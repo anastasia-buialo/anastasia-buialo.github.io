@@ -187,7 +187,7 @@ body[data-lang="no"] .lang-no { display: block; }
   display: none;
   align-items: center;
   gap: 6px;
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -215,7 +215,7 @@ body[data-lang="no"] .lang-no { display: block; }
 }
 /* Nav items share the toggle buttons' typeface + scale (Futura 12, tracked) */
 .nav-link {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -236,7 +236,7 @@ body[data-lang="no"] .lang-no { display: block; }
 }
 .seg--theme { border-color: var(--line4); }
 .seg-btn {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -894,7 +894,7 @@ body[data-lang="no"] .lang-no { display: block; }
    ============================================================ */
 .case-hero { padding: clamp(32px, 4.5vw, 60px) 0 clamp(28px, 4vw, 44px); }
 .case-h1 {
-  font-size: clamp(32px, 4vw, 52px);
+  font-size: clamp(30px, 3.4vw, 44px);
   font-weight: 500;
   line-height: 1.05;
   letter-spacing: -0.02em;
@@ -920,7 +920,7 @@ body[data-lang="no"] .lang-no { display: block; }
   border-top: 1px solid var(--line3);
 }
 .case-meta .field-label { margin-bottom: 10px; }
-.case-meta p:last-child { font-size: 18px; color: var(--ink); margin: 0; }
+.case-meta p:last-child { font-size: 16px; color: var(--ink); margin: 0; }
 
 /* Otovo hero stat strip */
 .stat-strip {
@@ -940,7 +940,7 @@ body[data-lang="no"] .lang-no { display: block; }
 
 /* Case "what it gave" value grid */
 .case-value-h2 {
-  font-size: clamp(24px, 2.8vw, 36px);
+  font-size: clamp(22px, 2.6vw, 32px);
   font-weight: 500;
   letter-spacing: -0.01em;
   margin: 0 0 32px;
@@ -990,15 +990,15 @@ body[data-lang="no"] .lang-no { display: block; }
   max-width: 62ch;
 }
 .story-body > p {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.6;
   color: var(--body);
   margin: 0 0 20px;
 }
 .story-body > p.tight { margin: 0 0 24px; }
 .story-body > p.diagnosis {
-  font-size: 20px;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 1.55;
   color: var(--ink);
   margin: 0 0 24px;
 }
@@ -1009,7 +1009,7 @@ body[data-lang="no"] .lang-no { display: block; }
   display: flex;
   flex-direction: column;
   gap: 14px;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.6;
   color: var(--body);
 }
@@ -1020,7 +1020,7 @@ body[data-lang="no"] .lang-no { display: block; }
   display: flex;
   flex-direction: column;
   gap: 14px;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.6;
   color: var(--body);
   flex: 1 1 320px;
@@ -1035,7 +1035,7 @@ body[data-lang="no"] .lang-no { display: block; }
   border-left: 2px solid var(--acc);
 }
 .quote blockquote {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.5;
   font-style: italic;
   color: var(--ink);
@@ -1060,8 +1060,8 @@ body[data-lang="no"] .lang-no { display: block; }
 }
 .rec-row:first-of-type { padding: 0 0 20px; }
 .rec-row:last-of-type { border-bottom: none; }
-.rec-problem { font-size: 18px; line-height: 1.5; color: var(--sub); margin: 0; }
-.rec-fix { font-size: 18px; line-height: 1.5; color: var(--ink); margin: 0; }
+.rec-problem { font-size: 16px; line-height: 1.5; color: var(--sub); margin: 0; }
+.rec-fix { font-size: 16px; line-height: 1.5; color: var(--ink); margin: 0; }
 .rec-fix .arrow { color: var(--acc); margin-right: 10px; }
 
 /* Image grids inside case bodies */
