@@ -691,11 +691,12 @@ body[data-lang="no"] .lang-no { display: block; }
 
 /* ---------- Visual work ------------------------------------- */
 .vw-intro {
-  font-size: 22px;
+  font-size: 20px;
+  line-height: 1.5;
   font-weight: 400;
   color: var(--sub);
   margin: 0 0 24px;
-  max-width: 60ch;
+  max-width: 52ch;
 }
 .vw-accordion { border-top: 1px solid var(--line3); }
 .vw-accordion .acc-head { padding: 20px 0; }
@@ -709,7 +710,7 @@ body[data-lang="no"] .lang-no { display: block; }
 }
 .vw-panel[hidden] { display: none; }
 .vw-text {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.6;
   font-weight: 400;
   color: var(--body);
