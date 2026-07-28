@@ -32,7 +32,7 @@
   --font-body: 'Suisse Intl', 'Suisse Int\'l', 'Switzer', sans-serif;
   --container: 1040px;
   --pad-x: clamp(16px, 4vw, 32px);
-  --section-y: clamp(56px, 9vw, 100px);
+  --section-y: clamp(48px, 6vw, 80px);
 }
 
 body[data-theme="dark"] {
@@ -161,8 +161,13 @@ body[data-lang="no"] .lang-no { display: block; }
   gap: 10px 18px;
 }
 .nav--case { gap: 12px 20px; }
+/* Nav items share the toggle buttons' typeface + scale (Futura 12, tracked) */
 .nav-link {
-  font-size: 18px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--sub);
   text-decoration: none;
   transition: color 0.2s;
@@ -209,7 +214,7 @@ body[data-lang="no"] .lang-no { display: block; }
 .section--bordered { border-bottom: 1px solid var(--line2); }
 
 .hero {
-  padding: clamp(64px, 10vw, 120px) 0 var(--section-y);
+  padding: clamp(36px, 4.5vw, 64px) 0 var(--section-y);
   border-bottom: 1px solid var(--line2);
 }
 
@@ -221,7 +226,7 @@ body[data-lang="no"] .lang-no { display: block; }
 }
 .section-head--wide { margin-bottom: 48px; }
 .section-head h2 {
-  font-size: clamp(32px, 4vw, 56px);
+  font-size: clamp(28px, 3.2vw, 44px);
   font-weight: 500;
   letter-spacing: -0.01em;
   margin: 0;
@@ -242,7 +247,7 @@ body[data-lang="no"] .lang-no { display: block; }
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--acc);
-  margin: 0 0 36px;
+  margin: 0 0 24px;
 }
 .field-label {
   font-family: var(--font-display);
@@ -277,16 +282,16 @@ body[data-lang="no"] .lang-no { display: block; }
 
 /* ---------- Hero (home) ------------------------------------- */
 .hero-h1 {
-  font-size: clamp(52px, 7.5vw, 112px);
+  font-size: clamp(40px, 5.2vw, 76px);
   font-weight: 500;
-  line-height: 1.02;
+  line-height: 1.05;
   letter-spacing: -0.02em;
   margin: 0;
   max-width: 18ch;
   text-wrap: balance;
 }
-/* Norwegian string has ascender/descender collisions at 1.02 */
-.lang-no .hero-h1 { line-height: 1.18; }
+/* Norwegian string has ascender/descender collisions at the tight leading */
+.lang-no .hero-h1 { line-height: 1.15; }
 .hero-h1 em {
   font-style: italic;
   font-weight: 400;
@@ -303,8 +308,8 @@ body[data-lang="no"] .lang-no { display: block; }
 .hero-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
-  gap: 48px 64px;
-  margin-top: 72px;
+  gap: 40px 64px;
+  margin-top: 48px;
   align-items: start;
 }
 
@@ -339,8 +344,8 @@ body[data-lang="no"] .lang-no { display: block; }
   background-size: 7px 7px;
 }
 .dither--hero {
-  height: 88px;
-  margin-top: 56px;
+  height: 64px;
+  margin-top: 36px;
   -webkit-mask-image: linear-gradient(90deg, black 0%, var(--line4) 45%, transparent 82%);
   mask-image: linear-gradient(90deg, black 0%, var(--line4) 45%, transparent 82%);
 }
@@ -361,11 +366,11 @@ body[data-lang="no"] .lang-no { display: block; }
 
 /* ---------- Method ------------------------------------------ */
 .tagline {
-  font-size: clamp(22px, 2.6vw, 30px);
+  font-size: clamp(20px, 2.2vw, 26px);
   line-height: 1.4;
   font-weight: 400;
   color: var(--big);
-  margin: 0 0 clamp(48px, 7vw, 80px);
+  margin: 0 0 clamp(36px, 5vw, 56px);
   text-wrap: pretty;
 }
 .step-grid {
@@ -422,7 +427,7 @@ body[data-lang="no"] .lang-no { display: block; }
 }
 .acc-title {
   display: block;
-  font-size: clamp(28px, 3.4vw, 48px);
+  font-size: clamp(24px, 2.8vw, 38px);
   font-weight: 500;
   letter-spacing: -0.01em;
   margin: 0;
@@ -516,10 +521,10 @@ body[data-lang="no"] .lang-no { display: block; }
   margin: 0;
   line-height: 1;
 }
-.emphasis--panel { font-size: clamp(44px, 5vw, 72px); }
-.emphasis--stat { font-size: clamp(36px, 4.4vw, 60px); }
+.emphasis--panel { font-size: clamp(40px, 4.4vw, 60px); }
+.emphasis--stat { font-size: clamp(34px, 3.8vw, 52px); }
 .emphasis--word {
-  font-size: clamp(28px, 3vw, 42px);
+  font-size: clamp(26px, 2.6vw, 38px);
   letter-spacing: -0.01em;
   line-height: 1.15;
 }
@@ -666,7 +671,7 @@ body[data-lang="no"] .lang-no { display: block; }
   border-radius: 4px;
   display: block;
 }
-.skills-block { margin-top: 128px; border-top: 1px solid var(--line3); }
+.skills-block { margin-top: 72px; border-top: 1px solid var(--line3); }
 
 /* ---------- Visual work ------------------------------------- */
 .vw-intro {
@@ -773,10 +778,10 @@ body[data-lang="no"] .lang-no { display: block; }
 }
 .contact-kicker { margin-bottom: 28px; }
 .contact-h2 {
-  font-size: clamp(48px, 7vw, 104px);
+  font-size: clamp(38px, 5vw, 72px);
   font-weight: 500;
   letter-spacing: -0.02em;
-  line-height: 1.02;
+  line-height: 1.05;
   margin: 0;
 }
 .contact-actions {
@@ -818,7 +823,7 @@ body[data-lang="no"] .lang-no { display: block; }
   display: flex;
   justify-content: space-between;
   gap: 24px;
-  margin-top: 96px;
+  margin-top: 64px;
   padding-top: 24px;
   border-top: 1px solid var(--line2);
   font-family: var(--font-display);
@@ -830,11 +835,11 @@ body[data-lang="no"] .lang-no { display: block; }
 /* ============================================================
    Case pages
    ============================================================ */
-.case-hero { padding: clamp(48px, 8vw, 88px) 0 clamp(32px, 5vw, 48px); }
+.case-hero { padding: clamp(32px, 4.5vw, 60px) 0 clamp(28px, 4vw, 44px); }
 .case-h1 {
-  font-size: clamp(44px, 6.4vw, 92px);
+  font-size: clamp(36px, 4.6vw, 64px);
   font-weight: 500;
-  line-height: 1.02;
+  line-height: 1.05;
   letter-spacing: -0.02em;
   margin: 0;
 }
@@ -878,7 +883,7 @@ body[data-lang="no"] .lang-no { display: block; }
 
 /* Case "what it gave" value grid */
 .case-value-h2 {
-  font-size: clamp(26px, 3.2vw, 42px);
+  font-size: clamp(24px, 2.8vw, 36px);
   font-weight: 500;
   letter-spacing: -0.01em;
   margin: 0 0 32px;
