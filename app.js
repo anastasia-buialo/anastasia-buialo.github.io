@@ -38,8 +38,26 @@
   var savedLang = read(LANG_KEY);
   applyLang(savedLang === 'en' || savedLang === 'no' ? savedLang : 'en');
 
+  function closeHead(head) {
+    head.setAttribute('aria-expanded', 'false');
+    var p = document.getElementById(head.getAttribute('aria-controls'));
+    if (p) p.hidden = true;
+    var i = head.querySelector('.acc-icon');
+    if (i) i.textContent = '+';
+  }
+
   function toggleAccordion(btn) {
     var open = btn.getAttribute('aria-expanded') === 'true';
+    // Exclusive: opening one collapses the others in the same group.
+    if (!open) {
+      var group = btn.closest('.accordion, .vw-accordion');
+      if (group) {
+        var others = group.querySelectorAll('.acc-head[aria-expanded="true"]');
+        for (var i = 0; i < others.length; i++) {
+          if (others[i] !== btn) closeHead(others[i]);
+        }
+      }
+    }
     btn.setAttribute('aria-expanded', open ? 'false' : 'true');
     var panel = document.getElementById(btn.getAttribute('aria-controls'));
     if (panel) panel.hidden = open;

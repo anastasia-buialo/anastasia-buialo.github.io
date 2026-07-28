@@ -864,8 +864,8 @@ body[data-lang="no"] .lang-no { display: block; }
   margin: 0;
 }
 .case-summary {
-  font-size: clamp(20px, 2.3vw, 27px);
-  line-height: 1.45;
+  font-size: clamp(19px, 2vw, 24px);
+  line-height: 1.5;
   font-weight: 400;
   color: var(--big);
   margin: 28px 0 0;
