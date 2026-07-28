@@ -100,7 +100,8 @@ button:focus-visible {
 
 /* Language-aware line breaking: body copy hyphenates using each block's `lang`
    (en / no); headings, labels and short display strings never hyphenate. */
-main { hyphens: auto; -webkit-hyphens: auto; overflow-wrap: break-word; }
+/* No automatic hyphenation anywhere; wrap at spaces / explicit break points only. */
+main { hyphens: manual; -webkit-hyphens: manual; overflow-wrap: break-word; }
 h1, h2, h3,
 .hero-h1, .contact-h2, .case-h1, .case-value-h2, .acc-title, .block-heading,
 .emphasis, .kicker, .eyebrow, .field-label, .row-label, .side-label,
@@ -247,9 +248,12 @@ body[data-lang="no"] .lang-no { display: block; }
 .eyebrow {
   font-family: var(--font-display);
   font-size: 12px;
+  font-weight: 500;
   letter-spacing: 0.1em;
   color: var(--acc);
 }
+/* Every 12px uppercase-style label is one weight (Futura Medium / 500) */
+.field-label, .row-label, .side-label, .story-label, .about-langlabel { font-weight: 500; }
 
 /* ---------- Typographic helpers ----------------------------- */
 .kicker {
@@ -496,7 +500,7 @@ body[data-lang="no"] .lang-no { display: block; }
   font-weight: 400;
   color: var(--body);
 }
-.panel-cta { margin: 32px 0 0; }
+.panel-cta { margin: 40px 0 0; }
 
 .tag-row {
   display: flex;
@@ -798,7 +802,6 @@ body[data-lang="no"] .lang-no { display: block; }
   line-height: 1.15;
   color: var(--acc2);
   margin: 0;
-  max-width: 20ch;
 }
 .contact-actions {
   display: flex;
