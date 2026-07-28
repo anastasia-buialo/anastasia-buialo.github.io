@@ -102,7 +102,7 @@
     // Tapping a section link closes the open mobile menu.
     var navLink = e.target.closest('.nav-link');
     if (navLink) {
-      var group = navLink.closest('.nav-links');
+      var group = navLink.closest('.nav-panel');
       if (group && group.classList.contains('open')) {
         var owner = document.querySelector('[data-nav-toggle][aria-controls="' + group.id + '"]');
         if (owner) setMenu(owner, false);

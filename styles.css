@@ -176,6 +176,13 @@ body[data-lang="no"] .lang-no { display: block; }
   gap: 10px 18px;
 }
 .nav--case { gap: 12px 20px; }
+/* Panel wraps links + toggles: inline on desktop, one disclosure on mobile */
+.nav-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 18px;
+}
 .nav-links {
   display: flex;
   flex-wrap: wrap;
@@ -188,9 +195,9 @@ body[data-lang="no"] .lang-no { display: block; }
   align-items: center;
   gap: 6px;
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.1em;
+  letter-spacing: 0;
   color: var(--sub);
   background: none;
   border: none;
@@ -202,23 +209,38 @@ body[data-lang="no"] .lang-no { display: block; }
 .nav-menu-btn .caret { font-size: 10px; }
 
 @media (max-width: 640px) {
-  .nav-menu-btn { display: inline-flex; order: 4; }
-  .nav-links { display: none; order: 5; width: 100%; }
-  .nav-links.open {
+  .nav-menu-btn { display: inline-flex; }
+  .nav-panel { display: none; }
+  /* Full-width dropdown anchored under the header */
+  .nav-panel.open {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
+    gap: 18px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 60;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line2);
+    padding: 22px var(--pad-x) 26px;
+  }
+  .nav-panel.open .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
     width: 100%;
-    padding: 6px 0 4px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line3);
   }
 }
-/* Nav items share the toggle buttons' typeface + scale (Futura 12, tracked) */
+/* Nav items share the toggle buttons' typeface + scale (Suisse 13, no tracking) */
 .nav-link {
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.1em;
+  letter-spacing: 0;
   color: var(--sub);
   text-decoration: none;
   transition: color 0.2s;
@@ -237,9 +259,9 @@ body[data-lang="no"] .lang-no { display: block; }
 .seg--theme { border-color: var(--line4); }
 .seg-btn {
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.1em;
+  letter-spacing: 0;
   line-height: 1.2;
   padding: 5px 12px;
   border: none;
@@ -389,6 +411,38 @@ body[data-lang="no"] .lang-no { display: block; }
 .meta-list li span:last-child { color: var(--ink); }
 .meta-list .nowrap { white-space: nowrap; }
 .meta-list .right { text-align: right; }
+
+/* Hero jump-nav (replaces the facts list) */
+.hero-jump {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+}
+.hero-jump a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line3);
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.hero-jump a:first-child { padding-top: 0; }
+.hero-jump a:hover { color: var(--acc2); }
+.hero-jump .jump-arrow {
+  color: var(--sub);
+  transition: transform 0.2s, color 0.2s;
+}
+.hero-jump a:hover .jump-arrow {
+  color: var(--acc2);
+  transform: translateX(4px);
+}
 
 /* ---------- Dither bands ------------------------------------ */
 .dither {
@@ -623,6 +677,21 @@ body[data-lang="no"] .lang-no { display: block; }
   font-size: 14px;
   color: var(--mut);
   white-space: nowrap;
+}
+/* Stack the project index on mobile so nothing forces horizontal scroll */
+@media (max-width: 640px) {
+  .index-row {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "desc year"
+      "name name";
+    column-gap: 16px;
+    row-gap: 4px;
+    align-items: baseline;
+  }
+  .index-desc { grid-area: desc; font-size: 16px; }
+  .index-year { grid-area: year; text-align: right; }
+  .index-name { grid-area: name; }
 }
 .block-heading {
   font-size: clamp(20px, 2.4vw, 28px);
