@@ -85,7 +85,30 @@
     }
   }
 
+  function setMenu(btn, open) {
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    var links = document.getElementById(btn.getAttribute('aria-controls'));
+    if (links) links.classList.toggle('open', open);
+    var caret = btn.querySelector('.caret');
+    if (caret) caret.textContent = open ? '▴' : '▾';
+  }
+
   document.addEventListener('click', function (e) {
+    var navToggle = e.target.closest('[data-nav-toggle]');
+    if (navToggle) {
+      setMenu(navToggle, navToggle.getAttribute('aria-expanded') !== 'true');
+      return;
+    }
+    // Tapping a section link closes the open mobile menu.
+    var navLink = e.target.closest('.nav-link');
+    if (navLink) {
+      var group = navLink.closest('.nav-links');
+      if (group && group.classList.contains('open')) {
+        var owner = document.querySelector('[data-nav-toggle][aria-controls="' + group.id + '"]');
+        if (owner) setMenu(owner, false);
+      }
+      // fall through to allow the anchor jump
+    }
     var themeBtn = e.target.closest('[data-set-theme]');
     if (themeBtn) {
       var t = themeBtn.getAttribute('data-set-theme');
