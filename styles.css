@@ -500,7 +500,7 @@ body[data-lang="no"] .lang-no { display: block; }
   font-weight: 400;
   color: var(--body);
 }
-.panel-cta { margin: 40px 0 0; }
+.panel-body .panel-cta { margin: 40px 0 0; }
 
 .tag-row {
   display: flex;
@@ -630,7 +630,7 @@ body[data-lang="no"] .lang-no { display: block; }
 }
 .row-list .years { color: var(--mut); white-space: nowrap; }
 .skills-text {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   color: var(--body);
   margin: 0;
