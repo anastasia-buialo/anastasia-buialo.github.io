@@ -682,7 +682,7 @@ body[data-lang="no"] .lang-no { display: block; }
   max-width: 60ch;
 }
 .vw-accordion { border-top: 1px solid var(--line3); }
-.vw-accordion .acc-title { font-size: clamp(22px, 2.6vw, 34px); }
+.vw-accordion .acc-title { font-size: clamp(18px, 2vw, 26px); }
 .vw-accordion .acc-sub { font-size: 14px; margin: 6px 0 0; }
 .vw-accordion .acc-icon { color: var(--acc2); }
 .vw-accordion .acc-head:last-of-type { border-bottom: 1px solid var(--line3); }
