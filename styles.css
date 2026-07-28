@@ -105,7 +105,7 @@ h1, h2, h3,
 .hero-h1, .contact-h2, .case-h1, .case-value-h2, .acc-title, .block-heading,
 .emphasis, .kicker, .eyebrow, .field-label, .row-label, .side-label,
 .story-label, .index-name, .index-year, .nav-link, .wordmark, .seg-btn,
-.tag, .overline, .caption, .meta-list, .years {
+.tag, .overline, .caption, .meta-list, .years, .skills-text {
   hyphens: manual;
   -webkit-hyphens: manual;
 }
