@@ -202,8 +202,8 @@ body[data-lang="no"] .lang-no { display: block; }
 .nav-menu-btn .caret { font-size: 10px; }
 
 @media (max-width: 640px) {
-  .nav-menu-btn { display: inline-flex; }
-  .nav-links { display: none; order: 3; width: 100%; }
+  .nav-menu-btn { display: inline-flex; order: 4; }
+  .nav-links { display: none; order: 5; width: 100%; }
   .nav-links.open {
     display: flex;
     flex-direction: column;
@@ -894,7 +894,7 @@ body[data-lang="no"] .lang-no { display: block; }
    ============================================================ */
 .case-hero { padding: clamp(32px, 4.5vw, 60px) 0 clamp(28px, 4vw, 44px); }
 .case-h1 {
-  font-size: clamp(36px, 4.6vw, 64px);
+  font-size: clamp(32px, 4vw, 52px);
   font-weight: 500;
   line-height: 1.05;
   letter-spacing: -0.02em;
@@ -947,12 +947,12 @@ body[data-lang="no"] .lang-no { display: block; }
 }
 .value-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
-  gap: 32px 48px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+  gap: 28px 32px;
 }
 .value-item {
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.55;
   color: var(--ink);
   margin: 0;
 }
@@ -997,8 +997,8 @@ body[data-lang="no"] .lang-no { display: block; }
 }
 .story-body > p.tight { margin: 0 0 24px; }
 .story-body > p.diagnosis {
-  font-size: 22px;
-  line-height: 1.45;
+  font-size: 20px;
+  line-height: 1.5;
   color: var(--ink);
   margin: 0 0 24px;
 }
