@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FinAut Portal — UX evaluation · Anastasia Buialo</title>
+<meta name="description" content="FinAut authorisation portal — an insight study turned into a decision basis. UX evaluation, 2026. Case study by Anastasia Buialo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/avatar.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="light" data-lang="en">
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem('ab-portfolio-theme');
+    if (t === 'dark' || t === 'light') document.body.dataset.theme = t;
+    var l = localStorage.getItem('ab-portfolio-lang');
+    if (l === 'en' || l === 'no') { document.body.dataset.lang = l; document.documentElement.lang = l; }
+  } catch (e) {}
+})();
+</script>
+
+<!-- ============================== ENGLISH ============================== -->
+<div class="lang-block lang-en" lang="en">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="wordmark">← Anastasia Buialo</a>
+      <nav class="nav nav--case">
+        <div class="seg" role="group" aria-label="Language">
+          <button class="seg-btn" type="button" data-set-lang="en" aria-pressed="true">EN</button>
+          <button class="seg-btn" type="button" data-set-lang="no" aria-pressed="false">NO</button>
+        </div>
+        <div class="seg seg--theme" role="group" aria-label="Theme">
+          <button class="seg-btn seg-btn--theme" type="button" data-set-theme="light" aria-pressed="true">light</button>
+          <button class="seg-btn seg-btn--theme" type="button" data-set-theme="dark" aria-pressed="false">dark</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="case-hero">
+      <p class="kicker" style="margin-bottom:28px">FinAut · 2026 · UX designer, Netlife</p>
+      <h1 class="case-h1">Make the path self-explanatory</h1>
+      <p class="case-summary">An insight study of the portal that keeps Norwegian financial advisers certified, turned into a decision basis the client could act on.</p>
+      <div class="case-meta">
+        <div>
+          <p class="field-label">Role</p>
+          <p>UX designer, insight lead</p>
+        </div>
+        <div>
+          <p class="field-label">Methods</p>
+          <p>Expert evaluation, depth interviews, moderated user tests, journey mapping, system mapping, workshop</p>
+        </div>
+        <div>
+          <p class="field-label">User groups</p>
+          <p>Candidates, authorised advisers, company administrators</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <h2 class="case-value-h2">What the insight work gave FinAut</h2>
+      <div class="value-grid">
+        <p class="value-item"><span class="n">01</span>A single diagnosis instead of scattered complaints: four recurring patterns that explain nearly every symptom in the portal.</p>
+        <p class="value-item"><span class="n">02</span>A strategic choice made concrete: three possible directions, weighed against cost and supplier dependency, with a recommended path.</p>
+        <p class="value-item"><span class="n">03</span>Three priorities to start from, each tied to the time it gives back, plus documented accessibility and GDPR breaches that had to be fixed regardless.</p>
+        <p class="value-item"><span class="n">04</span>Interface concepts for both portals, so the recommendations could be seen and discussed rather than read.</p>
+      </div>
+    </section>
+
+    <section class="case-section case-section--story">
+
+      <div class="story-row">
+        <p class="story-label">Problem</p>
+        <div class="story-body">
+          <p>FinAut runs the authorisation schemes that keep advisers in Norwegian finance qualified. The scheme has grown in scope and complexity, and sits on top of several learning platforms owned by suppliers. Candidates struggle to see where they are and what remains, advisers are unsure whether an annual update is done, and company administrators spend their days as a human reminder system.</p>
+          <p class="tight">The assignment was not to change the scheme, but to understand how it is experienced, and to hand FinAut a decision basis for what to do next.</p>
+          <img src="assets/finaut-today.png" alt="The portal today: a profile page with a long sidebar of parallel entry points" class="img h-300 pos-top">
+          <p class="caption caption--mut">Today: eight parallel entries, no status, no next step.</p>
+        </div>
+      </div>
+
+      <div class="story-row">
+        <p class="story-label">Research</p>
+        <div class="story-body">
+          <p>A review of the insight FinAut already had, a cross-disciplinary expert evaluation of finaut.no, My page and the company pages, depth interviews and moderated user tests with all three user groups plus key people at FinAut and its suppliers, a workshop with company administrators, and a mapping of the systems and how they hand over to each other.</p>
+          <p class="tight">The journeys were mapped with the mental model method, separating what the user is trying to achieve from what the system offers in return. That is what made the gap visible: the task layer is well understood, the support layer answers something else.</p>
+          <figure class="quote">
+            <blockquote>“Where am I, what do I have to do?”</blockquote>
+            <figcaption>Candidate, core need across every phase</figcaption>
+          </figure>
+          <figure class="quote">
+            <blockquote>“I am finished. Am I?”</blockquote>
+            <figcaption>Experienced adviser, after completing the annual update</figcaption>
+          </figure>
+          <div class="img-grid">
+            <img src="assets/finaut-journey.jpg" alt="Journey map of the authorisation flow with pain points" class="img h-200 pos-lefttop">
+            <img src="assets/finaut-insight.png" alt="Insight board: six phases, what works, what creates friction, key findings" class="img h-200 pos-lefttop">
+          </div>
+          <p class="caption caption--mut">The journey map, and one candidate’s six phases summarised for the client.</p>
+        </div>
+      </div>
+
+      <div class="story-row">
+        <p class="story-label">The diagnosis</p>
+        <div class="story-body">
+          <p class="diagnosis">Users are carrying the cost of systems that do not talk to each other. That is not a user problem, it is a system responsibility, and FinAut should take it back.</p>
+          <p>Everywhere we looked, in the expert evaluation, in users’ own words, and in how administrators actually get their job done, the same four patterns came back:</p>
+          <ul class="list-num">
+            <li><span class="n">01</span>No overview of where you are or what remains, for any of the three groups.</li>
+            <li><span class="n">02</span>The systems do not talk to each other; users build the bridge themselves.</li>
+            <li><span class="n">03</span>Everyone sees content that does not apply to them, and has to filter out the noise.</li>
+            <li><span class="n">04</span>Much of the work is done manually, mostly by administrators the portal should be helping.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="story-row">
+        <p class="story-label">From insight to recommendation</p>
+        <div class="story-body">
+          <p>Every finding was tied to a decision, and the decisions were ordered so FinAut could start on Monday rather than after a re-platforming.</p>
+          <div class="rec-row">
+            <p class="rec-problem">Nobody gets a status when they log in, whichever role they hold. This is where the experience collapses.</p>
+            <p class="rec-fix"><span class="arrow">→</span>Rebuild the start page as a status view with one clear next step, replacing today’s generic landing. Priority one.</p>
+          </div>
+          <div class="rec-row">
+            <p class="rec-problem">Administrators build their own systems in Excel because the portal gives them no real-time status.</p>
+            <p class="rec-fix"><span class="arrow">→</span>A simple dashboard with colour-coded status per candidate, search as the primary entry, and enrolment where the data already is.</p>
+          </div>
+          <div class="rec-row">
+            <p class="rec-problem">The expert evaluation found keyboard traps, contrast failures, an inaccessible embedded PDF and a possible leak of personal data.</p>
+            <p class="rec-fix"><span class="arrow">→</span>Fix the accessibility and GDPR breaches first: legally required whichever direction FinAut chooses.</p>
+          </div>
+          <div class="rec-row">
+            <p class="rec-problem">The portal depends on a supplier’s interfaces, and replacing the supplier would be a heavy, risky project.</p>
+            <p class="rec-fix"><span class="arrow">→</span>Start with UX on the existing systems, and require an API from the supplier in parallel, so the fast win also builds the long-term structure.</p>
+          </div>
+          <div class="rec-row">
+            <p class="rec-problem">The public site and the portal are technically woven together, though they serve different audiences.</p>
+            <p class="rec-fix"><span class="arrow">→</span>Separate them: the site proves the scheme is real and stays editorially owned, the portal moves people through a process.</p>
+          </div>
+          <div class="rec-row">
+            <p class="rec-problem">Changes have been driven by single orders, without anyone owning the whole experience.</p>
+            <p class="rec-fix"><span class="arrow">→</span>An internal owner of digital development, able to set requirements to suppliers with the user experience as the starting point.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-row">
+        <p class="story-label">Concept</p>
+        <div class="story-body">
+          <p class="tight">The recommendations were drawn up as interface sketches: a logged-in page built on progressive disclosure, where you see immediately whether you are authorised and what to do next, and a public front page that routes customers, advisers and companies apart instead of into one menu.</p>
+          <div class="img-grid img-grid--concept">
+            <img src="assets/finaut-concept-dashboard.png" alt="Concept for My page: greeting, next task, status per scheme, tasks and messages" class="img h-260 pos-top">
+            <img src="assets/finaut-concept-public.png" alt="Concept for the public site: three routes for customers, advisers and companies" class="img h-260 pos-top">
+          </div>
+        </div>
+      </div>
+
+      <div class="story-row story-row--last">
+        <p class="story-label">Learnings</p>
+        <ul class="learnings">
+          <li>When users cope by building their own scaffolding, that is the product’s job left undone.</li>
+          <li>A system landscape is not an excuse: users experience one service, whichever platform answers.</li>
+          <li>Insight is only worth what it changes, so every finding was paired with a decision and a priority.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="case-section--footer">
+      <p class="note">Findings and concepts are shown in anonymised form due to NDAs. Happy to walk through the details over a coffee: <a href="mailto:anastasia.buialo@gmail.com" class="link">anastasia.buialo@gmail.com</a></p>
+      <p style="margin:28px 0 0"><a href="index.html" class="pill">← All work</a></p>
+    </section>
+  </main>
+</div>
+
+<!-- ============================== NORWEGIAN ============================== -->
+<div class="lang-block lang-no" lang="no">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="wordmark">← Anastasia Buialo</a>
+      <nav class="nav nav--case">
+        <div class="seg" role="group" aria-label="Språk">
+          <button class="seg-btn" type="button" data-set-lang="en" aria-pressed="false">EN</button>
+          <button class="seg-btn" type="button" data-set-lang="no" aria-pressed="true">NO</button>
+        </div>
+        <div class="seg seg--theme" role="group" aria-label="Tema">
+          <button class="seg-btn seg-btn--theme" type="button" data-set-theme="light" aria-pressed="true">lys</button>
+          <button class="seg-btn seg-btn--theme" type="button" data-set-theme="dark" aria-pressed="false">mørk</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="case-hero">
+      <p class="kicker" style="margin-bottom:28px">FinAut · 2026 · UX-designer, Netlife</p>
+      <h1 class="case-h1">Gjør løpet selvforklarende</h1>
+      <p class="case-summary">Et innsiktsarbeid om portalen som holder norske finansrådgivere autorisert, gjort om til et beslutningsgrunnlag kunden kunne handle på.</p>
+      <div class="case-meta">
+        <div>
+          <p class="field-label">Rolle</p>
+          <p>UX-designer, ansvarlig for innsikt</p>
+        </div>
+        <div>
+          <p class="field-label">Metoder</p>
+          <p>Ekspertevaluering, dybdeintervjuer, modererte brukertester, brukerreisekartlegging, systemkartlegging, workshop</p>
+        </div>
+        <div>
+          <p class="field-label">Brukergrupper</p>
+          <p>Kandidater, autoriserte rådgivere, bedriftsansvarlige</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <h2 class="case-value-h2">Hva innsiktsarbeidet ga FinAut</h2>
+      <div class="value-grid">
+        <p class="value-item"><span class="n">01</span>Én diagnose i stedet for spredte klager: fire mønstre som forklarer nesten alle symptomene i portalen.</p>
+        <p class="value-item"><span class="n">02</span>Et strategisk valg gjort konkret: tre mulige retninger, veid mot kostnad og leverandøravhengighet, med en anbefalt vei.</p>
+        <p class="value-item"><span class="n">03</span>Tre prioriteringer å starte med, hver knyttet til tiden den frigjør, pluss dokumenterte UU- og GDPR-brudd som måtte lukkes uansett.</p>
+        <p class="value-item"><span class="n">04</span>Grensesnittkonsepter for begge portalene, slik at anbefalingene kunne ses og diskuteres i stedet for å leses.</p>
+      </div>
+    </section>
+
+    <section class="case-section case-section--story">
+
+      <div class="story-row">
+        <p class="story-label">Problem</p>
+        <div class="story-body">
+          <p>FinAut forvalter autorisasjonsordningene som holder rådgivere i finansnæringen kvalifisert. Ordningen har vokst i omfang og kompleksitet, og ligger oppå flere læringsplattformer eid av leverandører. Kandidater sliter med å se hvor de er og hva som gjenstår, rådgivere er usikre på om den årlige oppdateringen er gjort, og bedriftsansvarlige bruker dagene som et menneskelig påminnelsessystem.</p>
+          <p class="tight">Oppdraget var ikke å endre ordningen, men å forstå hvordan den oppleves, og gi FinAut et beslutningsgrunnlag for veien videre.</p>
+          <img src="assets/finaut-today.png" alt="Portalen i dag: en profilside med en lang sidemeny av parallelle innganger" class="img h-300 pos-top">
+          <p class="caption caption--mut">I dag: åtte parallelle innganger, ingen status, ingen neste steg.</p>
+        </div>
+      </div>
+
+      <div class="story-row">
+        <p class="story-label">Innsikt</p>
+        <div class="story-body">
+          <p>En gjennomgang av innsikten FinAut allerede hadde, en tverrfaglig ekspertevaluering av finaut.no, Min side og bedriftssiden, dybdeintervjuer og modererte brukertester med alle tre brukergruppene samt nøkkelpersoner hos FinAut og leverandørene, en workshop med bedriftsansvarlige, og en kartlegging av systemene og hvordan de overleverer til hverandre.</p>
+          <p class="tight">Brukerreisene ble kartlagt med mental modell-metoden, som skiller det brukeren prøver å oppnå fra det systemet tilbyr som svar. Det var det som gjorde gapet synlig: oppgavelaget er godt forstått, støttelaget svarer på noe annet.</p>
+          <figure class="quote">
+            <blockquote>«Hvor er jeg, hva må jeg gjøre?»</blockquote>
+            <figcaption>Kandidat, kjernebehov i alle faser</figcaption>
+          </figure>
+          <figure class="quote">
+            <blockquote>«Jeg er ferdig. Er jeg det?»</blockquote>
+            <figcaption>Erfaren rådgiver, etter fullført årlig oppdatering</figcaption>
+          </figure>
+          <div class="img-grid">
+            <img src="assets/finaut-journey.jpg" alt="Brukerreisekart over autorisasjonsløpet med smertepunkter" class="img h-200 pos-lefttop">
+            <img src="assets/finaut-insight.png" alt="Innsiktsflate: seks faser, hva som fungerer, hva som skaper friksjon, nøkkelfunn" class="img h-200 pos-lefttop">
+          </div>
+          <p class="caption caption--mut">Brukerreisekartet, og én kandidats seks faser oppsummert for kunden.</p>
+        </div>
+      </div>
+
+      <div class="story-row">
+        <p class="story-label">Diagnosen</p>
+        <div class="story-body">
+          <p class="diagnosis">Brukerne bærer kostnaden for at systemene ikke snakker sammen. Det er ikke et brukerproblem, det er et systemansvar, og FinAut bør ta det ansvaret tilbake.</p>
+          <p>Uansett hvor vi så, i ekspertevalueringen, i brukernes egne ord, og i hvordan bedriftsansvarlige faktisk løser jobben sin, gikk de samme fire mønstrene igjen:</p>
+          <ul class="list-num">
+            <li><span class="n">01</span>Ingen oversikt over hvor man er eller hva som gjenstår, for noen av de tre gruppene.</li>
+            <li><span class="n">02</span>Systemene snakker ikke sammen; brukerne bygger broen selv.</li>
+            <li><span class="n">03</span>Alle ser innhold som ikke gjelder dem, og må filtrere bort støyen selv.</li>
+            <li><span class="n">04</span>Mye av jobben gjøres manuelt, mest av bedriftsansvarlige som portalen burde hjulpet.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="story-row">
+        <p class="story-label">Fra innsikt til anbefaling</p>
+        <div class="story-body">
+          <p>Hvert funn ble koblet til en beslutning, og beslutningene ble prioritert slik at FinAut kunne starte på mandag i stedet for etter en plattformbytte.</p>
+          <div class="rec-row">
+            <p class="rec-problem">Ingen får en status når de logger inn, uansett rolle. Det er her opplevelsen kollapser.</p>
+            <p class="rec-fix"><span class="arrow">→</span>Bygg om startsiden til en statusoversikt med ett tydelig neste steg, i stedet for dagens generiske landing. Prioritet én.</p>
+          </div>
+          <div class="rec-row">
+            <p class="rec-problem">Bedriftsansvarlige bygger egne systemer i Excel fordi portalen ikke gir dem status i sanntid.</p>
+            <p class="rec-fix"><span class="arrow">→</span>Et enkelt dashbord med fargekodet status per kandidat, søk som primær inngang, og påmelding der dataene allerede er.</p>
+          </div>
+          <div class="rec-row">
+            <p class="rec-problem">Ekspertevalueringen fant tastaturfeller, kontrastbrudd, en innebygget PDF som ikke er universelt utformet, og en mulig lekkasje av personopplysninger.</p>
+            <p class="rec-fix"><span class="arrow">→</span>Lukk UU- og GDPR-bruddene først: lovpålagt uansett hvilken retning FinAut velger.</p>
+          </div>
+          <div class="rec-row">
+            <p class="rec-problem">Portalen er avhengig av en leverandørs grensesnitt, og å bytte leverandør ville vært et tungt og risikabelt prosjekt.</p>
+            <p class="rec-fix"><span class="arrow">→</span>Start med UX på dagens systemer, og still krav om et API fra leverandøren parallelt, slik at den raske gevinsten også bygger strukturen på sikt.</p>
+          </div>
+          <div class="rec-row">
+            <p class="rec-problem">Nettsiden og portalen er teknisk vevd sammen, selv om de møter ulike målgrupper.</p>
+            <p class="rec-fix"><span class="arrow">→</span>Skill dem: nettsiden beviser at ordningen er ekte og forblir redaksjonelt eid, portalen tar folk gjennom en prosess.</p>
+          </div>
+          <div class="rec-row">
+            <p class="rec-problem">Endringer har vært drevet av enkeltbestillinger, uten at noen eier helheten.</p>
+            <p class="rec-fix"><span class="arrow">→</span>En intern eier av den digitale utviklingen, som kan stille krav til leverandørene med brukeropplevelsen som utgangspunkt.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-row">
+        <p class="story-label">Konsept</p>
+        <div class="story-body">
+          <p class="tight">Anbefalingene ble tegnet opp som grensesnittskisser: en innlogget side bygget på progressiv avdekking, der du med en gang ser om du er autorisert og hva du skal gjøre videre, og en forside som ruter kunder, rådgivere og bedrifter hver for seg i stedet for inn i én meny.</p>
+          <div class="img-grid img-grid--concept">
+            <img src="assets/finaut-concept-dashboard.png" alt="Konsept for Min side: hilsen, neste oppgave, status per ordning, oppgaver og beskjeder" class="img h-260 pos-top">
+            <img src="assets/finaut-concept-public.png" alt="Konsept for nettsiden: tre veier for kunder, rådgivere og bedrifter" class="img h-260 pos-top">
+          </div>
+        </div>
+      </div>
+
+      <div class="story-row story-row--last">
+        <p class="story-label">Læring</p>
+        <ul class="learnings">
+          <li>Når brukerne klarer seg ved å bygge sitt eget stillas, er det produktets jobb som står ugjort.</li>
+          <li>Et systemlandskap er ingen unnskyldning: brukerne opplever én tjeneste, uansett hvilken plattform som svarer.</li>
+          <li>Innsikt er verdt akkurat det den endrer, så hvert funn ble koblet til en beslutning og en prioritering.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="case-section--footer">
+      <p class="note">Funn og konsepter vises i anonymisert form på grunn av NDA-er. Jeg går gjerne gjennom detaljene over en kaffe: <a href="mailto:anastasia.buialo@gmail.com" class="link">anastasia.buialo@gmail.com</a></p>
+      <p style="margin:28px 0 0"><a href="index.html" class="pill">← Alle prosjekter</a></p>
+    </section>
+  </main>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

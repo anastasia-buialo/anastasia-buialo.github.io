@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Otovo Solar Planner — self-checkout for solar · Anastasia Buialo</title>
+<meta name="description" content="Otovo Solar Planner — assisted self-checkout for residential solar. Lead UX designer, 2023. UX Nordic Award finalist. Case study by Anastasia Buialo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/avatar.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="light" data-lang="en">
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem('ab-portfolio-theme');
+    if (t === 'dark' || t === 'light') document.body.dataset.theme = t;
+    var l = localStorage.getItem('ab-portfolio-lang');
+    if (l === 'en' || l === 'no') { document.body.dataset.lang = l; document.documentElement.lang = l; }
+  } catch (e) {}
+})();
+</script>
+
+<!-- ============================== ENGLISH ============================== -->
+<div class="lang-block lang-en" lang="en">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="wordmark">← Anastasia Buialo</a>
+      <nav class="nav nav--case">
+        <div class="seg" role="group" aria-label="Language">
+          <button class="seg-btn" type="button" data-set-lang="en" aria-pressed="true">EN</button>
+          <button class="seg-btn" type="button" data-set-lang="no" aria-pressed="false">NO</button>
+        </div>
+        <div class="seg seg--theme" role="group" aria-label="Theme">
+          <button class="seg-btn seg-btn--theme" type="button" data-set-theme="light" aria-pressed="true">light</button>
+          <button class="seg-btn seg-btn--theme" type="button" data-set-theme="dark" aria-pressed="false">dark</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="case-hero">
+      <p class="kicker" style="margin-bottom:28px">Otovo · 2023 · Lead UX designer</p>
+      <h1 class="case-h1">Solar Planner</h1>
+      <p class="case-summary case-summary--narrow">Self-checkout for residential solar: the customer in charge, never left alone.</p>
+      <img src="assets/otovo-final.webp" alt="Final flow: roof drawing, panel layout and offer on mobile" class="img img--full" style="margin-top:44px">
+      <div class="stat-strip">
+        <div>
+          <p class="emphasis emphasis--stat">+40%</p>
+          <p class="stat-cap">conversion for customers who started self-checkout</p>
+        </div>
+        <div>
+          <p class="emphasis emphasis--stat">13</p>
+          <p class="stat-cap">markets, after a pilot in Sweden, France and Poland</p>
+        </div>
+        <div>
+          <p class="emphasis emphasis--word">Finalist</p>
+          <p class="stat-cap">UX Nordic Award 2023</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section case-section--story">
+      <div class="story-row">
+        <p class="story-label">Problem</p>
+        <div class="story-body">
+          <p>Buying solar meant handing over your details and waiting for a sales call. Customers who had already decided were slowed down by a process built for the undecided, but roofs, eaves and panel counts are hard to judge alone, so pure self-service risked costly wrong orders.</p>
+          <figure class="quote">
+            <blockquote>“He’s annoyed with having to give his contact details and can’t get an instant price.”</blockquote>
+            <figcaption>Interview, self-service customer</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="story-row">
+        <p class="story-label">Research</p>
+        <div class="story-body">
+          <p>Interviews with customers, sales agents and product managers, mapped into one journey covering the flow and the systems behind it. Then moderated remote tests with Swedish, French and Polish users, read next to funnel data and session recordings.</p>
+          <figure class="quote">
+            <blockquote>“He thinks the calc page has a lot of information and he doesn’t know what to do.” Information overload.</blockquote>
+            <figcaption>Usability test with a non-customer</figcaption>
+          </figure>
+          <div class="img-grid img-grid--quad">
+            <img src="assets/otovo-journey.avif" alt="Customer journey map" class="img h-130 pos-left">
+            <img src="assets/otovo-stories.avif" alt="User stories on sticky notes" class="img h-130 pos-top">
+            <img src="assets/otovo-insights.avif" alt="Insight board with quantified testing summary" class="img h-130 pos-lefttop">
+            <img src="assets/otovo-workshop.webp" alt="Cross-functional workshop session" class="img h-130">
+          </div>
+        </div>
+      </div>
+      <div class="story-row">
+        <p class="story-label">From insight to design</p>
+        <div class="story-body">
+          <p>Every finding was tied to a decision, so the team could see what changed and why.</p>
+          <figure class="quote">
+            <blockquote>“The surface drawing is challenging on mobile. Users are struggling with the drawing step, restarting the Tetris multiple times.”</blockquote>
+            <figcaption>Insight board, proof of concept</figcaption>
+          </figure>
+          <div class="rec-row">
+            <p class="rec-problem">3 of 5 didn’t understand what to do at the roof-drawing step, and most never found the tutorial.</p>
+            <p class="rec-fix"><span class="arrow">→</span>Instant visual feedback while drawing: panels appear on the roof as the shape closes, and the tutorial became part of the step instead of a link.</p>
+          </div>
+          <div class="rec-row">
+            <p class="rec-problem">3 of 5 struggled with the eave dropdown, and Swedish testers read “longest” instead of “lowest”.</p>
+            <p class="rec-fix"><span class="arrow">→</span>The eave was moved onto the map as a direct selection, with the wording rewritten and tested per market.</p>
+          </div>
+          <div class="rec-row">
+            <p class="rec-problem">2 of 4 never noticed the panel count, and half only realised the point of the exercise late.</p>
+            <p class="rec-fix"><span class="arrow">→</span>Panel count and price were pulled into the persistent bottom bar, updating live with every change.</p>
+          </div>
+          <div class="rec-row">
+            <p class="rec-problem">2 of 5 wanted a fallback to a person; sales agents feared unqualified self-served orders.</p>
+            <p class="rec-fix"><span class="arrow">→</span>A visible “talk to an agent” route at every step, plus qualification questions that route risky cases to sales before an offer exists.</p>
+          </div>
+          <div class="rec-row">
+            <p class="rec-problem">4 of 5 were frustrated at having to restart a faulty shape from scratch.</p>
+            <p class="rec-fix"><span class="arrow">→</span>Panels became individually removable and the layout editable, so a wrong drawing is corrected rather than redone.</p>
+          </div>
+        </div>
+      </div>
+      <div class="story-row">
+        <p class="story-label">Solution</p>
+        <div class="story-body">
+          <p>Assisted self-checkout: the customer draws the roof, picks panels and gets an instant offer, while a sales agent follows along and steps in the moment something stalls. Self-service where it is faster, humans where they add trust.</p>
+          <figure class="quote">
+            <blockquote>“Customers who chose to start the self-checkout process converted 40 % higher.”</blockquote>
+            <figcaption>Pilot result, Sweden, France and Poland</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="story-row story-row--last">
+        <p class="story-label">Learnings</p>
+        <div class="story-body">
+          <ul class="list-num">
+            <li>Autonomy is not abandonment; the win came from a visible way back to a human.</li>
+            <li>A pilot in three markets settled an argument that had run for months.</li>
+            <li>A self-served sale no system recognises is not a sale, so the back stage mattered as much as the interface.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section--footer">
+      <p class="note">Some data is anonymised due to NDAs. Happy to walk through the details over a coffee: <a href="mailto:anastasia.buialo@gmail.com" class="link">anastasia.buialo@gmail.com</a></p>
+      <p style="margin:28px 0 0"><a href="index.html" class="pill">← All work</a></p>
+    </section>
+  </main>
+</div>
+
+<!-- ============================== NORWEGIAN ============================== -->
+<div class="lang-block lang-no" lang="no">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="wordmark">← Anastasia Buialo</a>
+      <nav class="nav nav--case">
+        <div class="seg" role="group" aria-label="Språk">
+          <button class="seg-btn" type="button" data-set-lang="en" aria-pressed="false">EN</button>
+          <button class="seg-btn" type="button" data-set-lang="no" aria-pressed="true">NO</button>
+        </div>
+        <div class="seg seg--theme" role="group" aria-label="Tema">
+          <button class="seg-btn seg-btn--theme" type="button" data-set-theme="light" aria-pressed="true">lys</button>
+          <button class="seg-btn seg-btn--theme" type="button" data-set-theme="dark" aria-pressed="false">mørk</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="case-hero">
+      <p class="kicker" style="margin-bottom:28px">Otovo · 2023 · Ansvarlig UX-designer</p>
+      <h1 class="case-h1">Solar Planner</h1>
+      <p class="case-summary case-summary--narrow">Selvutsjekking for solenergi: kunden har kontrollen, men blir aldri overlatt til seg selv.</p>
+      <img src="assets/otovo-final.webp" alt="Ferdig flyt: taktegning, panelplassering og tilbud på mobil" class="img img--full" style="margin-top:44px">
+      <div class="stat-strip">
+        <div>
+          <p class="emphasis emphasis--stat">+40 %</p>
+          <p class="stat-cap">konvertering for kunder som startet selvutsjekking</p>
+        </div>
+        <div>
+          <p class="emphasis emphasis--stat">13</p>
+          <p class="stat-cap">markeder, etter pilot i Sverige, Frankrike og Polen</p>
+        </div>
+        <div>
+          <p class="emphasis emphasis--word">Finalist</p>
+          <p class="stat-cap">UX Nordic Award 2023</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section case-section--story">
+      <div class="story-row">
+        <p class="story-label">Problem</p>
+        <div class="story-body">
+          <p>Å kjøpe solenergi betydde å legge igjen kontaktinfo og vente på en selger. Kunder som allerede hadde bestemt seg, ble bremset av en prosess laget for de usikre, men tak, takfot og antall paneler er vanskelig å vurdere alene, så ren selvbetjening kunne gi kostbare feilbestillinger.</p>
+          <figure class="quote">
+            <blockquote>“Han er irritert over å måtte oppgi kontaktopplysninger og ikke få en pris med en gang.”</blockquote>
+            <figcaption>Intervju, selvbetjeningskunde</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="story-row">
+        <p class="story-label">Innsikt</p>
+        <div class="story-body">
+          <p>Intervjuer med kunder, selgere og produktsjefer, samlet i én kundereise som dekket både flyten og systemene bak. Deretter modererte fjerntester med svenske, franske og polske brukere, lest sammen med traktdata og sesjonsopptak.</p>
+          <figure class="quote">
+            <blockquote>“Han synes kalkulatorsiden har mye informasjon, og vet ikke hva han skal gjøre.” Informasjonsoverbelastning.</blockquote>
+            <figcaption>Brukertest med en ikke-kunde</figcaption>
+          </figure>
+          <div class="img-grid img-grid--quad">
+            <img src="assets/otovo-journey.avif" alt="Kundereisekart" class="img h-130 pos-left">
+            <img src="assets/otovo-stories.avif" alt="Brukerhistorier på lapper" class="img h-130 pos-top">
+            <img src="assets/otovo-insights.avif" alt="Innsiktsflate med kvantifisert testoppsummering" class="img h-130 pos-lefttop">
+            <img src="assets/otovo-workshop.webp" alt="Tverrfaglig workshop" class="img h-130">
+          </div>
+        </div>
+      </div>
+      <div class="story-row">
+        <p class="story-label">Fra innsikt til design</p>
+        <div class="story-body">
+          <p>Hvert funn ble koblet til en beslutning, slik at teamet så hva som ble endret og hvorfor.</p>
+          <figure class="quote">
+            <blockquote>“Tegning av flaten er krevende på mobil. Brukerne sliter i tegnesteget og starter Tetrisen på nytt flere ganger.”</blockquote>
+            <figcaption>Innsiktsflate, proof of concept</figcaption>
+          </figure>
+          <div class="rec-row">
+            <p class="rec-problem">3 av 5 forsto ikke hva de skulle gjøre i tegnesteget, og de fleste fant aldri veiledningen.</p>
+            <p class="rec-fix"><span class="arrow">→</span>Umiddelbar visuell tilbakemelding under tegning: panelene dukker opp på taket idet flaten lukkes, og veiledningen ble en del av steget i stedet for en lenke.</p>
+          </div>
+          <div class="rec-row">
+            <p class="rec-problem">3 av 5 slet med nedtrekkslisten for takfot, og svenske testere leste «lengste» i stedet for «laveste».</p>
+            <p class="rec-fix"><span class="arrow">→</span>Takfoten ble flyttet ut på kartet som et direkte valg, med ordlyd skrevet om og testet per marked.</p>
+          </div>
+          <div class="rec-row">
+            <p class="rec-problem">2 av 4 la aldri merke til antall paneler, og halvparten skjønte poenget med øvelsen for sent.</p>
+            <p class="rec-fix"><span class="arrow">→</span>Antall paneler og pris ble flyttet til den faste bunnlinjen, oppdatert live ved hver endring.</p>
+          </div>
+          <div class="rec-row">
+            <p class="rec-problem">2 av 5 ønsket en vei tilbake til et menneske; selgerne fryktet ukvalifiserte selvbetjente ordrer.</p>
+            <p class="rec-fix"><span class="arrow">→</span>En synlig «snakk med en rådgiver» i hvert steg, pluss kvalifiseringsspørsmål som ruter risikable saker til salg før et tilbud finnes.</p>
+          </div>
+          <div class="rec-row">
+            <p class="rec-problem">4 av 5 var frustrerte over å måtte starte en feil flate helt på nytt.</p>
+            <p class="rec-fix"><span class="arrow">→</span>Panelene ble mulige å fjerne enkeltvis og layouten redigerbar, slik at en feil tegning rettes i stedet for å gjøres om.</p>
+          </div>
+        </div>
+      </div>
+      <div class="story-row">
+        <p class="story-label">Løsning</p>
+        <div class="story-body">
+          <p>Assistert selvutsjekking: kunden tegner taket, velger paneler og får tilbud umiddelbart, mens en selger følger med og hopper inn i det noe stopper. Selvbetjening der det går raskere, mennesker der de skaper tillit.</p>
+          <figure class="quote">
+            <blockquote>“Kunder som valgte å starte selvutsjekkingen, konverterte 40 % høyere.”</blockquote>
+            <figcaption>Pilotresultat, Sverige, Frankrike og Polen</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="story-row story-row--last">
+        <p class="story-label">Læring</p>
+        <div class="story-body">
+          <ul class="list-num">
+            <li>Autonomi er ikke det samme som å bli forlatt; gevinsten lå i en synlig vei tilbake til et menneske.</li>
+            <li>En pilot i tre markeder avgjorde en diskusjon som hadde gått i månedsvis.</li>
+            <li>Et selvbetjent salg ingen systemer kjenner igjen, er ikke et salg; systemene bak betydde like mye som grensesnittet.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section--footer">
+      <p class="note">Noe data er anonymisert på grunn av NDA-er. Jeg går gjerne gjennom detaljene over en kaffe: <a href="mailto:anastasia.buialo@gmail.com" class="link">anastasia.buialo@gmail.com</a></p>
+      <p style="margin:28px 0 0"><a href="index.html" class="pill">← Alle prosjekter</a></p>
+    </section>
+  </main>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/avatar.png">
+<style>
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--acc); outline-offset: 3px; border-radius: 4px; }
+body { margin: 0; background-color: var(--bg); overflow-x: clip; color: var(--ink); font-family: 'Suisse Intl', 'Suisse Int\'l', 'Switzer', sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { font-family: 'Futura', 'Jost', sans-serif; }
+@font-face { font-family: 'Thornskull'; src: url('assets/Thornskull-Regular.otf') format('opentype'); font-display: swap; }
+::selection { background: var(--ink); color: var(--bg); }
+body::after { content: ""; position: fixed; inset: 0; z-index: 2147483647; pointer-events: none; opacity: 0.35; mix-blend-mode: multiply; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.18 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E"); }
+:root { --bg: #d6d6d2; --ink: #17171b; --big: #2b2c30; --body: #212226; --sub: #34353b; --mut: #3f4046; --acc: #4338ca; --acc2: #4f46e5; --acc3: #3730a3; --line: rgba(0,0,0,0.14); --line2: rgba(0,0,0,0.16); --line3: rgba(0,0,0,0.18); --line4: rgba(0,0,0,0.4); --wash: rgba(0,0,0,0.02); --header-bg: rgba(214,214,210,0.88); --dot: rgba(23,23,27,0.45); --dot2: rgba(23,23,27,0.38); --dot3: rgba(23,23,27,0.3); --img-line: rgba(79,70,229,0.28); --glow: rgba(67,56,202,0.45); }
+body[data-theme="dark"] { --bg: #030712; --ink: #f9fafb; --big: #e5e7eb; --body: #d1d5db; --sub: #9ca3af; --mut: #9ca3af; --acc: #818cf8; --acc2: #a5b4fc; --acc3: #c7d2fe; --line: rgba(255,255,255,0.12); --line2: rgba(255,255,255,0.08); --line3: rgba(255,255,255,0.1); --line4: rgba(255,255,255,0.55); --wash: rgba(255,255,255,0.02); --header-bg: rgba(3,7,18,0.85); --dot: rgba(129,140,248,0.55); --dot2: rgba(129,140,248,0.45); --dot3: rgba(129,140,248,0.35); --img-line: rgba(129,140,248,0.25); --glow: rgba(129,140,248,0.35); }
+body { transition: background-color 0.3s, color 0.3s; }
+body[data-theme="dark"]::after { content: ""; position: fixed; inset: 0; z-index: 2147483647; pointer-events: none; opacity: 0.8; mix-blend-mode: overlay; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.22 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E"); }
+</style>
+</helmet>
+
+<sc-if value="{{ isEN }}" hint-placeholder-val="{{ true }}">
+<div data-screen-label="Portfolio EN">
+
+  <header style="position: sticky; top: 0; z-index: 50; background: var(--header-bg); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line2)">
+    <div style="max-width: 1040px; margin: 0 auto; padding: 16px clamp(16px, 4vw, 32px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 20px">
+      <a href="#top-en" style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; white-space: nowrap">Anastasia Buialo</a>
+      <nav style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px">
+        <a href="#method-en" style="font-size: 14px; color: var(--sub); text-decoration: none; transition: color 0.2s" style-hover="color: var(--acc2)">Method</a>
+        <a href="#work-en" style="font-size: 14px; color: var(--sub); text-decoration: none; transition: color 0.2s" style-hover="color: var(--acc2)">Work</a>
+        <a href="#about-en" style="font-size: 14px; color: var(--sub); text-decoration: none; transition: color 0.2s" style-hover="color: var(--acc2)">About</a>
+        <a href="#contact-en" style="font-size: 14px; color: var(--sub); text-decoration: none; transition: color 0.2s" style-hover="color: var(--acc2)">Contact</a>
+        <div style="display: flex; align-items: center; gap: 2px; border: 1px solid var(--line); border-radius: 999px; padding: 3px">
+          <button style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.1em; padding: 5px 12px; border-radius: 999px; border: none; background: var(--ink); color: var(--bg); cursor: pointer">EN</button>
+          <button onClick="{{ setNO }}" style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.1em; padding: 5px 12px; border-radius: 999px; border: none; background: transparent; color: var(--sub); cursor: pointer" style-hover="color: var(--ink)">NO</button>
+        </div>
+        <div style="display: flex; align-items: center; gap: 2px; border: 1px solid var(--line4); border-radius: 999px; padding: 3px">
+          <button onClick="{{ setLight }}" style="{{ lightBtnStyle }}">Light</button>
+          <button onClick="{{ setDark }}" style="{{ darkBtnStyle }}">Dark</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top-en" style="max-width: 1040px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px)">
+
+    <section data-screen-label="Hero EN" style="padding: clamp(64px, 10vw, 120px) 0 clamp(56px, 9vw, 100px); border-bottom: 1px solid var(--line2)">
+      <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--acc); margin: 0 0 36px">Anastasia Buialo / UX- and Product Designer, Oslo</p>
+      <h1 style="font-size: clamp(52px, 7.5vw, 112px); font-weight: 500; line-height: 1.02; letter-spacing: -0.02em; margin: 0; max-width: 18ch; text-wrap: balance">Research, design decisions &amp; testing shaped into products people <em style="font-weight: 400; color: var(--acc2)">actually</em> use.</h1><div aria-hidden="true" style="height: 88px; margin-top: 56px; background-image: radial-gradient(var(--dot) 1px, transparent 1.3px); background-size: 7px 7px; -webkit-mask-image: linear-gradient(90deg, black 0%, var(--line4) 45%, transparent 82%); mask-image: linear-gradient(90deg, black 0%, var(--line4) 45%, transparent 82%)"></div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 48px 64px; margin-top: 72px; align-items: start">
+        <p style="font-size: 22px; line-height: 1.55; font-weight: 400; color: var(--body); margin: 0; max-width: 56ch">I'm a UX designer with a background in visual communication and eight years of building digital products, from early-stage startups and scaled technology platforms to member associations and charities. I work insight-driven: hypotheses, testing, learning. Less friction, more control for the user, measurable effect for the business.</p>
+        <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--sub)">
+          <li style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; border-bottom: 1px solid var(--line3); padding-bottom: 14px"><span>Experience</span><span style="color: var(--ink); white-space: nowrap">8 years</span></li>
+          <li style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; border-bottom: 1px solid var(--line3); padding-bottom: 14px"><span>Based in</span><span style="color: var(--ink); white-space: nowrap">Oslo, Norway</span></li>
+          <li style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; border-bottom: 1px solid var(--line3); padding-bottom: 14px"><span>Recognition</span><span style="color: var(--ink)">UX Nordic Award finalist</span></li>
+          <li style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px"><span>Focus</span><span style="color: var(--ink); text-align: right">Insights · Conceptualisation · Flows</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="method-en" data-screen-label="Method EN" style="padding: clamp(56px, 9vw, 100px) 0; scroll-margin-top: 80px; border-bottom: 1px solid var(--line2)">
+      <div style="display: flex; align-items: baseline; gap: 24px; margin-bottom: 24px">
+        <h2 style="font-size: clamp(32px, 4vw, 56px); font-weight: 500; letter-spacing: -0.01em; margin: 0">Method</h2>
+        <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--acc)">How I work</span>
+      </div>
+      <p style="font-size: clamp(22px, 2.6vw, 30px); line-height: 1.4; font-weight: 400; color: var(--big); margin: 0 0 clamp(48px, 7vw, 80px); text-wrap: pretty">Every design decision here started as something someone said, did, or struggled with.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); gap: 36px 32px">
+        <div>
+          <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.18em; color: var(--acc); margin: 0 0 14px">01</p>
+          <h3 style="font-size: 22px; font-weight: 500; margin: 0 0 10px">Hypothesis</h3>
+          <p style="font-size: 14px; font-weight: 400; color: var(--sub); line-height: 1.6; margin: 0">What do we believe, and what has to be true for it to work?</p>
+        </div>
+        <div>
+          <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.18em; color: var(--acc); margin: 0 0 14px">02</p>
+          <h3 style="font-size: 22px; font-weight: 500; margin: 0 0 10px">Testing</h3>
+          <p style="font-size: 14px; font-weight: 400; color: var(--sub); line-height: 1.6; margin: 0">User tests, interviews and card sorting, with real people from the target group.</p>
+        </div>
+        <div>
+          <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.18em; color: var(--acc); margin: 0 0 14px">03</p>
+          <h3 style="font-size: 22px; font-weight: 500; margin: 0 0 10px">Insight</h3>
+          <p style="font-size: 14px; font-weight: 400; color: var(--sub); line-height: 1.6; margin: 0">Findings are documented and shared, so decisions rest on evidence rather than gut feeling.</p>
+        </div>
+        <div>
+          <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.18em; color: var(--acc); margin: 0 0 14px">04</p>
+          <h3 style="font-size: 22px; font-weight: 500; margin: 0 0 10px">Adjustment</h3>
+          <p style="font-size: 14px; font-weight: 400; color: var(--sub); line-height: 1.6; margin: 0">The direction changes when the insight says so. Measurable effect is the verdict.</p>
+        </div>
+      </div>
+      
+    </section>
+
+    <section id="work-en" data-screen-label="Work EN" style="padding: clamp(56px, 9vw, 100px) 0; scroll-margin-top: 80px">
+      <div style="display: flex; align-items: baseline; gap: 24px; margin-bottom: 24px">
+        <h2 style="font-size: clamp(32px, 4vw, 56px); font-weight: 500; letter-spacing: -0.01em; margin: 0">Selected work</h2>
+        <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--acc)">Case studies</span>
+      </div>
+      <p style="font-size: 14px; font-weight: 400; color: var(--mut); margin: 0 0 32px; max-width: 60ch">Some of this work can't be shown publicly and some data is anonymised due to NDAs. Happy to walk through the details over a coffee.</p>
+
+      <div style="border-top: 1px solid var(--line3)">
+        <div onClick="{{ toggleF }}" style="display: grid; grid-template-columns: minmax(24px, 6vw) minmax(0,1fr) auto; gap: clamp(12px, 2vw, 24px); align-items: baseline; padding: 36px 0; cursor: pointer; transition: background 0.25s" style-hover="background: var(--wash)">
+          <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--acc)">01</span>
+          <div>
+            <h3 style="font-size: clamp(28px, 3.4vw, 48px); font-weight: 500; letter-spacing: -0.01em; margin: 0; transition: color 0.25s, transform 0.25s" style-hover="color: var(--acc2); transform: translateX(10px)">FinAut</h3>
+            <p style="font-size: 18px; color: var(--sub); margin: 8px 0 0; font-weight: 400">UX evaluation of the authorisation portal for Norwegian finance</p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 20px; font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--sub)"><span>2026</span><span style="font-size: 22px; color: var(--acc); width: 20px; text-align: center">{{ iconF }}</span></div>
+        </div>
+        <sc-if value="{{ openF }}" hint-placeholder-val="{{ true }}">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 40px 64px; padding: 8px 0 64px clamp(36px, 7vw, 112px)">
+            <div>
+              <p style="font-size: 18px; line-height: 1.6; font-weight: 400; color: var(--body); margin: 0">FinAut runs the authorisation schemes that keep advisers in Norwegian finance qualified. The portal sits on several supplier-owned learning platforms, and nobody, candidate or administrator, gets a clear status when they log in. I led the insight work and turned it into a decision basis: one diagnosis, a recommended direction, and three priorities to start from.</p>
+              <ul style="margin: 24px 0 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 10px; font-size: 18px; line-height: 1.5; font-weight: 400; color: var(--body)">
+                <li>Expert evaluation, depth interviews and moderated tests with all three user groups</li>
+                <li>Journeys mapped with the mental model method, plus a mapping of the system landscape</li>
+                <li>Prioritised recommendations, documented accessibility and GDPR breaches, and interface concepts</li>
+              </ul>
+              <p style="margin: 32px 0 0"><a href="FinAut Portal.dc.html" style="display: inline-block; font-size: 18px; color: var(--ink); border: 1px solid var(--line4); text-decoration: none; padding: 14px 28px; border-radius: 999px; white-space: nowrap; transition: border-color 0.2s, color 0.2s, transform 0.2s" style-hover="border-color: var(--acc); color: var(--acc2); transform: translateY(-3px)">Read the full case →</a></p>
+            </div>
+            <div>
+              <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sub); margin: 0 0 10px">Role</p>
+              <p style="font-size: 18px; margin: 0 0 24px; color: var(--ink)">UX design · Insight lead</p>
+              <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sub); margin: 0 0 12px">In the project</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px 20px">
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">User testing</span>
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">Expert evaluation</span>
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">Journey mapping</span>
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">Workshops</span>
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">Concept development</span>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+        <div onClick="{{ toggle0 }}" style="display: grid; grid-template-columns: minmax(24px, 6vw) minmax(0,1fr) auto; gap: clamp(12px, 2vw, 24px); align-items: baseline; padding: 36px 0; cursor: pointer; transition: background 0.25s; border-top: 1px solid var(--line3)" style-hover="background: var(--wash)">
+          <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--acc)">02</span>
+          <div>
+            <h3 style="font-size: clamp(28px, 3.4vw, 48px); font-weight: 500; letter-spacing: -0.01em; margin: 0; transition: color 0.25s, transform 0.25s" style-hover="color: var(--acc2); transform: translateX(10px)">c)optikk</h3>
+            <p style="font-size: 18px; color: var(--sub); margin: 8px 0 0; font-weight: 400">A new website for Norway's specialist eye-health brand</p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 20px; font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--sub)"><span>2025</span><span style="font-size: 22px; color: var(--acc); width: 20px; text-align: center">{{ icon0 }}</span></div>
+        </div>
+        <sc-if value="{{ open0 }}" hint-placeholder-val="{{ true }}">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 40px 64px; padding: 8px 0 64px clamp(36px, 7vw, 112px)">
+            <div>
+              <p style="font-size: 18px; line-height: 1.6; font-weight: 400; color: var(--body); margin: 0">c)optikk is Norway's largest association of privately owned optician stores. To make their members' expertise in eye health visible, they launched a new certification brand and website. Netlife delivered the name, brand, identity, content and design; I owned the UX.</p>
+              <ul style="margin: 24px 0 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 10px; font-size: 18px; line-height: 1.5; font-weight: 400; color: var(--body)">
+                <li>Evaluated the existing concept and designed the new site on the new visual identity</li>
+                <li>Anchored design decisions in insight from user testing</li>
+                <li>Contributed sketches and direction for the visual language</li>
+              </ul>
+            </div>
+            <div>
+              <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sub); margin: 0 0 10px">Role</p>
+              <p style="font-size: 18px; margin: 0 0 24px; color: var(--ink)">UX design · Concept development</p>
+              <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sub); margin: 0 0 12px">In the project</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px 20px">
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">UX design</span>
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">UI design</span>
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">Prototyping</span>
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">Insight</span>
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">Figma</span>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <div onClick="{{ toggle1 }}" style="display: grid; grid-template-columns: minmax(24px, 6vw) minmax(0,1fr) auto; gap: clamp(12px, 2vw, 24px); align-items: baseline; padding: 36px 0; cursor: pointer; transition: background 0.25s; border-top: 1px solid var(--line3)" style-hover="background: var(--wash)">
+          <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--acc)">03</span>
+          <div>
+            <h3 style="font-size: clamp(28px, 3.4vw, 48px); font-weight: 500; letter-spacing: -0.01em; margin: 0; transition: color 0.25s, transform 0.25s" style-hover="color: var(--acc2); transform: translateX(10px)">KORUS</h3>
+            <p style="font-size: 18px; color: var(--sub); margin: 8px 0 0; font-weight: 400">Moderated user testing across roles for a public health resource</p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 20px; font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--sub)"><span>2025</span><span style="font-size: 22px; color: var(--acc); width: 20px; text-align: center">{{ icon1 }}</span></div>
+        </div>
+        <sc-if value="{{ open1 }}" hint-placeholder-val="{{ false }}">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 40px 64px; padding: 8px 0 64px clamp(36px, 7vw, 112px)">
+            <div>
+              <p style="font-size: 18px; line-height: 1.6; font-weight: 400; color: var(--body); margin: 0">KORUS is a national competence resource on substance use for professionals across health, education and social services. They needed to know whether users in different roles could find and act on the content. I planned and led moderated user tests across the role groups and delivered the insight report.</p>
+              <ul style="margin: 24px 0 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 10px; font-size: 18px; line-height: 1.5; font-weight: 400; color: var(--body)">
+                <li>Moderated user testing with participants from each professional role</li>
+                <li>Insight report with prioritised, actionable recommendations</li>
+                <li>Concrete improvements to navigation and content structure per role's needs</li>
+              </ul>
+            </div>
+            <div>
+              <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sub); margin: 0 0 10px">Role</p>
+              <p style="font-size: 18px; margin: 0 0 24px; color: var(--ink)">UX design · Research lead</p>
+              <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sub); margin: 0 0 12px">In the project</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px 20px">
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">User testing</span>
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">Insight</span>
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">Reporting</span>
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">FigJam</span>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        
+
+        <div onClick="{{ toggle3 }}" style="display: grid; grid-template-columns: minmax(24px, 6vw) minmax(0,1fr) auto; gap: clamp(12px, 2vw, 24px); align-items: baseline; padding: 36px 0; cursor: pointer; transition: background 0.25s; border-top: 1px solid var(--line3)" style-hover="background: var(--wash)">
+          <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--acc)">04</span>
+          <div>
+            <h3 style="font-size: clamp(28px, 3.4vw, 48px); font-weight: 500; letter-spacing: -0.01em; margin: 0; transition: color 0.25s, transform 0.25s" style-hover="color: var(--acc2); transform: translateX(10px)">Otovo – Solar Planner</h3>
+            <p style="font-size: 18px; color: var(--sub); margin: 8px 0 0; font-weight: 400">Self-checkout for residential solar – UX Nordic Award finalist</p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 20px; font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--sub)"><span>2023</span><span style="font-size: 22px; color: var(--acc); width: 20px; text-align: center">{{ icon3 }}</span></div>
+        </div>
+        <sc-if value="{{ open3 }}" hint-placeholder-val="{{ false }}">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 40px 64px; padding: 8px 0 64px clamp(36px, 7vw, 112px)">
+            <div>
+              <p style="font-size: 18px; line-height: 1.6; font-weight: 400; color: var(--body); margin: 0">Otovo is a marketplace for residential solar, organising hundreds of vetted local installers. I led Solar Planner, a new self-checkout purchase flow, validating whether customers ready to commit could buy faster on their own.</p>
+              <ul style="margin: 24px 0 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 10px; font-size: 18px; line-height: 1.5; font-weight: 400; color: var(--body)">
+                <li>Discovery through user and stakeholder interviews, archetypes and journey mapping</li>
+                <li>Low-to-mid fidelity wireframes, tested and iterated through remote interviews and metrics</li>
+                <li>The pilot showed self-checkout works when assisted: the customer stays in charge, a sales agent monitors and steps in on questions</li>
+              </ul>
+              <p style="margin: 32px 0 0"><a href="Otovo Solar Planner.dc.html" style="display: inline-block; font-size: 18px; color: var(--ink); border: 1px solid var(--line4); text-decoration: none; padding: 14px 28px; border-radius: 999px; white-space: nowrap; transition: border-color 0.2s, color 0.2s, transform 0.2s" style-hover="border-color: var(--acc); color: var(--acc2); transform: translateY(-3px)">Read the full case →</a></p>
+            </div>
+            <div>
+              <p style="font-size: clamp(44px, 5vw, 72px); font-weight: 500; letter-spacing: -0.02em; color: var(--acc2); margin: 0; line-height: 1">+40%</p>
+              <p style="font-size: 14px; color: var(--sub); margin: 8px 0 32px; font-weight: 400">conversion for customers who started self-checkout</p>
+              <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sub); margin: 0 0 12px">In the project</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px 20px">
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">Research</span>
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">Journey mapping</span>
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">Workshops</span>
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">User testing</span>
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">Prototyping</span>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+
+      <div style="margin-top: 96px">
+        <div style="display: flex; align-items: baseline; gap: 24px; margin-bottom: 20px">
+          <h2 style="font-size: clamp(24px, 3vw, 36px); font-weight: 500; margin: 0">More projects</h2>
+        </div>
+        <div style="border-top: 1px solid var(--line3)">
+          <div style="display: grid; grid-template-columns: minmax(min(100%,200px),1.1fr) minmax(min(100%,240px),1.3fr) 76px; gap: 24px; align-items: baseline; padding: 20px 0 20px 0px; border-bottom: 1px solid var(--line3)">
+            <span style="font-size: 22px; font-weight: 500">The Salvation Army</span>
+            <span style="font-size: 14px; font-weight: 400; color: var(--sub)">User testing &amp; information architecture for local-branch pages</span>
+            <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--mut); white-space: nowrap">2025</span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(min(100%,200px),1.1fr) minmax(min(100%,240px),1.3fr) 76px; gap: 24px; align-items: baseline; padding: 20px 0 20px 0px; border-bottom: 1px solid var(--line3)">
+            <span style="font-size: 22px; font-weight: 500">Signicat</span>
+            <span style="font-size: 14px; font-weight: 400; color: var(--sub)">Resources-page IA &amp; content sorting for higher conversion</span>
+            <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--mut); white-space: nowrap">2025</span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(min(100%,200px),1.1fr) minmax(min(100%,240px),1.3fr) 76px; gap: 24px; align-items: baseline; padding: 20px 0 20px 0px; border-bottom: 1px solid var(--line3)">
+            <span style="font-size: 22px; font-weight: 500">Fjord Norway</span>
+            <span style="font-size: 14px; font-weight: 400; color: var(--sub)">Offers page and booking calendar to drive local tourism</span>
+            <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--mut); white-space: nowrap">2025</span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(min(100%,200px),1.1fr) minmax(min(100%,240px),1.3fr) 76px; gap: 24px; align-items: baseline; padding: 20px 0 20px 0px; border-bottom: 1px solid var(--line3)">
+            <span style="font-size: 22px; font-weight: 500">Norwegian Psychological Association</span>
+            <span style="font-size: 14px; font-weight: 400; color: var(--sub)">Navigation fixes anchored in the design system</span>
+            <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--mut); white-space: nowrap">2025</span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(min(100%,200px),1.1fr) minmax(min(100%,240px),1.3fr) 76px; gap: 24px; align-items: baseline; padding: 20px 0 20px 0px; border-bottom: 1px solid var(--line3)">
+            <span style="font-size: 22px; font-weight: 500">Oslo Adult Education</span>
+            <span style="font-size: 14px; font-weight: 400; color: var(--sub)">User testing to shift toward citizen-centred services</span>
+            <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--mut); white-space: nowrap">2025</span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(min(100%,200px),1.1fr) minmax(min(100%,240px),1.3fr) 76px; gap: 24px; align-items: baseline; padding: 20px 0 20px 0px; border-bottom: 1px solid var(--line3)">
+            <span style="font-size: 22px; font-weight: 500">Otovo – Solar &amp; Installer apps</span>
+            <span style="font-size: 14px; font-weight: 400; color: var(--sub)">Production overview, CO₂ view, field documentation flows</span>
+            <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--mut); white-space: nowrap">2023–24</span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(min(100%,200px),1.1fr) minmax(min(100%,240px),1.3fr) 76px; gap: 24px; align-items: baseline; padding: 20px 0 20px 0px; border-bottom: 1px solid var(--line3)">
+            <span style="font-size: 22px; font-weight: 500">Otovo – Insight ops</span>
+            <span style="font-size: 14px; font-weight: 400; color: var(--sub)">Regular qualitative feedback across 13 markets and languages</span>
+            <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--mut); white-space: nowrap">2021</span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(min(100%,200px),1.1fr) minmax(min(100%,240px),1.3fr) 76px; gap: 24px; align-items: baseline; padding: 20px 0 20px 0px; border-bottom: 1px solid var(--line3)">
+            <span style="font-size: 22px; font-weight: 500">Correlate</span>
+            <span style="font-size: 14px; font-weight: 400; color: var(--sub)">UI, IA and design system for a knowledge-sharing platform</span>
+            <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--mut); white-space: nowrap">2018–19</span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(min(100%,200px),1.1fr) minmax(min(100%,240px),1.3fr) 76px; gap: 24px; align-items: baseline; padding: 20px 0 20px 0px; border-bottom: 1px solid var(--line3)">
+            <span style="font-size: 22px; font-weight: 500">Norwegian Refugee Council</span>
+            <span style="font-size: 14px; font-weight: 400; color: var(--sub)">Digital storytelling &amp; infographics – Shorthand Award winner</span>
+            <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--mut); white-space: nowrap">2019</span>
+          </div>
+        </div>
+      </div>
+      <div aria-hidden="true" style="height: 28px; margin-top: clamp(40px, 7vw, 72px); background-image: radial-gradient(var(--dot3) 1px, transparent 1.3px); background-size: 7px 7px; -webkit-mask-image: linear-gradient(90deg, black, transparent 85%); mask-image: linear-gradient(90deg, black, transparent 85%)"></div>
+    </section>
+
+    <section id="experience-en" data-screen-label="Experience EN" style="padding: clamp(56px, 9vw, 100px) 0; scroll-margin-top: 80px">
+      <div style="display: flex; align-items: baseline; gap: 24px; margin-bottom: 48px">
+        <h2 style="font-size: clamp(32px, 4vw, 56px); font-weight: 500; letter-spacing: -0.01em; margin: 0">Experience</h2>
+        <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--acc)">Track record</span>
+      </div>
+      <div style="border-top: 1px solid var(--line3)">
+        <div style="display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 28px 0; border-bottom: 1px solid var(--line3)">
+          <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 220px; max-width: 100%">Roles</p>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; font-size: 18px; font-weight: 400; color: var(--body); flex: 1 1 320px; min-width: 0">
+            <li>Netlife, UX- and Product Designer <span style="color: var(--mut); white-space: nowrap">· 2025 –</span></li>
+            <li>Otovo, UX Designer <span style="color: var(--mut); white-space: nowrap">· 2020–25</span></li>
+            <li>Correlate, UX Designer <span style="color: var(--mut); white-space: nowrap">· 2018–20</span></li>
+            <li>Norwegian Refugee Council, Graphic Designer <span style="color: var(--mut); white-space: nowrap">· 2018–19</span></li>
+            <li>Indexo, UX Designer <span style="color: var(--mut); white-space: nowrap">· 2018</span></li>
+          </ul>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 28px 0; border-bottom: 1px solid var(--line3)">
+          <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 220px; max-width: 100%">Education</p>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; font-size: 18px; font-weight: 400; color: var(--body); flex: 1 1 320px; min-width: 0">
+            <li>BA Visual Communication, Polish-Japanese Academy of IT, Warsaw <span style="color: var(--mut); white-space: nowrap">· 2014–17</span></li>
+            <li>BA Media Communication, Taras Shevchenko University, Kyiv <span style="color: var(--mut); white-space: nowrap">· 2010–14</span></li>
+          </ul>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 28px 0; border-bottom: 1px solid var(--line3)">
+          <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 220px; max-width: 100%">Certifications</p>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; font-size: 18px; font-weight: 400; color: var(--body); flex: 1 1 320px; min-width: 0">
+            <li>Claude Code in practice, Anthropic <span style="color: var(--mut); white-space: nowrap">· 2026</span></li>
+            <li>Vibe coding with AI, Oschlo <span style="color: var(--mut); white-space: nowrap">· 2025</span></li>
+            <li>Product Discovery Certification, Mind the Product <span style="color: var(--mut); white-space: nowrap">· 2025</span></li>
+            <li>Prototyping in Figma, Designlab <span style="color: var(--mut); white-space: nowrap">· 2025</span></li>
+            <li>Mobile UX Design, Interaction Design Foundation <span style="color: var(--mut); white-space: nowrap">· 2023</span></li>
+            <li>UX research programme, University of Michigan (Coursera) <span style="color: var(--mut); white-space: nowrap">· 2020</span></li>
+          </ul>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 28px 0">
+          <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 220px; max-width: 100%">Recognition</p>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; font-size: 18px; font-weight: 400; color: var(--body); flex: 1 1 320px; min-width: 0">
+            <li>UX Nordic Award finalist, Otovo Solar Planner <span style="color: var(--mut); white-space: nowrap">· 2023</span></li>
+            <li>Shorthand Award, best non-profit story, NRC <span style="color: var(--mut); white-space: nowrap">· 2019</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="about-en" data-screen-label="About EN" style="padding: clamp(56px, 9vw, 100px) 0; scroll-margin-top: 80px">
+      <div style="display: flex; align-items: baseline; gap: 24px; margin-bottom: 48px">
+        <h2 style="font-size: clamp(32px, 4vw, 56px); font-weight: 500; letter-spacing: -0.01em; margin: 0">About</h2>
+        <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--acc)">Profile</span>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 40px 56px; align-items: flex-start">
+        <div style="flex: 1 1 420px; max-width: 62ch">
+          <p style="font-size: 22px; line-height: 1.5; font-weight: 400; color: var(--big); margin: 0; text-wrap: pretty">What I do best is gather insight and make complicated things simpler. I talk to users and stakeholders often, so I learn quickly and can change course when the evidence points elsewhere. I back decisions with data and what people actually say, and I build rough prototypes early, because it is cheaper to learn than to polish the wrong thing.</p>
+          <p style="font-size: 18px; line-height: 1.6; font-weight: 400; color: var(--sub); margin: 28px 0 0; max-width: 60ch">I've lived in three countries and explored many more. I speak English, Ukrainian, Norwegian and Polish, and I'm used to working with diverse cultures. I also give time outside client work: pro bono and bartered design for emerging artists with a non-profit cause, and volunteering as a bird rehabilitator.</p>
+          <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sub); margin: 48px 0 14px">Languages</p>
+          <p style="font-size: 18px; font-weight: 400; color: var(--body); margin: 0">English · Norwegian · Ukrainian · Polish</p>
+        </div>
+        <div style="flex: 0 1 260px; min-width: 200px"><img src="assets/avatar.png" alt="Anastasia Buialo" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 4px; display: block"></div>
+      </div>
+      <div style="margin-top: 128px; border-top: 1px solid var(--line3)">
+            <div style="display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 24px 0; border-bottom: 1px solid var(--line3)">
+              <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 220px; max-width: 100%">Design</p>
+              <p style="font-size: 18px; font-weight: 400; color: var(--body); margin: 0; line-height: 1.7; text-wrap: pretty; flex: 1 1 320px; min-width: 0">Interaction design<span style="color: var(--acc); padding: 0 10px">·</span>Concept development<span style="color: var(--acc); padding: 0 10px">·</span>Wireframing &amp; prototyping<span style="color: var(--acc); padding: 0 10px">·</span>UI design<span style="color: var(--acc); padding: 0 10px">·</span>Design systems<span style="color: var(--acc); padding: 0 10px">·</span>Form design<span style="color: var(--acc); padding: 0 10px">·</span>Visual identity &amp; graphic design</p>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 24px 0; border-bottom: 1px solid var(--line3)">
+              <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 220px; max-width: 100%">Research &amp; insight</p>
+              <p style="font-size: 18px; font-weight: 400; color: var(--body); margin: 0; line-height: 1.7; text-wrap: pretty; flex: 1 1 320px; min-width: 0">User testing<span style="color: var(--acc); padding: 0 10px">·</span>User interviews<span style="color: var(--acc); padding: 0 10px">·</span>Journey &amp; service mapping<span style="color: var(--acc); padding: 0 10px">·</span>Card sorting<span style="color: var(--acc); padding: 0 10px">·</span>A/B &amp; hypothesis testing<span style="color: var(--acc); padding: 0 10px">·</span>Analytics and metrics<span style="color: var(--acc); padding: 0 10px">·</span>Insight reporting</p>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 24px 0; border-bottom: 1px solid var(--line3)">
+              <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 220px; max-width: 100%">Tools &amp; AI</p>
+              <p style="font-size: 18px; font-weight: 400; color: var(--body); margin: 0; line-height: 1.7; text-wrap: pretty; flex: 1 1 320px; min-width: 0">Figma, FigJam<span style="color: var(--acc); padding: 0 10px">·</span>Hotjar<span style="color: var(--acc); padding: 0 10px">·</span>Google Analytics<span style="color: var(--acc); padding: 0 10px">·</span>Lyssna<span style="color: var(--acc); padding: 0 10px">·</span>Notion<span style="color: var(--acc); padding: 0 10px">·</span>Adobe Illustrator, Photoshop<span style="color: var(--acc); padding: 0 10px">·</span>Vibe coding with AI<span style="color: var(--acc); padding: 0 10px">·</span>AI-assisted research synthesis<span style="color: var(--acc); padding: 0 10px">·</span>Designing AI-driven features</p>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 24px 0">
+              <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 220px; max-width: 100%">Ways of working</p>
+              <p style="font-size: 18px; font-weight: 400; color: var(--body); margin: 0; line-height: 1.7; text-wrap: pretty; flex: 1 1 320px; min-width: 0">Cross-functional collaboration<span style="color: var(--acc); padding: 0 10px">·</span>Stakeholder communication<span style="color: var(--acc); padding: 0 10px">·</span>Workshop facilitation<span style="color: var(--acc); padding: 0 10px">·</span>Design ops<span style="color: var(--acc); padding: 0 10px">·</span>Curiosity<span style="color: var(--acc); padding: 0 10px">·</span>Student and trainee mentorship<span style="color: var(--acc); padding: 0 10px">·</span>Working across markets &amp; cultures</p>
+            </div>
+          </div>
+    </section>
+
+    
+
+    
+    <section id="visual-en" data-screen-label="Visual work EN" style="padding: clamp(56px, 9vw, 100px) 0 24px; scroll-margin-top: 80px">
+      <div style="display: flex; align-items: baseline; gap: 24px; margin-bottom: 20px">
+        <h2 style="font-size: clamp(32px, 4vw, 56px); font-weight: 500; letter-spacing: -0.01em; margin: 0">Visual work</h2>
+        <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--acc)">Handmade</span>
+      </div>
+      <p style="font-size: 22px; font-weight: 400; color: var(--sub); margin: 0 0 24px; max-width: 60ch">Handmade marks, found objects, and the beauty of error, as evidence of a hand.</p>
+      <div style="border-top: 1px solid var(--line3)">
+      <div onClick="{{ toggle4 }}" style="display: grid; grid-template-columns: minmax(24px, 6vw) minmax(0,1fr) auto; gap: clamp(12px, 2vw, 24px); align-items: baseline; padding: 36px 0; cursor: pointer; transition: background 0.25s; border-top: 1px solid var(--line3)" style-hover="background: var(--wash)">
+        <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--acc)">01</span>
+        <div>
+          <h3 style="font-size: clamp(22px, 2.6vw, 34px); font-weight: 500; letter-spacing: -0.01em; margin: 0; transition: color 0.25s, transform 0.25s" style-hover="color: var(--acc2); transform: translateX(10px)">Thornskull</h3>
+          <p style="font-size: 14px; color: var(--sub); margin: 6px 0 0; font-weight: 400">A typeface cut with scissors</p>
+        </div>
+        <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 22px; color: var(--acc2); width: 20px; text-align: center">{{ icon4 }}</span>
+      </div>
+      <sc-if value="{{ open4 }}" hint-placeholder-val="{{ false }}">
+        <div style="padding: 8px 0 64px clamp(36px, 7vw, 112px)">
+          <p style="font-size: 18px; line-height: 1.6; font-weight: 400; color: var(--body); margin: 0 0 32px; max-width: 62ch">A display font that began as paper: letterforms cut freehand with scissors, no sketches, then scanned, traced and built into a working typeface. Every jag and overshoot is a knife decision kept, not an error removed.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 16px; align-items: stretch">
+            <div><img src="assets/thornskull-cuts-4.jpg" alt="Paper-cut letterforms" style="width: 100%; height: 180px; object-fit: cover; border-radius: 4px; border: 1px solid var(--img-line); display: block"><p style="font-size: 14px; color: var(--sub); margin: 10px 0 0"><span style="color: var(--acc)">1</span> Arrange – shapes become letters</p></div>
+            <div><img src="assets/thornskull-cuts-1.jpg" alt="Arranged paper shapes" style="width: 100%; height: 180px; object-fit: cover; border-radius: 4px; border: 1px solid var(--img-line); display: block"><p style="font-size: 14px; color: var(--sub); margin: 10px 0 0"><span style="color: var(--acc)">2</span> Cut – freehand, no sketches</p></div>
+            <div><img src="assets/thornskull-alphabet.png" alt="Thornskull alphabet frames in Figma" style="width: 100%; height: 180px; object-fit: cover; border-radius: 4px; border: 1px solid var(--img-line); display: block"><p style="font-size: 14px; color: var(--sub); margin: 10px 0 0"><span style="color: var(--acc)">3</span> Scan, trace &amp; refine – errors kept, on a baseline grid in Figma</p></div>
+            <div style="display: flex; flex-direction: column"><div style="flex: 1; min-height: 180px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--glow); border-radius: 4px; font-family: 'Thornskull', 'Futura', 'Jost', sans-serif; font-size: clamp(36px, 4vw, 56px); color: var(--ink)">Aa Bb</div><p style="font-size: 14px; color: var(--sub); margin: 10px 0 0"><span style="color: var(--acc)">4</span> The working OTF – set live</p></div>
+          </div>
+          <p style="font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--acc); margin: 40px 0 16px">References</p>
+          <p style="font-size: 18px; line-height: 1.6; font-weight: 400; color: var(--body); margin: 0 0 20px; max-width: 62ch">Two references met in the middle: Norwegian black-metal lettering (hand-drawn, symmetrical, dissolving into branches) and 19th-century botanical plates, where every thorn is documented with care. Thornskull is the overlap.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 16px; max-width: 560px">
+            <img src="assets/ref-blackmetal.png" alt="Norwegian black-metal lettering reference" style="width: 100%; height: 260px; object-fit: cover; border-radius: 4px; border: 1px solid var(--img-line); display: block">
+            <img src="assets/ref-botanical.png" alt="Botanical plate of wild roses, thorns documented" style="width: 100%; height: 260px; object-fit: cover; border-radius: 4px; border: 1px solid var(--img-line); display: block">
+          </div>
+        </div>
+      </sc-if>
+      <div style="border-top: 1px solid var(--line3)"></div>
+      <div onClick="{{ toggle5 }}" style="display: grid; grid-template-columns: minmax(24px, 6vw) minmax(0,1fr) auto; gap: clamp(12px, 2vw, 24px); align-items: baseline; padding: 36px 0; cursor: pointer; transition: background 0.25s; border-top: 1px solid var(--line3)" style-hover="background: var(--wash)">
+        <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--acc)">02</span>
+        <div>
+          <h3 style="font-size: clamp(22px, 2.6vw, 34px); font-weight: 500; letter-spacing: -0.01em; margin: 0; transition: color 0.25s, transform 0.25s" style-hover="color: var(--acc2); transform: translateX(10px)">Logo &amp; visual language</h3>
+          <p style="font-size: 14px; color: var(--sub); margin: 6px 0 0; font-weight: 400">Rave collective</p>
+        </div>
+        <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 22px; color: var(--acc2); width: 20px; text-align: center">{{ icon5 }}</span>
+      </div>
+      <sc-if value="{{ open5 }}" hint-placeholder-val="{{ false }}">
+        <div style="padding: 8px 0 64px clamp(36px, 7vw, 112px)">
+          <p style="font-size: 18px; line-height: 1.6; font-weight: 400; color: var(--body); margin: 0 0 32px; max-width: 62ch">Identity and visual language for a rave collective. The wordmark starts as sharpie letters drawn by the collective’s founder, traced and run through fingerprint moirés, scanner noise and channel-split glitches, an identity built to degrade on purpose, loud where the grid is quiet.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 16px">
+            <div><img src="assets/ork-board.png" alt="Identity board with wordmark variants and posters" style="width: 100%; height: 180px; object-fit: cover; object-position: top; border-radius: 4px; border: 1px solid var(--img-line); display: block"><p style="font-size: 14px; color: var(--sub); margin: 10px 0 0"><span style="color: var(--acc)">1</span> Explore – wordmark states and poster system</p></div>
+            <div><img src="assets/ork-textures.png" alt="Moss texture and fingerprint moiré" style="width: 100%; height: 180px; object-fit: cover; border-radius: 4px; border: 1px solid var(--img-line); display: block"><p style="font-size: 14px; color: var(--sub); margin: 10px 0 0"><span style="color: var(--acc)">2</span> Texture – forest moss and an open-source fingerprint moiré</p></div>
+            <div><img src="assets/drk-3.png" alt="Wave distortion and glitch degradation" style="width: 100%; height: 180px; object-fit: cover; border-radius: 4px; border: 1px solid var(--img-line); display: block"><p style="font-size: 14px; color: var(--sub); margin: 10px 0 0"><span style="color: var(--acc)">3</span> Degrade – scanner noise and channel-split glitches</p></div>
+            <div><img src="assets/drk-1.png" alt="The finished wordmark over green glitch texture" style="width: 100%; height: 180px; object-fit: cover; border-radius: 4px; border: 1px solid var(--img-line); display: block"><p style="font-size: 14px; color: var(--sub); margin: 10px 0 0"><span style="color: var(--acc)">4</span> The wordmark – never the same twice</p></div>
+          </div>
+          <p style="font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--acc); margin: 40px 0 16px">References</p>
+          <p style="font-size: 18px; line-height: 1.6; font-weight: 400; color: var(--body); margin: 0 0 20px; max-width: 62ch">Theodor Kittelsen’s Nøkken (the creature surfacing from dark water) set the mood: Nordic folklore mystery, rendered in club-poster language.</p>
+          <img src="assets/ref-nokken.png" alt="Theodor Kittelsen, Nøkken (1904)" style="width: 100%; max-width: 420px; height: auto; border-radius: 4px; border: 1px solid var(--img-line); display: block">
+        </div>
+      </sc-if>
+      <div style="border-top: 1px solid var(--line3)"></div>
+      </div>
+      <sc-if value="{{ showSide }}" hint-placeholder-val="{{ true }}">
+      <div style="margin-top: clamp(48px, 7vw, 80px)">
+        <p style="font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--acc); margin: 0 0 20px">And everything else made by hand</p>
+        <p style="font-size: 18px; line-height: 1.6; font-weight: 400; color: var(--body); margin: 0 0 28px; max-width: 62ch">Outside work I draw, style people and rehabilitate injured birds. I also enjoy nature, new music, documentaries, and homemade ramen.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 110px), 1fr)); gap: 14px; max-width: 900px">
+          <img src="assets/pigeon.jpg" alt="Rescued pigeon on my shoulder" style="width: 100%; height: 140px; object-fit: cover; border-radius: 4px; filter: grayscale(1); border: 1px solid var(--img-line); display: block">
+          <img src="assets/ramen.jpg" alt="Homemade ramen" style="width: 100%; height: 140px; object-fit: cover; border-radius: 4px; filter: grayscale(1); border: 1px solid var(--img-line); display: block">
+          <img src="assets/bird-sketches.png" alt="Bird sketches on a whiteboard" style="width: 100%; height: 140px; object-fit: cover; border-radius: 4px; filter: grayscale(1); border: 1px solid var(--img-line); display: block">
+          <img src="assets/ink-brush.png" alt="Ink brush study" style="width: 100%; height: 140px; object-fit: cover; border-radius: 4px; filter: grayscale(1); border: 1px solid var(--img-line); display: block">
+          <img src="assets/opera-fjord.jpg" alt="Oslo Opera House over the fjord" style="width: 100%; height: 140px; object-fit: cover; border-radius: 4px; filter: grayscale(1); border: 1px solid var(--img-line); display: block">
+          <img src="assets/skateboard.jpg" alt="On a skateboard" style="width: 100%; height: 140px; object-fit: cover; border-radius: 4px; filter: grayscale(1); border: 1px solid var(--img-line); display: block">
+        </div>
+      </div>
+      </sc-if>
+      <p style="font-size: 14px; color: var(--mut); margin: 40px 0 0; max-width: 62ch">* Much of this work happens outside invoices: pro bono, or bartered with emerging artists working for a non-profit cause.</p>
+    </section>
+
+    
+
+    <section id="contact-en" data-screen-label="Contact EN" style="position: relative; padding: clamp(32px, 5vw, 56px) 0 40px; scroll-margin-top: 80px">
+      <div aria-hidden="true" style="height: 72px; margin-bottom: 48px; background-image: radial-gradient(var(--dot2) 1px, transparent 1.3px); background-size: 7px 7px; -webkit-mask-image: linear-gradient(0deg, black, transparent 90%); mask-image: linear-gradient(0deg, black, transparent 90%)"></div><p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--acc); margin: 0 0 28px">Contact</p>
+      <h2 style="font-size: clamp(48px, 7vw, 104px); font-weight: 500; letter-spacing: -0.02em; line-height: 1.02; margin: 0">Let's build something people actually use.</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 48px">
+        <span style="display: inline-flex; align-items: stretch; border: 1px solid var(--line4); border-radius: 999px; overflow: hidden">
+          <a href="mailto:anastasia.buialo@gmail.com" style="font-size: 18px; color: var(--ink); text-decoration: none; white-space: nowrap; padding: 14px 22px 14px 28px; transition: color 0.2s, background 0.2s" style-hover="color: var(--acc2); background: var(--wash)">anastasia.buialo@gmail.com ↗</a>
+          <span style="width: 1px; background: var(--line4)"></span>
+          <button onClick="{{ copyEmail }}" style="font-size: 14px; font-family: inherit; color: var(--ink); background: transparent; border: none; cursor: pointer; padding: 14px 22px; transition: color 0.2s, background 0.2s" style-hover="color: var(--acc2); background: var(--wash)">{{ copyLabelEN }}</button>
+        </span>
+        <a href="https://www.linkedin.com/in/anastasiabuialo/" target="_blank" rel="noopener" style="font-size: 18px; color: var(--ink); border: 1px solid var(--line4); text-decoration: none; padding: 14px 28px; border-radius: 999px; white-space: nowrap; transition: border-color 0.2s, color 0.2s, transform 0.2s" style-hover="border-color: var(--acc); color: var(--acc2); transform: translateY(-3px)">LinkedIn ↗</a>
+        <a href="https://www.netlife.com" target="_blank" rel="noopener" style="font-size: 18px; color: var(--ink); border: 1px solid var(--line4); text-decoration: none; padding: 14px 28px; border-radius: 999px; white-space: nowrap; transition: border-color 0.2s, color 0.2s, transform 0.2s" style-hover="border-color: var(--acc); color: var(--acc2); transform: translateY(-3px)">Netlife ↗</a>
+      </div>
+      <div style="display: flex; justify-content: space-between; gap: 24px; margin-top: 96px; padding-top: 24px; border-top: 1px solid var(--line2); font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; color: var(--mut)">
+        <span>© 2026 Anastasia Buialo</span>
+        <span>All visuals © Anastasia Buialo</span>
+        <span>Oslo, Norway</span>
+      </div>
+    </section>
+  </main>
+</div>
+</sc-if>
+
+<sc-if value="{{ isNO }}" hint-placeholder-val="{{ false }}">
+<div data-screen-label="Portfolio NO">
+
+  <header style="position: sticky; top: 0; z-index: 50; background: var(--header-bg); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line2)">
+    <div style="max-width: 1040px; margin: 0 auto; padding: 16px clamp(16px, 4vw, 32px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 20px">
+      <a href="#top-no" style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; white-space: nowrap">Anastasia Buialo</a>
+      <nav style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px">
+        <a href="#method-no" style="font-size: 14px; color: var(--sub); text-decoration: none; transition: color 0.2s" style-hover="color: var(--acc2)">Metoden</a>
+        <a href="#work-no" style="font-size: 14px; color: var(--sub); text-decoration: none; transition: color 0.2s" style-hover="color: var(--acc2)">Arbeid</a>
+        <a href="#about-no" style="font-size: 14px; color: var(--sub); text-decoration: none; transition: color 0.2s" style-hover="color: var(--acc2)">Om meg</a>
+        <a href="#contact-no" style="font-size: 14px; color: var(--sub); text-decoration: none; transition: color 0.2s" style-hover="color: var(--acc2)">Kontakt</a>
+        <div style="display: flex; align-items: center; gap: 2px; border: 1px solid var(--line); border-radius: 999px; padding: 3px">
+          <button onClick="{{ setEN }}" style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.1em; padding: 5px 12px; border-radius: 999px; border: none; background: transparent; color: var(--sub); cursor: pointer" style-hover="color: var(--ink)">EN</button>
+          <button style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.1em; padding: 5px 12px; border-radius: 999px; border: none; background: var(--ink); color: var(--bg); cursor: pointer">NO</button>
+        </div>
+        <div style="display: flex; align-items: center; gap: 2px; border: 1px solid var(--line4); border-radius: 999px; padding: 3px">
+          <button onClick="{{ setLight }}" style="{{ lightBtnStyle }}">Lys</button>
+          <button onClick="{{ setDark }}" style="{{ darkBtnStyle }}">Mørk</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top-no" style="max-width: 1040px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px)">
+
+    <section data-screen-label="Hero NO" style="padding: clamp(64px, 10vw, 120px) 0 clamp(56px, 9vw, 100px); border-bottom: 1px solid var(--line2)">
+      <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--acc); margin: 0 0 36px">Anastasia Buialo / UX- og produktdesigner, Oslo</p>
+      <h1 style="font-size: clamp(52px, 7.5vw, 112px); font-weight: 500; line-height: 1.18; letter-spacing: -0.02em; margin: 0; max-width: 18ch; text-wrap: balance">Innsikt og design, testet til produkter folk <em style="font-weight: 400; color: var(--acc2)">faktisk</em> bruker.</h1><div aria-hidden="true" style="height: 88px; margin-top: 56px; background-image: radial-gradient(var(--dot) 1px, transparent 1.3px); background-size: 7px 7px; -webkit-mask-image: linear-gradient(90deg, black 0%, var(--line4) 45%, transparent 82%); mask-image: linear-gradient(90deg, black 0%, var(--line4) 45%, transparent 82%)"></div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 48px 64px; margin-top: 72px; align-items: start">
+        <p style="font-size: 22px; line-height: 1.55; font-weight: 400; color: var(--body); margin: 0; max-width: 56ch">Jeg er UX-designer med bakgrunn i visuell kommunikasjon og åtte års erfaring fra utvikling av digitale produkter, fra tidligfase startups og skalerte teknologiplattformer til foreninger og veldedige organisasjoner. Jeg jobber innsiktsbasert: hypoteser, testing, læring. Mindre friksjon og mer kontroll for brukeren, målbar effekt for forretningen.</p>
+        <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--sub)">
+          <li style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; border-bottom: 1px solid var(--line3); padding-bottom: 14px"><span>Erfaring</span><span style="color: var(--ink); white-space: nowrap">8 år</span></li>
+          <li style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; border-bottom: 1px solid var(--line3); padding-bottom: 14px"><span>Base</span><span style="color: var(--ink); white-space: nowrap">Oslo, Norge</span></li>
+          <li style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; border-bottom: 1px solid var(--line3); padding-bottom: 14px"><span>Utmerkelse</span><span style="color: var(--ink)">Finalist, UX Nordic Award</span></li>
+          <li style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px"><span>Fokus</span><span style="color: var(--ink); text-align: right">Innsikt · Konseptualisering · Flyt</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="method-no" data-screen-label="Method NO" style="padding: clamp(56px, 9vw, 100px) 0; scroll-margin-top: 80px; border-bottom: 1px solid var(--line2)">
+      <div style="display: flex; align-items: baseline; gap: 24px; margin-bottom: 24px">
+        <h2 style="font-size: clamp(32px, 4vw, 56px); font-weight: 500; letter-spacing: -0.01em; margin: 0">Metoden</h2>
+        <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--acc)">Slik jobber jeg</span>
+      </div>
+      <p style="font-size: clamp(22px, 2.6vw, 30px); line-height: 1.4; font-weight: 400; color: var(--big); margin: 0 0 clamp(48px, 7vw, 80px); text-wrap: pretty">Hver designbeslutning her startet som noe noen sa, gjorde eller strevde med.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); gap: 36px 32px">
+        <div>
+          <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.18em; color: var(--acc); margin: 0 0 14px">01</p>
+          <h3 style="font-size: 22px; font-weight: 500; margin: 0 0 10px">Hypotese</h3>
+          <p style="font-size: 14px; font-weight: 400; color: var(--sub); line-height: 1.6; margin: 0">Hva tror vi, og hva må være sant for at det skal fungere?</p>
+        </div>
+        <div>
+          <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.18em; color: var(--acc); margin: 0 0 14px">02</p>
+          <h3 style="font-size: 22px; font-weight: 500; margin: 0 0 10px">Testing</h3>
+          <p style="font-size: 14px; font-weight: 400; color: var(--sub); line-height: 1.6; margin: 0">Brukertester, intervjuer og kortsortering, med ekte brukere fra målgruppen.</p>
+        </div>
+        <div>
+          <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.18em; color: var(--acc); margin: 0 0 14px">03</p>
+          <h3 style="font-size: 22px; font-weight: 500; margin: 0 0 10px">Innsikt</h3>
+          <p style="font-size: 14px; font-weight: 400; color: var(--sub); line-height: 1.6; margin: 0">Funnene dokumenteres og deles, slik at beslutninger tas på grunnlag og ikke magefølelse.</p>
+        </div>
+        <div>
+          <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.18em; color: var(--acc); margin: 0 0 14px">04</p>
+          <h3 style="font-size: 22px; font-weight: 500; margin: 0 0 10px">Justering</h3>
+          <p style="font-size: 14px; font-weight: 400; color: var(--sub); line-height: 1.6; margin: 0">Retningen endres når innsikten tilsier det. Målbar effekt er fasit.</p>
+        </div>
+      </div>
+      
+    </section>
+
+    <section id="work-no" data-screen-label="Work NO" style="padding: clamp(56px, 9vw, 100px) 0; scroll-margin-top: 80px">
+      <div style="display: flex; align-items: baseline; gap: 24px; margin-bottom: 24px">
+        <h2 style="font-size: clamp(32px, 4vw, 56px); font-weight: 500; letter-spacing: -0.01em; margin: 0">Utvalgte prosjekter</h2>
+        <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--acc)">Casestudier</span>
+      </div>
+      <p style="font-size: 14px; font-weight: 400; color: var(--mut); margin: 0 0 32px; max-width: 60ch">Noe av arbeidet kan ikke vises offentlig, og noe data er anonymisert på grunn av NDA-er. Jeg går gjerne gjennom detaljene over en kaffe.</p>
+
+      <div style="border-top: 1px solid var(--line3)">
+        <div onClick="{{ toggleF }}" style="display: grid; grid-template-columns: minmax(24px, 6vw) minmax(0,1fr) auto; gap: clamp(12px, 2vw, 24px); align-items: baseline; padding: 36px 0; cursor: pointer; transition: background 0.25s" style-hover="background: var(--wash)">
+          <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--acc)">01</span>
+          <div>
+            <h3 style="font-size: clamp(28px, 3.4vw, 48px); font-weight: 500; letter-spacing: -0.01em; margin: 0; transition: color 0.25s, transform 0.25s" style-hover="color: var(--acc2); transform: translateX(10px)">FinAut</h3>
+            <p style="font-size: 18px; color: var(--sub); margin: 8px 0 0; font-weight: 400">UX-evaluering av autorisasjonsportalen for finansnæringen</p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 20px; font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--sub)"><span>2026</span><span style="font-size: 22px; color: var(--acc); width: 20px; text-align: center">{{ iconF }}</span></div>
+        </div>
+        <sc-if value="{{ openF }}" hint-placeholder-val="{{ true }}">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 40px 64px; padding: 8px 0 64px clamp(36px, 7vw, 112px)">
+            <div>
+              <p style="font-size: 18px; line-height: 1.6; font-weight: 400; color: var(--body); margin: 0">FinAut forvalter autorisasjonsordningene som holder rådgivere i finansnæringen kvalifisert. Portalen ligger oppå flere leverandøreide læringsplattformer, og ingen, verken kandidat eller bedriftsansvarlig, får en tydelig status når de logger inn. Jeg ledet innsiktsarbeidet og gjorde det om til et beslutningsgrunnlag: én diagnose, en anbefalt retning og tre prioriteringer å starte med.</p>
+              <ul style="margin: 24px 0 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 10px; font-size: 18px; line-height: 1.5; font-weight: 400; color: var(--body)">
+                <li>Ekspertevaluering, dybdeintervjuer og modererte tester med alle tre brukergruppene</li>
+                <li>Brukerreiser kartlagt med mental modell-metoden, i tillegg til systemkartlegging</li>
+                <li>Prioriterte anbefalinger, dokumenterte UU- og GDPR-brudd, og grensesnittkonsepter</li>
+              </ul>
+              <p style="margin: 32px 0 0"><a href="FinAut Portal.dc.html" style="display: inline-block; font-size: 18px; color: var(--ink); border: 1px solid var(--line4); text-decoration: none; padding: 14px 28px; border-radius: 999px; white-space: nowrap; transition: border-color 0.2s, color 0.2s, transform 0.2s" style-hover="border-color: var(--acc); color: var(--acc2); transform: translateY(-3px)">Les hele caset →</a></p>
+            </div>
+            <div>
+              <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sub); margin: 0 0 10px">Rolle</p>
+              <p style="font-size: 18px; margin: 0 0 24px; color: var(--ink)">UX-design · Ansvarlig for innsikt</p>
+              <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sub); margin: 0 0 12px">I prosjektet</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px 20px">
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">Brukertesting</span>
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">Ekspertevaluering</span>
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">Brukerreiser</span>
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">Workshop</span>
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">Konseptutvikling</span>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+        <div onClick="{{ toggle0 }}" style="display: grid; grid-template-columns: minmax(24px, 6vw) minmax(0,1fr) auto; gap: clamp(12px, 2vw, 24px); align-items: baseline; padding: 36px 0; cursor: pointer; transition: background 0.25s; border-top: 1px solid var(--line3)" style-hover="background: var(--wash)">
+          <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--acc)">02</span>
+          <div>
+            <h3 style="font-size: clamp(28px, 3.4vw, 48px); font-weight: 500; letter-spacing: -0.01em; margin: 0; transition: color 0.25s, transform 0.25s" style-hover="color: var(--acc2); transform: translateX(10px)">c)optikk</h3>
+            <p style="font-size: 18px; color: var(--sub); margin: 8px 0 0; font-weight: 400">Ny nettside for spesialisert optikerklinikk</p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 20px; font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--sub)"><span>2025</span><span style="font-size: 22px; color: var(--acc); width: 20px; text-align: center">{{ icon0 }}</span></div>
+        </div>
+        <sc-if value="{{ open0 }}" hint-placeholder-val="{{ true }}">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 40px 64px; padding: 8px 0 64px clamp(36px, 7vw, 112px)">
+            <div>
+              <p style="font-size: 18px; line-height: 1.6; font-weight: 400; color: var(--body); margin: 0">c)optikk er Norges største sammenslutning av privateide optikerforretninger. For å synliggjøre medlemmenes kompetanse på øyehelse lanserte de en egen merkeordning og nettside. Netlife leverte navn, merke, identitet, innhold og design; jeg hadde ansvar for UX-delen.</p>
+              <ul style="margin: 24px 0 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 10px; font-size: 18px; line-height: 1.5; font-weight: 400; color: var(--body)">
+                <li>Evaluerte eksisterende konsept og utviklet ny nettside basert på den nye visuelle identiteten</li>
+                <li>Forankret designvalg i innsikt fra brukertesting</li>
+                <li>Bidro med skisser og innspill til den visuelle retningen</li>
+              </ul>
+            </div>
+            <div>
+              <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sub); margin: 0 0 10px">Rolle</p>
+              <p style="font-size: 18px; margin: 0 0 24px; color: var(--ink)">UX-design · Konseptutvikling</p>
+              <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sub); margin: 0 0 12px">I prosjektet</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px 20px">
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">UX-design</span>
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">UI-design</span>
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">Prototyping</span>
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">Innsikt</span>
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">Figma</span>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <div onClick="{{ toggle1 }}" style="display: grid; grid-template-columns: minmax(24px, 6vw) minmax(0,1fr) auto; gap: clamp(12px, 2vw, 24px); align-items: baseline; padding: 36px 0; cursor: pointer; transition: background 0.25s; border-top: 1px solid var(--line3)" style-hover="background: var(--wash)">
+          <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--acc)">03</span>
+          <div>
+            <h3 style="font-size: clamp(28px, 3.4vw, 48px); font-weight: 500; letter-spacing: -0.01em; margin: 0; transition: color 0.25s, transform 0.25s" style-hover="color: var(--acc2); transform: translateX(10px)">KORUS</h3>
+            <p style="font-size: 18px; color: var(--sub); margin: 8px 0 0; font-weight: 400">Modererte brukertester på tvers av roller for en nasjonal kompetanseressurs</p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 20px; font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--sub)"><span>2025</span><span style="font-size: 22px; color: var(--acc); width: 20px; text-align: center">{{ icon1 }}</span></div>
+        </div>
+        <sc-if value="{{ open1 }}" hint-placeholder-val="{{ false }}">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 40px 64px; padding: 8px 0 64px clamp(36px, 7vw, 112px)">
+            <div>
+              <p style="font-size: 18px; line-height: 1.6; font-weight: 400; color: var(--body); margin: 0">KORUS er en nasjonal kompetanseressurs om rus for fagfolk i helse, skole og sosialtjenester. De trengte å vite om brukere i ulike roller fant og forsto innholdet. Jeg planla og ledet modererte brukertester på tvers av rollegruppene og leverte innsiktsrapporten.</p>
+              <ul style="margin: 24px 0 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 10px; font-size: 18px; line-height: 1.5; font-weight: 400; color: var(--body)">
+                <li>Modererte brukertester med deltakere fra hver fagrolle</li>
+                <li>Innsiktsrapport med prioriterte, handlingsrettede anbefalinger</li>
+                <li>Konkrete forbedringer i navigasjon og innholdsstruktur ut fra rollenes behov</li>
+              </ul>
+            </div>
+            <div>
+              <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sub); margin: 0 0 10px">Rolle</p>
+              <p style="font-size: 18px; margin: 0 0 24px; color: var(--ink)">UX-design · Ansvar for innsikt</p>
+              <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sub); margin: 0 0 12px">I prosjektet</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px 20px">
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">Brukertesting</span>
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">Innsikt</span>
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">Rapportering</span>
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">FigJam</span>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        
+
+        <div onClick="{{ toggle3 }}" style="display: grid; grid-template-columns: minmax(24px, 6vw) minmax(0,1fr) auto; gap: clamp(12px, 2vw, 24px); align-items: baseline; padding: 36px 0; cursor: pointer; transition: background 0.25s; border-top: 1px solid var(--line3)" style-hover="background: var(--wash)">
+          <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--acc)">04</span>
+          <div>
+            <h3 style="font-size: clamp(28px, 3.4vw, 48px); font-weight: 500; letter-spacing: -0.01em; margin: 0; transition: color 0.25s, transform 0.25s" style-hover="color: var(--acc2); transform: translateX(10px)">Otovo – Solar Planner</h3>
+            <p style="font-size: 18px; color: var(--sub); margin: 8px 0 0; font-weight: 400">Selvutsjekking for solenergi – finalist til UX Nordic Award</p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 20px; font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--sub)"><span>2023</span><span style="font-size: 22px; color: var(--acc); width: 20px; text-align: center">{{ icon3 }}</span></div>
+        </div>
+        <sc-if value="{{ open3 }}" hint-placeholder-val="{{ false }}">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 40px 64px; padding: 8px 0 64px clamp(36px, 7vw, 112px)">
+            <div>
+              <p style="font-size: 18px; line-height: 1.6; font-weight: 400; color: var(--body); margin: 0">Otovo er en markedsplass for solenergi til boligeiere, med et nettverk av hundrevis av kontrollerte installatører. Jeg ledet Solar Planner, en ny kjøpsflyt med selvutsjekking, for å validere om kunder som er klare til å forplikte seg kan kjøpe raskere på egen hånd.</p>
+              <ul style="margin: 24px 0 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 10px; font-size: 18px; line-height: 1.5; font-weight: 400; color: var(--body)">
+                <li>Oppdagelse gjennom bruker- og interessentintervjuer, arketyper og reisekartlegging</li>
+                <li>Wireframes med lav til middels trofasthet, testet og iterert via fjernintervjuer og måleparametere</li>
+                <li>Piloten viste at selvutsjekking fungerer når den er assistert: kunden har ansvaret, en salgsagent overvåker og hjelper ved spørsmål</li>
+              </ul>
+              <p style="margin: 32px 0 0"><a href="Otovo Solar Planner.dc.html" style="display: inline-block; font-size: 18px; color: var(--ink); border: 1px solid var(--line4); text-decoration: none; padding: 14px 28px; border-radius: 999px; white-space: nowrap; transition: border-color 0.2s, color 0.2s, transform 0.2s" style-hover="border-color: var(--acc); color: var(--acc2); transform: translateY(-3px)">Les hele caset →</a></p>
+            </div>
+            <div>
+              <p style="font-size: clamp(44px, 5vw, 72px); font-weight: 500; letter-spacing: -0.02em; color: var(--acc2); margin: 0; line-height: 1">+40 %</p>
+              <p style="font-size: 14px; color: var(--sub); margin: 8px 0 32px; font-weight: 400">høyere konvertering for kunder som startet selvutsjekking</p>
+              <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sub); margin: 0 0 12px">I prosjektet</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px 20px">
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">Innsikt</span>
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">Kundereise</span>
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">Workshops</span>
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">Brukertesting</span>
+                <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; letter-spacing: 0.02em; color: var(--acc3)">Prototyping</span>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+
+      <div style="margin-top: 96px">
+        <div style="display: flex; align-items: baseline; gap: 24px; margin-bottom: 20px">
+          <h2 style="font-size: clamp(24px, 3vw, 36px); font-weight: 500; margin: 0">Flere prosjekter</h2>
+        </div>
+        <div style="border-top: 1px solid var(--line3)">
+          <div style="display: grid; grid-template-columns: minmax(min(100%,200px),1.1fr) minmax(min(100%,240px),1.3fr) 76px; gap: 24px; align-items: baseline; padding: 20px 0 20px 0px; border-bottom: 1px solid var(--line3)">
+            <span style="font-size: 22px; font-weight: 500">Frelsesarmeen</span>
+            <span style="font-size: 14px; font-weight: 400; color: var(--sub)">Brukertesting og informasjonsarkitektur for lokallagssider</span>
+            <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--mut); white-space: nowrap">2025</span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(min(100%,200px),1.1fr) minmax(min(100%,240px),1.3fr) 76px; gap: 24px; align-items: baseline; padding: 20px 0 20px 0px; border-bottom: 1px solid var(--line3)">
+            <span style="font-size: 22px; font-weight: 500">Signicat</span>
+            <span style="font-size: 14px; font-weight: 400; color: var(--sub)">Forenklet IA og sortering på ressurssiden for økt konvertering</span>
+            <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--mut); white-space: nowrap">2025</span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(min(100%,200px),1.1fr) minmax(min(100%,240px),1.3fr) 76px; gap: 24px; align-items: baseline; padding: 20px 0 20px 0px; border-bottom: 1px solid var(--line3)">
+            <span style="font-size: 22px; font-weight: 500">Fjord Norge</span>
+            <span style="font-size: 14px; font-weight: 400; color: var(--sub)">Tilbudsside og bookingkalender for mer lokal turisme</span>
+            <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--mut); white-space: nowrap">2025</span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(min(100%,200px),1.1fr) minmax(min(100%,240px),1.3fr) 76px; gap: 24px; align-items: baseline; padding: 20px 0 20px 0px; border-bottom: 1px solid var(--line3)">
+            <span style="font-size: 22px; font-weight: 500">Norsk psykologforening</span>
+            <span style="font-size: 14px; font-weight: 400; color: var(--sub)">Løsninger på navigasjonsutfordringer, forankret i designsystemet</span>
+            <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--mut); white-space: nowrap">2025</span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(min(100%,200px),1.1fr) minmax(min(100%,240px),1.3fr) 76px; gap: 24px; align-items: baseline; padding: 20px 0 20px 0px; border-bottom: 1px solid var(--line3)">
+            <span style="font-size: 22px; font-weight: 500">Oslo Voksenopplæring</span>
+            <span style="font-size: 14px; font-weight: 400; color: var(--sub)">Brukertesting for skiftet mot innbyggerorienterte tjenester</span>
+            <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--mut); white-space: nowrap">2025</span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(min(100%,200px),1.1fr) minmax(min(100%,240px),1.3fr) 76px; gap: 24px; align-items: baseline; padding: 20px 0 20px 0px; border-bottom: 1px solid var(--line3)">
+            <span style="font-size: 22px; font-weight: 500">Otovo – Solar- og Installer-apper</span>
+            <span style="font-size: 14px; font-weight: 400; color: var(--sub)">Produksjonsoversikt, CO₂-visning og dokumentasjon i felt</span>
+            <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--mut); white-space: nowrap">2023–24</span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(min(100%,200px),1.1fr) minmax(min(100%,240px),1.3fr) 76px; gap: 24px; align-items: baseline; padding: 20px 0 20px 0px; border-bottom: 1px solid var(--line3)">
+            <span style="font-size: 22px; font-weight: 500">Otovo – Innsiktsoperasjoner</span>
+            <span style="font-size: 14px; font-weight: 400; color: var(--sub)">Regelmessig kvalitativ innsikt på tvers av 13 markeder og språk</span>
+            <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--mut); white-space: nowrap">2021</span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(min(100%,200px),1.1fr) minmax(min(100%,240px),1.3fr) 76px; gap: 24px; align-items: baseline; padding: 20px 0 20px 0px; border-bottom: 1px solid var(--line3)">
+            <span style="font-size: 22px; font-weight: 500">Correlate</span>
+            <span style="font-size: 14px; font-weight: 400; color: var(--sub)">UI, IA og designsystem for kunnskapsdelingsplattform</span>
+            <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--mut); white-space: nowrap">2018–19</span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(min(100%,200px),1.1fr) minmax(min(100%,240px),1.3fr) 76px; gap: 24px; align-items: baseline; padding: 20px 0 20px 0px; border-bottom: 1px solid var(--line3)">
+            <span style="font-size: 22px; font-weight: 500">Flyktninghjelpen</span>
+            <span style="font-size: 14px; font-weight: 400; color: var(--sub)">Digital historiefortelling og infografikk – vinner av Shorthand Award</span>
+            <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--mut); white-space: nowrap">2019</span>
+          </div>
+        </div>
+      </div>
+      <div aria-hidden="true" style="height: 28px; margin-top: clamp(40px, 7vw, 72px); background-image: radial-gradient(var(--dot3) 1px, transparent 1.3px); background-size: 7px 7px; -webkit-mask-image: linear-gradient(90deg, black, transparent 85%); mask-image: linear-gradient(90deg, black, transparent 85%)"></div>
+    </section>
+
+    <section id="experience-no" data-screen-label="Experience NO" style="padding: clamp(56px, 9vw, 100px) 0; scroll-margin-top: 80px">
+      <div style="display: flex; align-items: baseline; gap: 24px; margin-bottom: 48px">
+        <h2 style="font-size: clamp(32px, 4vw, 56px); font-weight: 500; letter-spacing: -0.01em; margin: 0">Erfaring</h2>
+        <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--acc)">Bakgrunn</span>
+      </div>
+      <div style="border-top: 1px solid var(--line3)">
+        <div style="display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 28px 0; border-bottom: 1px solid var(--line3)">
+          <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 220px; max-width: 100%">Roller</p>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; font-size: 18px; font-weight: 400; color: var(--body); flex: 1 1 320px; min-width: 0">
+            <li>Netlife, UX- og produktdesigner <span style="color: var(--mut); white-space: nowrap">· 2025 –</span></li>
+            <li>Otovo, UX-designer <span style="color: var(--mut); white-space: nowrap">· 2020–25</span></li>
+            <li>Correlate, UX-designer <span style="color: var(--mut); white-space: nowrap">· 2018–20</span></li>
+            <li>Flyktninghjelpen, grafisk designer <span style="color: var(--mut); white-space: nowrap">· 2018–19</span></li>
+            <li>Indexo, UX-designer <span style="color: var(--mut); white-space: nowrap">· 2018</span></li>
+          </ul>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 28px 0; border-bottom: 1px solid var(--line3)">
+          <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 220px; max-width: 100%">Utdannelse</p>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; font-size: 18px; font-weight: 400; color: var(--body); flex: 1 1 320px; min-width: 0">
+            <li>Bachelor i visuell kommunikasjon, Polish-Japanese Academy of IT, Warszawa <span style="color: var(--mut); white-space: nowrap">· 2014–17</span></li>
+            <li>Bachelor i mediekommunikasjon, Taras Sjevtsjenko-universitetet, Kyiv <span style="color: var(--mut); white-space: nowrap">· 2010–14</span></li>
+          </ul>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 28px 0; border-bottom: 1px solid var(--line3)">
+          <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 220px; max-width: 100%">Sertifiseringer</p>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; font-size: 18px; font-weight: 400; color: var(--body); flex: 1 1 320px; min-width: 0">
+            <li>Claude Code i praksis, Anthropic <span style="color: var(--mut); white-space: nowrap">· 2026</span></li>
+            <li>Fagdager i vibekoding (KI), Oschlo <span style="color: var(--mut); white-space: nowrap">· 2025</span></li>
+            <li>Product Discovery Certification, Mind the Product <span style="color: var(--mut); white-space: nowrap">· 2025</span></li>
+            <li>Prototyping i Figma, Designlab <span style="color: var(--mut); white-space: nowrap">· 2025</span></li>
+            <li>Mobile UX Design, Interaction Design Foundation <span style="color: var(--mut); white-space: nowrap">· 2023</span></li>
+            <li>UX-researchprogram, University of Michigan (Coursera) <span style="color: var(--mut); white-space: nowrap">· 2020</span></li>
+          </ul>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 28px 0">
+          <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 220px; max-width: 100%">Utmerkelser</p>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; font-size: 18px; font-weight: 400; color: var(--body); flex: 1 1 320px; min-width: 0">
+            <li>Finalist til UX Nordic Award, Otovo Solar Planner <span style="color: var(--mut); white-space: nowrap">· 2023</span></li>
+            <li>Shorthand Award, beste ideelle historie, Flyktninghjelpen <span style="color: var(--mut); white-space: nowrap">· 2019</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="about-no" data-screen-label="About NO" style="padding: clamp(56px, 9vw, 100px) 0; scroll-margin-top: 80px">
+      <div style="display: flex; align-items: baseline; gap: 24px; margin-bottom: 48px">
+        <h2 style="font-size: clamp(32px, 4vw, 56px); font-weight: 500; letter-spacing: -0.01em; margin: 0">Om meg</h2>
+        <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--acc)">Profil</span>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 40px 56px; align-items: flex-start">
+        <div style="flex: 1 1 420px; max-width: 62ch">
+          <p style="font-size: 22px; line-height: 1.5; font-weight: 400; color: var(--big); margin: 0; text-wrap: pretty">Det jeg er best på, er å samle innsikt og gjøre kompliserte ting enklere. Jeg snakker ofte med brukere og interessenter, så jeg lærer raskt og kan endre kurs når funnene peker et annet sted. Jeg tar beslutninger basert på data og det folk faktisk sier, og lager grove prototyper tidlig, fordi det er billigere å lære enn å pusse på feil løsning.</p>
+          <p style="font-size: 18px; line-height: 1.6; font-weight: 400; color: var(--sub); margin: 28px 0 0; max-width: 60ch">Jeg har bodd i tre land og utforsket mange flere. Jeg snakker engelsk, ukrainsk, norsk og polsk, og er vant til å jobbe med ulike kulturer. Jeg gir også tid utenfor kundeoppdrag: pro bono og byttedesign for nye kunstnere med en ideell sak, og frivillig arbeid med rehabilitering av fugler.</p>
+          <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sub); margin: 48px 0 14px">Språk</p>
+          <p style="font-size: 18px; font-weight: 400; color: var(--body); margin: 0">Engelsk · Norsk · Ukrainsk · Polsk</p>
+        </div>
+        <div style="flex: 0 1 260px; min-width: 200px"><img src="assets/avatar.png" alt="Anastasia Buialo" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 4px; display: block"></div>
+      </div>
+      <div style="margin-top: 128px; border-top: 1px solid var(--line3)">
+            <div style="display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 24px 0; border-bottom: 1px solid var(--line3)">
+              <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 220px; max-width: 100%">Design</p>
+              <p style="font-size: 18px; font-weight: 400; color: var(--body); margin: 0; line-height: 1.7; text-wrap: pretty; flex: 1 1 320px; min-width: 0">Interaksjonsdesign<span style="color: var(--acc); padding: 0 10px">·</span>Konseptutvikling<span style="color: var(--acc); padding: 0 10px">·</span>Wireframing og prototyping<span style="color: var(--acc); padding: 0 10px">·</span>UI-design<span style="color: var(--acc); padding: 0 10px">·</span>Designsystem<span style="color: var(--acc); padding: 0 10px">·</span>Skjemadesign<span style="color: var(--acc); padding: 0 10px">·</span>Visuell identitet og grafisk design</p>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 24px 0; border-bottom: 1px solid var(--line3)">
+              <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 220px; max-width: 100%">Analyse og innsikt</p>
+              <p style="font-size: 18px; font-weight: 400; color: var(--body); margin: 0; line-height: 1.7; text-wrap: pretty; flex: 1 1 320px; min-width: 0">Brukertesting<span style="color: var(--acc); padding: 0 10px">·</span>Brukerintervjuer<span style="color: var(--acc); padding: 0 10px">·</span>Bruker- og tjenestereiser<span style="color: var(--acc); padding: 0 10px">·</span>Kortsortering<span style="color: var(--acc); padding: 0 10px">·</span>A/B- og hypotesetesting<span style="color: var(--acc); padding: 0 10px">·</span>Analyse og måling<span style="color: var(--acc); padding: 0 10px">·</span>Innsiktsrapportering</p>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 24px 0; border-bottom: 1px solid var(--line3)">
+              <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 220px; max-width: 100%">Verktøy og KI</p>
+              <p style="font-size: 18px; font-weight: 400; color: var(--body); margin: 0; line-height: 1.7; text-wrap: pretty; flex: 1 1 320px; min-width: 0">Figma, FigJam<span style="color: var(--acc); padding: 0 10px">·</span>Hotjar<span style="color: var(--acc); padding: 0 10px">·</span>Google Analytics<span style="color: var(--acc); padding: 0 10px">·</span>Lyssna<span style="color: var(--acc); padding: 0 10px">·</span>Notion<span style="color: var(--acc); padding: 0 10px">·</span>Adobe Illustrator, Photoshop<span style="color: var(--acc); padding: 0 10px">·</span>Vibekoding med KI<span style="color: var(--acc); padding: 0 10px">·</span>KI-assistert innsiktssyntese<span style="color: var(--acc); padding: 0 10px">·</span>Design av KI-drevne funksjoner</p>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 24px 0">
+              <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 220px; max-width: 100%">Arbeidsmåte</p>
+              <p style="font-size: 18px; font-weight: 400; color: var(--body); margin: 0; line-height: 1.7; text-wrap: pretty; flex: 1 1 320px; min-width: 0">Tverrfaglig samarbeid<span style="color: var(--acc); padding: 0 10px">·</span>Interessentkommunikasjon<span style="color: var(--acc); padding: 0 10px">·</span>Fasilitering av workshops<span style="color: var(--acc); padding: 0 10px">·</span>Designops<span style="color: var(--acc); padding: 0 10px">·</span>Nysgjerrighet<span style="color: var(--acc); padding: 0 10px">·</span>Mentorering av studenter og traineer<span style="color: var(--acc); padding: 0 10px">·</span>Arbeid på tvers av markeder og kulturer</p>
+            </div>
+          </div>
+    </section>
+
+    
+
+    
+    <section id="visual-no" data-screen-label="Visual work NO" style="padding: clamp(56px, 9vw, 100px) 0 24px; scroll-margin-top: 80px">
+      <div style="display: flex; align-items: baseline; gap: 24px; margin-bottom: 20px">
+        <h2 style="font-size: clamp(32px, 4vw, 56px); font-weight: 500; letter-spacing: -0.01em; margin: 0">Visuelt arbeid</h2>
+        <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--acc)">Håndlaget</span>
+      </div>
+      <p style="font-size: 22px; font-weight: 400; color: var(--sub); margin: 0 0 24px; max-width: 60ch">Håndlagde spor, funnede objekter og skjønnheten i feilen, bevis på en hånd.</p>
+      <div style="border-top: 1px solid var(--line3)">
+      <div onClick="{{ toggle4 }}" style="display: grid; grid-template-columns: minmax(24px, 6vw) minmax(0,1fr) auto; gap: clamp(12px, 2vw, 24px); align-items: baseline; padding: 36px 0; cursor: pointer; transition: background 0.25s; border-top: 1px solid var(--line3)" style-hover="background: var(--wash)">
+        <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--acc)">01</span>
+        <div>
+          <h3 style="font-size: clamp(22px, 2.6vw, 34px); font-weight: 500; letter-spacing: -0.01em; margin: 0; transition: color 0.25s, transform 0.25s" style-hover="color: var(--acc2); transform: translateX(10px)">Thornskull</h3>
+          <p style="font-size: 14px; color: var(--sub); margin: 6px 0 0; font-weight: 400">En font klippet med saks</p>
+        </div>
+        <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 22px; color: var(--acc2); width: 20px; text-align: center">{{ icon4 }}</span>
+      </div>
+      <sc-if value="{{ open4 }}" hint-placeholder-val="{{ false }}">
+        <div style="padding: 8px 0 64px clamp(36px, 7vw, 112px)">
+          <p style="font-size: 18px; line-height: 1.6; font-weight: 400; color: var(--body); margin: 0 0 32px; max-width: 62ch">En displayfont som startet som papir: bokstaver klippet på frihånd med saks, uten skisser, deretter skannet, tegnet opp og bygget til en fungerende font. Hver takk og hvert overkutt er en knivbeslutning som fikk bli, ikke en feil som ble fjernet.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 16px; align-items: stretch">
+            <div><img src="assets/thornskull-cuts-4.jpg" alt="Papirklipte bokstaver" style="width: 100%; height: 180px; object-fit: cover; border-radius: 4px; border: 1px solid var(--img-line); display: block"><p style="font-size: 14px; color: var(--sub); margin: 10px 0 0"><span style="color: var(--acc)">1</span> Komponer – former blir bokstaver</p></div>
+            <div><img src="assets/thornskull-cuts-1.jpg" alt="Komponerte papirformer" style="width: 100%; height: 180px; object-fit: cover; border-radius: 4px; border: 1px solid var(--img-line); display: block"><p style="font-size: 14px; color: var(--sub); margin: 10px 0 0"><span style="color: var(--acc)">2</span> Klipp – på frihånd, uten skisser</p></div>
+            <div><img src="assets/thornskull-alphabet.png" alt="Thornskull-alfabetet i Figma" style="width: 100%; height: 180px; object-fit: cover; border-radius: 4px; border: 1px solid var(--img-line); display: block"><p style="font-size: 14px; color: var(--sub); margin: 10px 0 0"><span style="color: var(--acc)">3</span> Skann, tegn opp og finpuss – feilene får bli, på grunnlinjerutenett i Figma</p></div>
+            <div style="display: flex; flex-direction: column"><div style="flex: 1; min-height: 180px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--glow); border-radius: 4px; font-family: 'Thornskull', 'Futura', 'Jost', sans-serif; font-size: clamp(36px, 4vw, 56px); color: var(--ink)">Aa Bb</div><p style="font-size: 14px; color: var(--sub); margin: 10px 0 0"><span style="color: var(--acc)">4</span> Den ferdige OTF-en – satt live</p></div>
+          </div>
+          <p style="font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--acc); margin: 40px 0 16px">Referanser</p>
+          <p style="font-size: 18px; line-height: 1.6; font-weight: 400; color: var(--body); margin: 0 0 20px; max-width: 62ch">To referanser møttes på midten: norsk black metal-lettering (håndtegnet, symmetrisk, i oppløsning mot greiner) og botaniske plansjer fra 1800-tallet, der hver torn er dokumentert med omhu. Thornskull er overlappen.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 16px; max-width: 560px">
+            <img src="assets/ref-blackmetal.png" alt="Referanse: norsk black metal-lettering" style="width: 100%; height: 260px; object-fit: cover; border-radius: 4px; border: 1px solid var(--img-line); display: block">
+            <img src="assets/ref-botanical.png" alt="Botanisk plansje av villroser, torner dokumentert" style="width: 100%; height: 260px; object-fit: cover; border-radius: 4px; border: 1px solid var(--img-line); display: block">
+          </div>
+        </div>
+      </sc-if>
+      <div style="border-top: 1px solid var(--line3)"></div>
+      <div onClick="{{ toggle5 }}" style="display: grid; grid-template-columns: minmax(24px, 6vw) minmax(0,1fr) auto; gap: clamp(12px, 2vw, 24px); align-items: baseline; padding: 36px 0; cursor: pointer; transition: background 0.25s; border-top: 1px solid var(--line3)" style-hover="background: var(--wash)">
+        <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; color: var(--acc)">02</span>
+        <div>
+          <h3 style="font-size: clamp(22px, 2.6vw, 34px); font-weight: 500; letter-spacing: -0.01em; margin: 0; transition: color 0.25s, transform 0.25s" style-hover="color: var(--acc2); transform: translateX(10px)">Logo og visuelt språk</h3>
+          <p style="font-size: 14px; color: var(--sub); margin: 6px 0 0; font-weight: 400">Ravekollektiv</p>
+        </div>
+        <span style="font-family: 'Futura', 'Jost', sans-serif; font-size: 22px; color: var(--acc2); width: 20px; text-align: center">{{ icon5 }}</span>
+      </div>
+      <sc-if value="{{ open5 }}" hint-placeholder-val="{{ false }}">
+        <div style="padding: 8px 0 64px clamp(36px, 7vw, 112px)">
+          <p style="font-size: 18px; line-height: 1.6; font-weight: 400; color: var(--body); margin: 0 0 32px; max-width: 62ch">Identitet og visuelt språk for et ravekollektiv. Ordmerket starter som sprittusj-bokstaver tegnet av kollektivets grunnlegger, tegnet opp og kjørt gjennom fingeravtrykk-moaré, skannerstøy og kanalsplittede glitcher, en identitet bygget for å forvitre med vilje, høylytt der rutenettet er stille.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 16px">
+            <div><img src="assets/ork-board.png" alt="Identitetsflate med ordmerkevarianter og plakater" style="width: 100%; height: 180px; object-fit: cover; object-position: top; border-radius: 4px; border: 1px solid var(--img-line); display: block"><p style="font-size: 14px; color: var(--sub); margin: 10px 0 0"><span style="color: var(--acc)">1</span> Utforsk – ordmerkevarianter og plakatsystem</p></div>
+            <div><img src="assets/ork-textures.png" alt="Mosetekstur og fingeravtrykk-moaré" style="width: 100%; height: 180px; object-fit: cover; border-radius: 4px; border: 1px solid var(--img-line); display: block"><p style="font-size: 14px; color: var(--sub); margin: 10px 0 0"><span style="color: var(--acc)">2</span> Teksturer – skogsmose og et åpen kildekode-fingeravtrykk i moaré</p></div>
+            <div><img src="assets/drk-3.png" alt="Bølgeforvrengning og glitch-forvitring" style="width: 100%; height: 180px; object-fit: cover; border-radius: 4px; border: 1px solid var(--img-line); display: block"><p style="font-size: 14px; color: var(--sub); margin: 10px 0 0"><span style="color: var(--acc)">3</span> Forvitre – skannerstøy og kanalsplittede glitcher</p></div>
+            <div><img src="assets/drk-1.png" alt="Det ferdige ordmerket over grønn glitch-tekstur" style="width: 100%; height: 180px; object-fit: cover; border-radius: 4px; border: 1px solid var(--img-line); display: block"><p style="font-size: 14px; color: var(--sub); margin: 10px 0 0"><span style="color: var(--acc)">4</span> Ordmerket – aldri likt to ganger</p></div>
+          </div>
+          <p style="font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--acc); margin: 40px 0 16px">Referanser</p>
+          <p style="font-size: 18px; line-height: 1.6; font-weight: 400; color: var(--body); margin: 0 0 20px; max-width: 62ch">Theodor Kittelsens Nøkken (skikkelsen som stiger opp av mørkt vann) satte stemningen: nordisk folketro-mystikk, oversatt til klubbplakatens språk.</p>
+          <img src="assets/ref-nokken.png" alt="Theodor Kittelsen, Nøkken (1904)" style="width: 100%; max-width: 420px; height: auto; border-radius: 4px; border: 1px solid var(--img-line); display: block">
+        </div>
+      </sc-if>
+      <div style="border-top: 1px solid var(--line3)"></div>
+      </div>
+      <sc-if value="{{ showSide }}" hint-placeholder-val="{{ true }}">
+      <div style="margin-top: clamp(48px, 7vw, 80px)">
+        <p style="font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--acc); margin: 0 0 20px">Og alt annet laget for hånd</p>
+        <p style="font-size: 18px; line-height: 1.6; font-weight: 400; color: var(--body); margin: 0 0 28px; max-width: 62ch">Utenom jobb tegner jeg, styler folk og rehabiliterer skadde fugler. Jeg setter også pris på naturen, ny musikk, dokumentarer og hjemmelaget ramen.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 110px), 1fr)); gap: 14px; max-width: 900px">
+          <img src="assets/pigeon.jpg" alt="Reddet due på skulderen" style="width: 100%; height: 140px; object-fit: cover; border-radius: 4px; filter: grayscale(1); border: 1px solid var(--img-line); display: block">
+          <img src="assets/ramen.jpg" alt="Hjemmelaget ramen" style="width: 100%; height: 140px; object-fit: cover; border-radius: 4px; filter: grayscale(1); border: 1px solid var(--img-line); display: block">
+          <img src="assets/bird-sketches.png" alt="Fugleskisser på whiteboard" style="width: 100%; height: 140px; object-fit: cover; border-radius: 4px; filter: grayscale(1); border: 1px solid var(--img-line); display: block">
+          <img src="assets/ink-brush.png" alt="Tusjstudie" style="width: 100%; height: 140px; object-fit: cover; border-radius: 4px; filter: grayscale(1); border: 1px solid var(--img-line); display: block">
+          <img src="assets/opera-fjord.jpg" alt="Operahuset over fjorden" style="width: 100%; height: 140px; object-fit: cover; border-radius: 4px; filter: grayscale(1); border: 1px solid var(--img-line); display: block">
+          <img src="assets/skateboard.jpg" alt="På rullebrett" style="width: 100%; height: 140px; object-fit: cover; border-radius: 4px; filter: grayscale(1); border: 1px solid var(--img-line); display: block">
+        </div>
+      </div>
+      </sc-if>
+      <p style="font-size: 14px; color: var(--mut); margin: 40px 0 0; max-width: 62ch">* Mye av dette arbeidet skjer utenfor fakturaer: pro bono, eller i bytte med nye kunstnere som jobber for en ideell sak.</p>
+    </section>
+
+    
+
+    <section id="contact-no" data-screen-label="Contact NO" style="position: relative; padding: clamp(32px, 5vw, 56px) 0 40px; scroll-margin-top: 80px">
+      <div aria-hidden="true" style="height: 72px; margin-bottom: 48px; background-image: radial-gradient(var(--dot2) 1px, transparent 1.3px); background-size: 7px 7px; -webkit-mask-image: linear-gradient(0deg, black, transparent 90%); mask-image: linear-gradient(0deg, black, transparent 90%)"></div><p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--acc); margin: 0 0 28px">Kontakt</p>
+      <h2 style="font-size: clamp(48px, 7vw, 104px); font-weight: 500; letter-spacing: -0.02em; line-height: 1.02; margin: 0">La oss bygge noe folk faktisk bruker.</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 48px">
+        <span style="display: inline-flex; align-items: stretch; border: 1px solid var(--line4); border-radius: 999px; overflow: hidden">
+          <a href="mailto:anastasia.buialo@gmail.com" style="font-size: 18px; color: var(--ink); text-decoration: none; white-space: nowrap; padding: 14px 22px 14px 28px; transition: color 0.2s, background 0.2s" style-hover="color: var(--acc2); background: var(--wash)">anastasia.buialo@gmail.com ↗</a>
+          <span style="width: 1px; background: var(--line4)"></span>
+          <button onClick="{{ copyEmail }}" style="font-size: 14px; font-family: inherit; color: var(--ink); background: transparent; border: none; cursor: pointer; padding: 14px 22px; transition: color 0.2s, background 0.2s" style-hover="color: var(--acc2); background: var(--wash)">{{ copyLabelNO }}</button>
+        </span>
+        <a href="https://www.linkedin.com/in/anastasiabuialo/" target="_blank" rel="noopener" style="font-size: 18px; color: var(--ink); border: 1px solid var(--line4); text-decoration: none; padding: 14px 28px; border-radius: 999px; white-space: nowrap; transition: border-color 0.2s, color 0.2s, transform 0.2s" style-hover="border-color: var(--acc); color: var(--acc2); transform: translateY(-3px)">LinkedIn ↗</a>
+        <a href="https://www.netlife.com" target="_blank" rel="noopener" style="font-size: 18px; color: var(--ink); border: 1px solid var(--line4); text-decoration: none; padding: 14px 28px; border-radius: 999px; white-space: nowrap; transition: border-color 0.2s, color 0.2s, transform 0.2s" style-hover="border-color: var(--acc); color: var(--acc2); transform: translateY(-3px)">Netlife ↗</a>
+      </div>
+      <div style="display: flex; justify-content: space-between; gap: 24px; margin-top: 96px; padding-top: 24px; border-top: 1px solid var(--line2); font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; color: var(--mut)">
+        <span>© 2026 Anastasia Buialo</span>
+        <span>Alt visuelt materiale © Anastasia Buialo</span>
+        <span>Oslo, Norge</span>
+      </div>
+    </section>
+  </main>
+</div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;defaultLang&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;en&quot;, &quot;no&quot;], &quot;default&quot;: &quot;en&quot;, &quot;tsType&quot;: &quot;'en' | 'no'&quot;, &quot;section&quot;: &quot;Site&quot;}, &quot;showSideWork&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Site&quot;}}">
+class Component extends DCLogic {
+  state = { lang: null, open: [false, false, false, false, false, false], openF: false, theme: null };
+
+  componentDidMount() {
+    let saved = null;
+    try { saved = localStorage.getItem('ab-portfolio-theme'); } catch (e) {}
+    const theme = saved === 'light' || saved === 'dark' ? saved : 'light';
+    this.setState({ theme });
+    document.body.dataset.theme = theme;
+  }
+
+  setTheme(theme) {
+    try { localStorage.setItem('ab-portfolio-theme', theme); } catch (e) {}
+    this.setState({ theme });
+  }
+
+  themeBtnStyle(active) {
+    return {
+      fontFamily: "'Futura', 'Jost', sans-serif", fontSize: 11, fontWeight: 700,
+      letterSpacing: '0.1em', textTransform: 'lowercase', padding: '5px 12px',
+      borderRadius: 999, border: 'none', cursor: 'pointer', lineHeight: 1.2,
+      background: active ? 'var(--ink)' : 'transparent',
+      color: active ? 'var(--bg)' : 'var(--sub)',
+      transition: 'background 0.2s, color 0.2s',
+    };
+  }
+
+  componentDidUpdate() {
+    if (this.state.theme) document.body.dataset.theme = this.state.theme;
+  }
+
+  renderVals() {
+    const lang = this.state.lang ?? (this.props.defaultLang ?? 'en');
+    const open = this.state.open;
+    const toggle = (i) => () => this.setState((s) => ({ open: s.open.map((v, j) => (j === i ? !v : v)) }));
+    return {
+      isEN: lang === 'en',
+      isNO: lang === 'no',
+      copyEmail: () => {
+        const done = () => {
+          this.setState({ copied: true });
+          clearTimeout(this._copyT);
+          this._copyT = setTimeout(() => this.setState({ copied: false }), 2000);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText('anastasia.buialo@gmail.com').then(done).catch(() => {});
+        } else {
+          const ta = document.createElement('textarea');
+          ta.value = 'anastasia.buialo@gmail.com';
+          document.body.appendChild(ta); ta.select();
+          try { document.execCommand('copy'); done(); } catch (e) {}
+          ta.remove();
+        }
+      },
+      copyLabelEN: this.state.copied ? 'Copied!' : 'Copy',
+      copyLabelNO: this.state.copied ? 'Kopiert!' : 'Kopier',
+      setLight: () => this.setTheme('light'),
+      setDark: () => this.setTheme('dark'),
+      lightBtnStyle: this.themeBtnStyle((this.state.theme ?? 'light') === 'light'),
+      darkBtnStyle: this.themeBtnStyle((this.state.theme ?? 'light') === 'dark'),
+      setEN: () => this.setState({ lang: 'en' }),
+      setNO: () => this.setState({ lang: 'no' }),
+      showSide: this.props.showSideWork ?? true,
+      openF: this.state.openF,
+      iconF: this.state.openF ? '−' : '+',
+      toggleF: () => this.setState((s) => ({ openF: !s.openF })),
+      open0: open[0], open1: open[1], open2: open[2], open3: open[3], open4: open[4], open5: open[5],
+      icon0: open[0] ? '−' : '+', icon1: open[1] ? '−' : '+', icon2: open[2] ? '−' : '+', icon3: open[3] ? '−' : '+', icon4: open[4] ? '−' : '+', icon5: open[5] ? '−' : '+',
+      toggle0: toggle(0), toggle1: toggle(1), toggle2: toggle(2), toggle3: toggle(3), toggle4: toggle(4), toggle5: toggle(5),
+    };
+  }
+}
+</script>
+</body>
+</html>

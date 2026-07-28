@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/avatar.png">
+<style>
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--acc); outline-offset: 3px; border-radius: 4px; }
+body { margin: 0; background-color: var(--bg); overflow-x: clip; color: var(--ink); font-family: 'Suisse Intl', 'Suisse Int\'l', 'Switzer', sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { font-family: 'Futura', 'Jost', sans-serif; }
+::selection { background: var(--ink); color: var(--bg); }
+body::after { content: ""; position: fixed; inset: 0; z-index: 2147483647; pointer-events: none; opacity: 0.35; mix-blend-mode: multiply; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.18 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E"); }
+:root { --bg: #d6d6d2; --ink: #17171b; --big: #2b2c30; --body: #212226; --sub: #34353b; --mut: #3f4046; --acc: #4338ca; --acc2: #4f46e5; --acc3: #3730a3; --line: rgba(0,0,0,0.14); --line2: rgba(0,0,0,0.16); --line3: rgba(0,0,0,0.18); --line4: rgba(0,0,0,0.4); --wash: rgba(0,0,0,0.02); --header-bg: rgba(214,214,210,0.88); --img-line: rgba(79,70,229,0.28); }
+body[data-theme="dark"] { --bg: #030712; --ink: #f9fafb; --big: #e5e7eb; --body: #d1d5db; --sub: #9ca3af; --mut: #9ca3af; --acc: #818cf8; --acc2: #a5b4fc; --acc3: #c7d2fe; --line: rgba(255,255,255,0.12); --line2: rgba(255,255,255,0.08); --line3: rgba(255,255,255,0.1); --line4: rgba(255,255,255,0.55); --wash: rgba(255,255,255,0.02); --header-bg: rgba(3,7,18,0.85); --img-line: rgba(129,140,248,0.25); }
+body { transition: background-color 0.3s, color 0.3s; }
+body[data-theme="dark"]::after { content: ""; position: fixed; inset: 0; z-index: 2147483647; pointer-events: none; opacity: 0.8; mix-blend-mode: overlay; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.22 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E"); }
+a { color: var(--acc); } a:hover { color: var(--acc2); }
+</style>
+</helmet>
+
+<sc-if value="{{ isEN }}" hint-placeholder-val="{{ true }}">
+<div data-screen-label="FinAut EN">
+
+  <header style="position: sticky; top: 0; z-index: 50; background: var(--header-bg); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line2)">
+    <div style="max-width: 1040px; margin: 0 auto; padding: 16px clamp(16px, 4vw, 32px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 20px">
+      <a href="Anastasia Buialo - Portfolio v2.dc.html" style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; white-space: nowrap">← Anastasia Buialo</a>
+      <nav style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px">
+        <div style="display: flex; align-items: center; gap: 2px; border: 1px solid var(--line); border-radius: 999px; padding: 3px">
+          <button style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.1em; padding: 5px 12px; border-radius: 999px; border: none; background: var(--ink); color: var(--bg); cursor: pointer">EN</button>
+          <button onClick="{{ setNO }}" style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.1em; padding: 5px 12px; border-radius: 999px; border: none; background: transparent; color: var(--sub); cursor: pointer" style-hover="color: var(--ink)">NO</button>
+        </div>
+        <div style="display: flex; align-items: center; gap: 2px; border: 1px solid var(--line4); border-radius: 999px; padding: 3px">
+          <button onClick="{{ setLight }}" style="{{ lightBtnStyle }}">light</button>
+          <button onClick="{{ setDark }}" style="{{ darkBtnStyle }}">dark</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main style="max-width: 1040px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px)">
+
+    <section data-screen-label="FinAut hero EN" style="padding: clamp(48px, 8vw, 88px) 0 clamp(32px, 5vw, 48px)">
+      <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--acc); margin: 0 0 28px">FinAut · 2026 · UX designer, Netlife</p>
+      <h1 style="font-size: clamp(44px, 6.4vw, 92px); font-weight: 500; line-height: 1.02; letter-spacing: -0.02em; margin: 0">Make the path self-explanatory</h1>
+      <p style="font-size: clamp(20px, 2.3vw, 27px); line-height: 1.45; font-weight: 400; color: var(--big); margin: 28px 0 0; max-width: 46ch; text-wrap: pretty">An insight study of the portal that keeps Norwegian financial advisers certified, turned into a decision basis the client could act on.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 24px 40px; margin-top: 44px; padding-top: 28px; border-top: 1px solid var(--line3)">
+        <div>
+          <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sub); margin: 0 0 10px">Role</p>
+          <p style="font-size: 18px; color: var(--ink); margin: 0">UX designer, insight lead</p>
+        </div>
+        <div>
+          <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sub); margin: 0 0 10px">Methods</p>
+          <p style="font-size: 18px; color: var(--ink); margin: 0">Expert evaluation, depth interviews, moderated user tests, journey mapping, system mapping, workshop</p>
+        </div>
+        <div>
+          <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sub); margin: 0 0 10px">User groups</p>
+          <p style="font-size: 18px; color: var(--ink); margin: 0">Candidates, authorised advisers, company administrators</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="FinAut value EN" style="padding: clamp(40px, 6vw, 64px) 0; border-top: 1px solid var(--line2)">
+      <h2 style="font-size: clamp(26px, 3.2vw, 42px); font-weight: 500; letter-spacing: -0.01em; margin: 0 0 32px">What the insight work gave FinAut</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 32px 48px">
+        <div>
+          <p style="font-size: 18px; line-height: 1.6; color: var(--ink); margin: 0"><span style="color: var(--acc); margin-right: 10px">01</span>A single diagnosis instead of scattered complaints: four recurring patterns that explain nearly every symptom in the portal.</p>
+        </div>
+        <div>
+          <p style="font-size: 18px; line-height: 1.6; color: var(--ink); margin: 0"><span style="color: var(--acc); margin-right: 10px">02</span>A strategic choice made concrete: three possible directions, weighed against cost and supplier dependency, with a recommended path.</p>
+        </div>
+        <div>
+          <p style="font-size: 18px; line-height: 1.6; color: var(--ink); margin: 0"><span style="color: var(--acc); margin-right: 10px">03</span>Three priorities to start from, each tied to the time it gives back, plus documented accessibility and GDPR breaches that had to be fixed regardless.</p>
+        </div>
+        <div>
+          <p style="font-size: 18px; line-height: 1.6; color: var(--ink); margin: 0"><span style="color: var(--acc); margin-right: 10px">04</span>Interface concepts for both portals, so the recommendations could be seen and discussed rather than read.</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="FinAut story EN" style="padding: clamp(40px, 6vw, 64px) 0 clamp(48px, 7vw, 80px); border-top: 1px solid var(--line2)">
+
+      <div style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 0 0 36px">
+        <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 200px; max-width: 100%">Problem</p>
+        <div style="flex: 1 1 320px; min-width: 0; max-width: 62ch">
+          <p style="font-size: 18px; line-height: 1.6; color: var(--body); margin: 0 0 20px">FinAut runs the authorisation schemes that keep advisers in Norwegian finance qualified. The scheme has grown in scope and complexity, and sits on top of several learning platforms owned by suppliers. Candidates struggle to see where they are and what remains, advisers are unsure whether an annual update is done, and company administrators spend their days as a human reminder system.</p>
+          <p style="font-size: 18px; line-height: 1.6; color: var(--body); margin: 0 0 24px">The assignment was not to change the scheme, but to understand how it is experienced, and to hand FinAut a decision basis for what to do next.</p>
+          <img src="assets/finaut-today.png" alt="The portal today: a profile page with a long sidebar of parallel entry points" style="width: 100%; height: 300px; object-fit: cover; object-position: top; border-radius: 4px; border: 1px solid var(--img-line); display: block">
+          <p style="font-size: 14px; color: var(--mut); margin: 10px 0 0">Today: eight parallel entries, no status, no next step.</p>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 36px 0; border-top: 1px solid var(--line3)">
+        <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 200px; max-width: 100%">Research</p>
+        <div style="flex: 1 1 320px; min-width: 0; max-width: 62ch">
+          <p style="font-size: 18px; line-height: 1.6; color: var(--body); margin: 0 0 20px">A review of the insight FinAut already had, a cross-disciplinary expert evaluation of finaut.no, My page and the company pages, depth interviews and moderated user tests with all three user groups plus key people at FinAut and its suppliers, a workshop with company administrators, and a mapping of the systems and how they hand over to each other.</p>
+          <p style="font-size: 18px; line-height: 1.6; color: var(--body); margin: 0 0 24px">The journeys were mapped with the mental model method, separating what the user is trying to achieve from what the system offers in return. That is what made the gap visible: the task layer is well understood, the support layer answers something else.</p>
+          <figure style="margin: 0 0 24px; padding: 0 0 0 20px; border-left: 2px solid var(--acc)">
+            <blockquote style="font-size: 18px; line-height: 1.5; font-style: italic; color: var(--ink); margin: 0">“Where am I, what do I have to do?”</blockquote>
+            <figcaption style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mut); margin-top: 12px">Candidate, core need across every phase</figcaption>
+          </figure>
+          <figure style="margin: 0 0 24px; padding: 0 0 0 20px; border-left: 2px solid var(--acc)">
+            <blockquote style="font-size: 18px; line-height: 1.5; font-style: italic; color: var(--ink); margin: 0">“I am finished. Am I?”</blockquote>
+            <figcaption style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mut); margin-top: 12px">Experienced adviser, after completing the annual update</figcaption>
+          </figure>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 12px">
+            <img src="assets/finaut-journey.jpg" alt="Journey map of the authorisation flow with pain points" style="width: 100%; height: 200px; object-fit: cover; object-position: left top; border-radius: 4px; border: 1px solid var(--img-line); display: block">
+            <img src="assets/finaut-insight.png" alt="Insight board: six phases, what works, what creates friction, key findings" style="width: 100%; height: 200px; object-fit: cover; object-position: left top; border-radius: 4px; border: 1px solid var(--img-line); display: block">
+          </div>
+          <p style="font-size: 14px; color: var(--mut); margin: 10px 0 0">The journey map, and one candidate’s six phases summarised for the client.</p>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 36px 0; border-top: 1px solid var(--line3)">
+        <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 200px; max-width: 100%">The diagnosis</p>
+        <div style="flex: 1 1 320px; min-width: 0; max-width: 62ch">
+          <p style="font-size: 22px; line-height: 1.45; color: var(--ink); margin: 0 0 24px">Users are carrying the cost of systems that do not talk to each other. That is not a user problem, it is a system responsibility, and FinAut should take it back.</p>
+          <p style="font-size: 18px; line-height: 1.6; color: var(--body); margin: 0 0 20px">Everywhere we looked, in the expert evaluation, in users’ own words, and in how administrators actually get their job done, the same four patterns came back:</p>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; font-size: 18px; line-height: 1.6; color: var(--body)">
+            <li><span style="color: var(--acc); margin-right: 10px">01</span>No overview of where you are or what remains, for any of the three groups.</li>
+            <li><span style="color: var(--acc); margin-right: 10px">02</span>The systems do not talk to each other; users build the bridge themselves.</li>
+            <li><span style="color: var(--acc); margin-right: 10px">03</span>Everyone sees content that does not apply to them, and has to filter out the noise.</li>
+            <li><span style="color: var(--acc); margin-right: 10px">04</span>Much of the work is done manually, mostly by administrators the portal should be helping.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 36px 0; border-top: 1px solid var(--line3)">
+        <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 200px; max-width: 100%">From insight to recommendation</p>
+        <div style="flex: 1 1 320px; min-width: 0; max-width: 62ch">
+          <p style="font-size: 18px; line-height: 1.6; color: var(--body); margin: 0 0 20px">Every finding was tied to a decision, and the decisions were ordered so FinAut could start on Monday rather than after a re-platforming.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 10px 32px; padding: 0 0 20px; border-bottom: 1px solid var(--line3)">
+            <p style="font-size: 18px; line-height: 1.5; color: var(--sub); margin: 0">Nobody gets a status when they log in, whichever role they hold. This is where the experience collapses.</p>
+            <p style="font-size: 18px; line-height: 1.5; color: var(--ink); margin: 0"><span style="color: var(--acc); margin-right: 10px">→</span>Rebuild the start page as a status view with one clear next step, replacing today’s generic landing. Priority one.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 10px 32px; padding: 20px 0; border-bottom: 1px solid var(--line3)">
+            <p style="font-size: 18px; line-height: 1.5; color: var(--sub); margin: 0">Administrators build their own systems in Excel because the portal gives them no real-time status.</p>
+            <p style="font-size: 18px; line-height: 1.5; color: var(--ink); margin: 0"><span style="color: var(--acc); margin-right: 10px">→</span>A simple dashboard with colour-coded status per candidate, search as the primary entry, and enrolment where the data already is.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 10px 32px; padding: 20px 0; border-bottom: 1px solid var(--line3)">
+            <p style="font-size: 18px; line-height: 1.5; color: var(--sub); margin: 0">The expert evaluation found keyboard traps, contrast failures, an inaccessible embedded PDF and a possible leak of personal data.</p>
+            <p style="font-size: 18px; line-height: 1.5; color: var(--ink); margin: 0"><span style="color: var(--acc); margin-right: 10px">→</span>Fix the accessibility and GDPR breaches first: legally required whichever direction FinAut chooses.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 10px 32px; padding: 20px 0; border-bottom: 1px solid var(--line3)">
+            <p style="font-size: 18px; line-height: 1.5; color: var(--sub); margin: 0">The portal depends on a supplier’s interfaces, and replacing the supplier would be a heavy, risky project.</p>
+            <p style="font-size: 18px; line-height: 1.5; color: var(--ink); margin: 0"><span style="color: var(--acc); margin-right: 10px">→</span>Start with UX on the existing systems, and require an API from the supplier in parallel, so the fast win also builds the long-term structure.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 10px 32px; padding: 20px 0; border-bottom: 1px solid var(--line3)">
+            <p style="font-size: 18px; line-height: 1.5; color: var(--sub); margin: 0">The public site and the portal are technically woven together, though they serve different audiences.</p>
+            <p style="font-size: 18px; line-height: 1.5; color: var(--ink); margin: 0"><span style="color: var(--acc); margin-right: 10px">→</span>Separate them: the site proves the scheme is real and stays editorially owned, the portal moves people through a process.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 10px 32px; padding: 20px 0">
+            <p style="font-size: 18px; line-height: 1.5; color: var(--sub); margin: 0">Changes have been driven by single orders, without anyone owning the whole experience.</p>
+            <p style="font-size: 18px; line-height: 1.5; color: var(--ink); margin: 0"><span style="color: var(--acc); margin-right: 10px">→</span>An internal owner of digital development, able to set requirements to suppliers with the user experience as the starting point.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 36px 0; border-top: 1px solid var(--line3)">
+        <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 200px; max-width: 100%">Concept</p>
+        <div style="flex: 1 1 320px; min-width: 0; max-width: 62ch">
+          <p style="font-size: 18px; line-height: 1.6; color: var(--body); margin: 0 0 24px">The recommendations were drawn up as interface sketches: a logged-in page built on progressive disclosure, where you see immediately whether you are authorised and what to do next, and a public front page that routes customers, advisers and companies apart instead of into one menu.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 14px">
+            <img src="assets/finaut-concept-dashboard.png" alt="Concept for My page: greeting, next task, status per scheme, tasks and messages" style="width: 100%; height: 260px; object-fit: cover; object-position: top; border-radius: 4px; border: 1px solid var(--img-line); display: block">
+            <img src="assets/finaut-concept-public.png" alt="Concept for the public site: three routes for customers, advisers and companies" style="width: 100%; height: 260px; object-fit: cover; object-position: top; border-radius: 4px; border: 1px solid var(--img-line); display: block">
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 36px 0 0; border-top: 1px solid var(--line3)">
+        <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 200px; max-width: 100%">Learnings</p>
+        <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; font-size: 18px; line-height: 1.6; color: var(--body); flex: 1 1 320px; min-width: 0; max-width: 62ch">
+          <li>When users cope by building their own scaffolding, that is the product’s job left undone.</li>
+          <li>A system landscape is not an excuse: users experience one service, whichever platform answers.</li>
+          <li>Insight is only worth what it changes, so every finding was paired with a decision and a priority.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section data-screen-label="FinAut footer EN" style="padding: clamp(32px, 5vw, 48px) 0 clamp(56px, 8vw, 88px); border-top: 1px solid var(--line2)">
+      <p style="font-size: 14px; color: var(--mut); margin: 0; max-width: 60ch">Findings and concepts are shown in anonymised form due to NDAs. Happy to walk through the details over a coffee: <a href="mailto:anastasia.buialo@gmail.com" style="text-decoration: none">anastasia.buialo@gmail.com</a></p>
+      <p style="margin: 28px 0 0"><a href="Anastasia Buialo - Portfolio v2.dc.html" style="display: inline-block; font-size: 18px; color: var(--ink); border: 1px solid var(--line4); text-decoration: none; padding: 14px 28px; border-radius: 999px; white-space: nowrap; transition: border-color 0.2s, color 0.2s, transform 0.2s" style-hover="border-color: var(--acc); color: var(--acc2); transform: translateY(-3px)">← All work</a></p>
+    </section>
+  </main>
+</div>
+</sc-if>
+
+<sc-if value="{{ isNO }}" hint-placeholder-val="{{ false }}">
+<div data-screen-label="FinAut NO">
+
+  <header style="position: sticky; top: 0; z-index: 50; background: var(--header-bg); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line2)">
+    <div style="max-width: 1040px; margin: 0 auto; padding: 16px clamp(16px, 4vw, 32px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 20px">
+      <a href="Anastasia Buialo - Portfolio v2.dc.html" style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; white-space: nowrap">← Anastasia Buialo</a>
+      <nav style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px">
+        <div style="display: flex; align-items: center; gap: 2px; border: 1px solid var(--line); border-radius: 999px; padding: 3px">
+          <button onClick="{{ setEN }}" style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.1em; padding: 5px 12px; border-radius: 999px; border: none; background: transparent; color: var(--sub); cursor: pointer" style-hover="color: var(--ink)">EN</button>
+          <button style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.1em; padding: 5px 12px; border-radius: 999px; border: none; background: var(--ink); color: var(--bg); cursor: pointer">NO</button>
+        </div>
+        <div style="display: flex; align-items: center; gap: 2px; border: 1px solid var(--line4); border-radius: 999px; padding: 3px">
+          <button onClick="{{ setLight }}" style="{{ lightBtnStyle }}">light</button>
+          <button onClick="{{ setDark }}" style="{{ darkBtnStyle }}">dark</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main style="max-width: 1040px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px)">
+
+    <section data-screen-label="FinAut hero NO" style="padding: clamp(48px, 8vw, 88px) 0 clamp(32px, 5vw, 48px)">
+      <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--acc); margin: 0 0 28px">FinAut · 2026 · UX-designer, Netlife</p>
+      <h1 style="font-size: clamp(44px, 6.4vw, 92px); font-weight: 500; line-height: 1.02; letter-spacing: -0.02em; margin: 0">Gjør løpet selvforklarende</h1>
+      <p style="font-size: clamp(20px, 2.3vw, 27px); line-height: 1.45; font-weight: 400; color: var(--big); margin: 28px 0 0; max-width: 46ch; text-wrap: pretty">Et innsiktsarbeid om portalen som holder norske finansrådgivere autorisert, gjort om til et beslutningsgrunnlag kunden kunne handle på.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 24px 40px; margin-top: 44px; padding-top: 28px; border-top: 1px solid var(--line3)">
+        <div>
+          <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sub); margin: 0 0 10px">Rolle</p>
+          <p style="font-size: 18px; color: var(--ink); margin: 0">UX-designer, ansvarlig for innsikt</p>
+        </div>
+        <div>
+          <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sub); margin: 0 0 10px">Metoder</p>
+          <p style="font-size: 18px; color: var(--ink); margin: 0">Ekspertevaluering, dybdeintervjuer, modererte brukertester, brukerreisekartlegging, systemkartlegging, workshop</p>
+        </div>
+        <div>
+          <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sub); margin: 0 0 10px">Brukergrupper</p>
+          <p style="font-size: 18px; color: var(--ink); margin: 0">Kandidater, autoriserte rådgivere, bedriftsansvarlige</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="FinAut value NO" style="padding: clamp(40px, 6vw, 64px) 0; border-top: 1px solid var(--line2)">
+      <h2 style="font-size: clamp(26px, 3.2vw, 42px); font-weight: 500; letter-spacing: -0.01em; margin: 0 0 32px">Hva innsiktsarbeidet ga FinAut</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 32px 48px">
+        <div>
+          <p style="font-size: 18px; line-height: 1.6; color: var(--ink); margin: 0"><span style="color: var(--acc); margin-right: 10px">01</span>Én diagnose i stedet for spredte klager: fire mønstre som forklarer nesten alle symptomene i portalen.</p>
+        </div>
+        <div>
+          <p style="font-size: 18px; line-height: 1.6; color: var(--ink); margin: 0"><span style="color: var(--acc); margin-right: 10px">02</span>Et strategisk valg gjort konkret: tre mulige retninger, veid mot kostnad og leverandøravhengighet, med en anbefalt vei.</p>
+        </div>
+        <div>
+          <p style="font-size: 18px; line-height: 1.6; color: var(--ink); margin: 0"><span style="color: var(--acc); margin-right: 10px">03</span>Tre prioriteringer å starte med, hver knyttet til tiden den frigjør, pluss dokumenterte UU- og GDPR-brudd som måtte lukkes uansett.</p>
+        </div>
+        <div>
+          <p style="font-size: 18px; line-height: 1.6; color: var(--ink); margin: 0"><span style="color: var(--acc); margin-right: 10px">04</span>Grensesnittkonsepter for begge portalene, slik at anbefalingene kunne ses og diskuteres i stedet for å leses.</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="FinAut story NO" style="padding: clamp(40px, 6vw, 64px) 0 clamp(48px, 7vw, 80px); border-top: 1px solid var(--line2)">
+
+      <div style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 0 0 36px">
+        <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 200px; max-width: 100%">Problem</p>
+        <div style="flex: 1 1 320px; min-width: 0; max-width: 62ch">
+          <p style="font-size: 18px; line-height: 1.6; color: var(--body); margin: 0 0 20px">FinAut forvalter autorisasjonsordningene som holder rådgivere i finansnæringen kvalifisert. Ordningen har vokst i omfang og kompleksitet, og ligger oppå flere læringsplattformer eid av leverandører. Kandidater sliter med å se hvor de er og hva som gjenstår, rådgivere er usikre på om den årlige oppdateringen er gjort, og bedriftsansvarlige bruker dagene som et menneskelig påminnelsessystem.</p>
+          <p style="font-size: 18px; line-height: 1.6; color: var(--body); margin: 0 0 24px">Oppdraget var ikke å endre ordningen, men å forstå hvordan den oppleves, og gi FinAut et beslutningsgrunnlag for veien videre.</p>
+          <img src="assets/finaut-today.png" alt="Portalen i dag: en profilside med en lang sidemeny av parallelle innganger" style="width: 100%; height: 300px; object-fit: cover; object-position: top; border-radius: 4px; border: 1px solid var(--img-line); display: block">
+          <p style="font-size: 14px; color: var(--mut); margin: 10px 0 0">I dag: åtte parallelle innganger, ingen status, ingen neste steg.</p>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 36px 0; border-top: 1px solid var(--line3)">
+        <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 200px; max-width: 100%">Innsikt</p>
+        <div style="flex: 1 1 320px; min-width: 0; max-width: 62ch">
+          <p style="font-size: 18px; line-height: 1.6; color: var(--body); margin: 0 0 20px">En gjennomgang av innsikten FinAut allerede hadde, en tverrfaglig ekspertevaluering av finaut.no, Min side og bedriftssiden, dybdeintervjuer og modererte brukertester med alle tre brukergruppene samt nøkkelpersoner hos FinAut og leverandørene, en workshop med bedriftsansvarlige, og en kartlegging av systemene og hvordan de overleverer til hverandre.</p>
+          <p style="font-size: 18px; line-height: 1.6; color: var(--body); margin: 0 0 24px">Brukerreisene ble kartlagt med mental modell-metoden, som skiller det brukeren prøver å oppnå fra det systemet tilbyr som svar. Det var det som gjorde gapet synlig: oppgavelaget er godt forstått, støttelaget svarer på noe annet.</p>
+          <figure style="margin: 0 0 24px; padding: 0 0 0 20px; border-left: 2px solid var(--acc)">
+            <blockquote style="font-size: 18px; line-height: 1.5; font-style: italic; color: var(--ink); margin: 0">«Hvor er jeg, hva må jeg gjøre?»</blockquote>
+            <figcaption style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mut); margin-top: 12px">Kandidat, kjernebehov i alle faser</figcaption>
+          </figure>
+          <figure style="margin: 0 0 24px; padding: 0 0 0 20px; border-left: 2px solid var(--acc)">
+            <blockquote style="font-size: 18px; line-height: 1.5; font-style: italic; color: var(--ink); margin: 0">«Jeg er ferdig. Er jeg det?»</blockquote>
+            <figcaption style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mut); margin-top: 12px">Erfaren rådgiver, etter fullført årlig oppdatering</figcaption>
+          </figure>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 12px">
+            <img src="assets/finaut-journey.jpg" alt="Brukerreisekart over autorisasjonsløpet med smertepunkter" style="width: 100%; height: 200px; object-fit: cover; object-position: left top; border-radius: 4px; border: 1px solid var(--img-line); display: block">
+            <img src="assets/finaut-insight.png" alt="Innsiktsflate: seks faser, hva som fungerer, hva som skaper friksjon, nøkkelfunn" style="width: 100%; height: 200px; object-fit: cover; object-position: left top; border-radius: 4px; border: 1px solid var(--img-line); display: block">
+          </div>
+          <p style="font-size: 14px; color: var(--mut); margin: 10px 0 0">Brukerreisekartet, og én kandidats seks faser oppsummert for kunden.</p>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 36px 0; border-top: 1px solid var(--line3)">
+        <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 200px; max-width: 100%">Diagnosen</p>
+        <div style="flex: 1 1 320px; min-width: 0; max-width: 62ch">
+          <p style="font-size: 22px; line-height: 1.45; color: var(--ink); margin: 0 0 24px">Brukerne bærer kostnaden for at systemene ikke snakker sammen. Det er ikke et brukerproblem, det er et systemansvar, og FinAut bør ta det ansvaret tilbake.</p>
+          <p style="font-size: 18px; line-height: 1.6; color: var(--body); margin: 0 0 20px">Uansett hvor vi så, i ekspertevalueringen, i brukernes egne ord, og i hvordan bedriftsansvarlige faktisk løser jobben sin, gikk de samme fire mønstrene igjen:</p>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; font-size: 18px; line-height: 1.6; color: var(--body)">
+            <li><span style="color: var(--acc); margin-right: 10px">01</span>Ingen oversikt over hvor man er eller hva som gjenstår, for noen av de tre gruppene.</li>
+            <li><span style="color: var(--acc); margin-right: 10px">02</span>Systemene snakker ikke sammen; brukerne bygger broen selv.</li>
+            <li><span style="color: var(--acc); margin-right: 10px">03</span>Alle ser innhold som ikke gjelder dem, og må filtrere bort støyen selv.</li>
+            <li><span style="color: var(--acc); margin-right: 10px">04</span>Mye av jobben gjøres manuelt, mest av bedriftsansvarlige som portalen burde hjulpet.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 36px 0; border-top: 1px solid var(--line3)">
+        <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 200px; max-width: 100%">Fra innsikt til anbefaling</p>
+        <div style="flex: 1 1 320px; min-width: 0; max-width: 62ch">
+          <p style="font-size: 18px; line-height: 1.6; color: var(--body); margin: 0 0 20px">Hvert funn ble koblet til en beslutning, og beslutningene ble prioritert slik at FinAut kunne starte på mandag i stedet for etter en plattformbytte.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 10px 32px; padding: 0 0 20px; border-bottom: 1px solid var(--line3)">
+            <p style="font-size: 18px; line-height: 1.5; color: var(--sub); margin: 0">Ingen får en status når de logger inn, uansett rolle. Det er her opplevelsen kollapser.</p>
+            <p style="font-size: 18px; line-height: 1.5; color: var(--ink); margin: 0"><span style="color: var(--acc); margin-right: 10px">→</span>Bygg om startsiden til en statusoversikt med ett tydelig neste steg, i stedet for dagens generiske landing. Prioritet én.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 10px 32px; padding: 20px 0; border-bottom: 1px solid var(--line3)">
+            <p style="font-size: 18px; line-height: 1.5; color: var(--sub); margin: 0">Bedriftsansvarlige bygger egne systemer i Excel fordi portalen ikke gir dem status i sanntid.</p>
+            <p style="font-size: 18px; line-height: 1.5; color: var(--ink); margin: 0"><span style="color: var(--acc); margin-right: 10px">→</span>Et enkelt dashbord med fargekodet status per kandidat, søk som primær inngang, og påmelding der dataene allerede er.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 10px 32px; padding: 20px 0; border-bottom: 1px solid var(--line3)">
+            <p style="font-size: 18px; line-height: 1.5; color: var(--sub); margin: 0">Ekspertevalueringen fant tastaturfeller, kontrastbrudd, en innebygget PDF som ikke er universelt utformet, og en mulig lekkasje av personopplysninger.</p>
+            <p style="font-size: 18px; line-height: 1.5; color: var(--ink); margin: 0"><span style="color: var(--acc); margin-right: 10px">→</span>Lukk UU- og GDPR-bruddene først: lovpålagt uansett hvilken retning FinAut velger.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 10px 32px; padding: 20px 0; border-bottom: 1px solid var(--line3)">
+            <p style="font-size: 18px; line-height: 1.5; color: var(--sub); margin: 0">Portalen er avhengig av en leverandørs grensesnitt, og å bytte leverandør ville vært et tungt og risikabelt prosjekt.</p>
+            <p style="font-size: 18px; line-height: 1.5; color: var(--ink); margin: 0"><span style="color: var(--acc); margin-right: 10px">→</span>Start med UX på dagens systemer, og still krav om et API fra leverandøren parallelt, slik at den raske gevinsten også bygger strukturen på sikt.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 10px 32px; padding: 20px 0; border-bottom: 1px solid var(--line3)">
+            <p style="font-size: 18px; line-height: 1.5; color: var(--sub); margin: 0">Nettsiden og portalen er teknisk vevd sammen, selv om de møter ulike målgrupper.</p>
+            <p style="font-size: 18px; line-height: 1.5; color: var(--ink); margin: 0"><span style="color: var(--acc); margin-right: 10px">→</span>Skill dem: nettsiden beviser at ordningen er ekte og forblir redaksjonelt eid, portalen tar folk gjennom en prosess.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 10px 32px; padding: 20px 0">
+            <p style="font-size: 18px; line-height: 1.5; color: var(--sub); margin: 0">Endringer har vært drevet av enkeltbestillinger, uten at noen eier helheten.</p>
+            <p style="font-size: 18px; line-height: 1.5; color: var(--ink); margin: 0"><span style="color: var(--acc); margin-right: 10px">→</span>En intern eier av den digitale utviklingen, som kan stille krav til leverandørene med brukeropplevelsen som utgangspunkt.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 36px 0; border-top: 1px solid var(--line3)">
+        <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 200px; max-width: 100%">Konsept</p>
+        <div style="flex: 1 1 320px; min-width: 0; max-width: 62ch">
+          <p style="font-size: 18px; line-height: 1.6; color: var(--body); margin: 0 0 24px">Anbefalingene ble tegnet opp som grensesnittskisser: en innlogget side bygget på progressiv avdekking, der du med en gang ser om du er autorisert og hva du skal gjøre videre, og en forside som ruter kunder, rådgivere og bedrifter hver for seg i stedet for inn i én meny.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 14px">
+            <img src="assets/finaut-concept-dashboard.png" alt="Konsept for Min side: hilsen, neste oppgave, status per ordning, oppgaver og beskjeder" style="width: 100%; height: 260px; object-fit: cover; object-position: top; border-radius: 4px; border: 1px solid var(--img-line); display: block">
+            <img src="assets/finaut-concept-public.png" alt="Konsept for nettsiden: tre veier for kunder, rådgivere og bedrifter" style="width: 100%; height: 260px; object-fit: cover; object-position: top; border-radius: 4px; border: 1px solid var(--img-line); display: block">
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 36px 0 0; border-top: 1px solid var(--line3)">
+        <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 200px; max-width: 100%">Læring</p>
+        <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; font-size: 18px; line-height: 1.6; color: var(--body); flex: 1 1 320px; min-width: 0; max-width: 62ch">
+          <li>Når brukerne klarer seg ved å bygge sitt eget stillas, er det produktets jobb som står ugjort.</li>
+          <li>Et systemlandskap er ingen unnskyldning: brukerne opplever én tjeneste, uansett hvilken plattform som svarer.</li>
+          <li>Innsikt er verdt akkurat det den endrer, så hvert funn ble koblet til en beslutning og en prioritering.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section data-screen-label="FinAut footer NO" style="padding: clamp(32px, 5vw, 48px) 0 clamp(56px, 8vw, 88px); border-top: 1px solid var(--line2)">
+      <p style="font-size: 14px; color: var(--mut); margin: 0; max-width: 60ch">Funn og konsepter vises i anonymisert form på grunn av NDA-er. Jeg går gjerne gjennom detaljene over en kaffe: <a href="mailto:anastasia.buialo@gmail.com" style="text-decoration: none">anastasia.buialo@gmail.com</a></p>
+      <p style="margin: 28px 0 0"><a href="Anastasia Buialo - Portfolio v2.dc.html" style="display: inline-block; font-size: 18px; color: var(--ink); border: 1px solid var(--line4); text-decoration: none; padding: 14px 28px; border-radius: 999px; white-space: nowrap; transition: border-color 0.2s, color 0.2s, transform 0.2s" style-hover="border-color: var(--acc); color: var(--acc2); transform: translateY(-3px)">← Alle prosjekter</a></p>
+    </section>
+  </main>
+</div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;defaultLang&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;en&quot;, &quot;no&quot;], &quot;default&quot;: &quot;en&quot;, &quot;tsType&quot;: &quot;'en' | 'no'&quot;, &quot;section&quot;: &quot;Case&quot;}}">
+class Component extends DCLogic {
+  state = { lang: null, theme: null };
+
+  componentDidMount() {
+    let savedTheme = null, savedLang = null;
+    try {
+      savedTheme = localStorage.getItem('ab-portfolio-theme');
+      savedLang = localStorage.getItem('ab-portfolio-lang');
+    } catch (e) {}
+    const theme = savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : 'light';
+    const lang = savedLang === 'no' || savedLang === 'en' ? savedLang : (this.props.defaultLang ?? 'en');
+    this.setState({ theme, lang });
+    document.body.dataset.theme = theme;
+  }
+
+  componentDidUpdate() {
+    if (this.state.theme) document.body.dataset.theme = this.state.theme;
+  }
+
+  setTheme(theme) {
+    try { localStorage.setItem('ab-portfolio-theme', theme); } catch (e) {}
+    this.setState({ theme });
+  }
+
+  setLang(lang) {
+    try { localStorage.setItem('ab-portfolio-lang', lang); } catch (e) {}
+    this.setState({ lang });
+  }
+
+  themeBtnStyle(active) {
+    return {
+      fontFamily: "'Futura', 'Jost', sans-serif", fontSize: 11, fontWeight: 700,
+      letterSpacing: '0.1em', textTransform: 'lowercase', padding: '5px 12px',
+      borderRadius: 999, border: 'none', cursor: 'pointer', lineHeight: 1.2,
+      background: active ? 'var(--ink)' : 'transparent',
+      color: active ? 'var(--bg)' : 'var(--sub)',
+      transition: 'background 0.2s, color 0.2s',
+    };
+  }
+
+  renderVals() {
+    const lang = this.state.lang ?? (this.props.defaultLang ?? 'en');
+    return {
+      isEN: lang === 'en',
+      isNO: lang === 'no',
+      setEN: () => this.setLang('en'),
+      setNO: () => this.setLang('no'),
+      setLight: () => this.setTheme('light'),
+      setDark: () => this.setTheme('dark'),
+      lightBtnStyle: this.themeBtnStyle((this.state.theme ?? 'light') === 'light'),
+      darkBtnStyle: this.themeBtnStyle((this.state.theme ?? 'light') === 'dark'),
+    };
+  }
+}
+</script>
+</body>
+</html>

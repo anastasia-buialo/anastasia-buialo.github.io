@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/avatar.png">
+<style>
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--acc); outline-offset: 3px; border-radius: 4px; }
+body { margin: 0; background-color: var(--bg); overflow-x: clip; color: var(--ink); font-family: 'Suisse Intl', 'Suisse Int\'l', 'Switzer', sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { font-family: 'Futura', 'Jost', sans-serif; }
+::selection { background: var(--ink); color: var(--bg); }
+body::after { content: ""; position: fixed; inset: 0; z-index: 2147483647; pointer-events: none; opacity: 0.35; mix-blend-mode: multiply; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.18 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E"); }
+:root { --bg: #d6d6d2; --ink: #17171b; --big: #2b2c30; --body: #212226; --sub: #34353b; --mut: #3f4046; --acc: #4338ca; --acc2: #4f46e5; --acc3: #3730a3; --line: rgba(0,0,0,0.14); --line2: rgba(0,0,0,0.16); --line3: rgba(0,0,0,0.18); --line4: rgba(0,0,0,0.4); --wash: rgba(0,0,0,0.02); --header-bg: rgba(214,214,210,0.88); --img-line: rgba(79,70,229,0.28); }
+body[data-theme="dark"] { --bg: #030712; --ink: #f9fafb; --big: #e5e7eb; --body: #d1d5db; --sub: #9ca3af; --mut: #9ca3af; --acc: #818cf8; --acc2: #a5b4fc; --acc3: #c7d2fe; --line: rgba(255,255,255,0.12); --line2: rgba(255,255,255,0.08); --line3: rgba(255,255,255,0.1); --line4: rgba(255,255,255,0.55); --wash: rgba(255,255,255,0.02); --header-bg: rgba(3,7,18,0.85); --img-line: rgba(129,140,248,0.25); }
+body { transition: background-color 0.3s, color 0.3s; }
+body[data-theme="dark"]::after { content: ""; position: fixed; inset: 0; z-index: 2147483647; pointer-events: none; opacity: 0.8; mix-blend-mode: overlay; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.22 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E"); }
+a { color: var(--acc); } a:hover { color: var(--acc2); }
+</style>
+</helmet>
+
+<sc-if value="{{ isEN }}" hint-placeholder-val="{{ true }}">
+<div data-screen-label="Case EN">
+
+  <header style="position: sticky; top: 0; z-index: 50; background: var(--header-bg); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line2)">
+    <div style="max-width: 1040px; margin: 0 auto; padding: 16px clamp(16px, 4vw, 32px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 20px">
+      <a href="Anastasia Buialo - Portfolio v2.dc.html" style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; white-space: nowrap">← Anastasia Buialo</a>
+      <nav style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px">
+        <div style="display: flex; align-items: center; gap: 2px; border: 1px solid var(--line); border-radius: 999px; padding: 3px">
+          <button style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.1em; padding: 5px 12px; border-radius: 999px; border: none; background: var(--ink); color: var(--bg); cursor: pointer">EN</button>
+          <button onClick="{{ setNO }}" style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.1em; padding: 5px 12px; border-radius: 999px; border: none; background: transparent; color: var(--sub); cursor: pointer" style-hover="color: var(--ink)">NO</button>
+        </div>
+        <div style="display: flex; align-items: center; gap: 2px; border: 1px solid var(--line4); border-radius: 999px; padding: 3px">
+          <button onClick="{{ setLight }}" style="{{ lightBtnStyle }}">light</button>
+          <button onClick="{{ setDark }}" style="{{ darkBtnStyle }}">dark</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main style="max-width: 1040px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px)">
+
+    <section data-screen-label="Case hero EN" style="padding: clamp(48px, 8vw, 88px) 0 clamp(32px, 5vw, 48px)">
+      <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--acc); margin: 0 0 28px">Otovo · 2023 · Lead UX designer</p>
+      <h1 style="font-size: clamp(44px, 6.4vw, 92px); font-weight: 500; line-height: 1.02; letter-spacing: -0.02em; margin: 0">Solar Planner</h1>
+      <p style="font-size: clamp(20px, 2.3vw, 27px); line-height: 1.45; font-weight: 400; color: var(--big); margin: 28px 0 0; max-width: 44ch; text-wrap: pretty">Self-checkout for residential solar: the customer in charge, never left alone.</p>
+      <img src="assets/otovo-final.webp" alt="Final flow: roof drawing, panel layout and offer on mobile" style="width: 100%; height: auto; margin-top: 44px; border-radius: 4px; border: 1px solid var(--img-line); display: block">
+      <div style="display: flex; flex-wrap: wrap; gap: 28px 56px; margin-top: 44px; padding-top: 28px; border-top: 1px solid var(--line3)">
+        <div>
+          <p style="font-size: clamp(36px, 4.4vw, 60px); font-weight: 500; letter-spacing: -0.02em; color: var(--acc2); margin: 0; line-height: 1; font-family: 'Futura', 'Jost', sans-serif">+40%</p>
+          <p style="font-size: 14px; color: var(--sub); margin: 10px 0 0; max-width: 26ch">conversion for customers who started self-checkout</p>
+        </div>
+        <div>
+          <p style="font-size: clamp(36px, 4.4vw, 60px); font-weight: 500; letter-spacing: -0.02em; color: var(--acc2); margin: 0; line-height: 1; font-family: 'Futura', 'Jost', sans-serif">13</p>
+          <p style="font-size: 14px; color: var(--sub); margin: 10px 0 0; max-width: 26ch">markets, after a pilot in Sweden, France and Poland</p>
+        </div>
+        <div>
+          <p style="font-size: clamp(28px, 3vw, 42px); font-weight: 500; letter-spacing: -0.01em; color: var(--acc2); margin: 0; line-height: 1.15; font-family: 'Futura', 'Jost', sans-serif">Finalist</p>
+          <p style="font-size: 14px; color: var(--sub); margin: 10px 0 0; max-width: 26ch">UX Nordic Award 2023</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Story EN" style="padding: clamp(40px, 6vw, 64px) 0 clamp(48px, 7vw, 80px); border-top: 1px solid var(--line2)">
+      <div style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 0 0 36px">
+        <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 200px; max-width: 100%">Problem</p>
+        <div style="flex: 1 1 320px; min-width: 0; max-width: 62ch">
+          <p style="font-size: 18px; line-height: 1.6; color: var(--body); margin: 0 0 20px">Buying solar meant handing over your details and waiting for a sales call. Customers who had already decided were slowed down by a process built for the undecided, but roofs, eaves and panel counts are hard to judge alone, so pure self-service risked costly wrong orders.</p>
+          <figure style="margin: 0 0 24px; padding: 0 0 0 20px; border-left: 2px solid var(--acc)">
+            <blockquote style="font-size: 18px; line-height: 1.5; font-style: italic; color: var(--ink); margin: 0">“He’s annoyed with having to give his contact details and can’t get an instant price.”</blockquote>
+            <figcaption style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mut); margin-top: 12px">Interview, self-service customer</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 36px 0; border-top: 1px solid var(--line3)">
+        <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 200px; max-width: 100%">Research</p>
+        <div style="flex: 1 1 320px; min-width: 0; max-width: 62ch">
+          <p style="font-size: 18px; line-height: 1.6; color: var(--body); margin: 0 0 20px">Interviews with customers, sales agents and product managers, mapped into one journey covering the flow and the systems behind it. Then moderated remote tests with Swedish, French and Polish users, read next to funnel data and session recordings.</p>
+          <figure style="margin: 0 0 24px; padding: 0 0 0 20px; border-left: 2px solid var(--acc)">
+            <blockquote style="font-size: 18px; line-height: 1.5; font-style: italic; color: var(--ink); margin: 0">“He thinks the calc page has a lot of information and he doesn’t know what to do.” Information overload.</blockquote>
+            <figcaption style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mut); margin-top: 12px">Usability test with a non-customer</figcaption>
+          </figure>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); gap: 12px; margin-top: 4px">
+            <img src="assets/otovo-journey.avif" alt="Customer journey map" style="width: 100%; height: 130px; object-fit: cover; object-position: left; border-radius: 4px; border: 1px solid var(--img-line); display: block">
+            <img src="assets/otovo-stories.avif" alt="User stories on sticky notes" style="width: 100%; height: 130px; object-fit: cover; object-position: top; border-radius: 4px; border: 1px solid var(--img-line); display: block">
+            <img src="assets/otovo-insights.avif" alt="Insight board with quantified testing summary" style="width: 100%; height: 130px; object-fit: cover; object-position: left top; border-radius: 4px; border: 1px solid var(--img-line); display: block">
+            <img src="assets/otovo-workshop.webp" alt="Cross-functional workshop session" style="width: 100%; height: 130px; object-fit: cover; border-radius: 4px; border: 1px solid var(--img-line); display: block">
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 36px 0; border-top: 1px solid var(--line3)">
+        <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 200px; max-width: 100%">From insight to design</p>
+        <div style="flex: 1 1 320px; min-width: 0; max-width: 62ch">
+          <p style="font-size: 18px; line-height: 1.6; color: var(--body); margin: 0 0 20px">Every finding was tied to a decision, so the team could see what changed and why.</p>
+          <figure style="margin: 0 0 24px; padding: 0 0 0 20px; border-left: 2px solid var(--acc)">
+            <blockquote style="font-size: 18px; line-height: 1.5; font-style: italic; color: var(--ink); margin: 0">“The surface drawing is challenging on mobile. Users are struggling with the drawing step, restarting the Tetris multiple times.”</blockquote>
+            <figcaption style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mut); margin-top: 12px">Insight board, proof of concept</figcaption>
+          </figure>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 10px 32px; padding: 0 0 20px; border-bottom: 1px solid var(--line3)">
+            <p style="font-size: 18px; line-height: 1.5; color: var(--sub); margin: 0">3 of 5 didn’t understand what to do at the roof-drawing step, and most never found the tutorial.</p>
+            <p style="font-size: 18px; line-height: 1.5; color: var(--ink); margin: 0"><span style="color: var(--acc); margin-right: 10px">→</span>Instant visual feedback while drawing: panels appear on the roof as the shape closes, and the tutorial became part of the step instead of a link.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 10px 32px; padding: 20px 0; border-bottom: 1px solid var(--line3)">
+            <p style="font-size: 18px; line-height: 1.5; color: var(--sub); margin: 0">3 of 5 struggled with the eave dropdown, and Swedish testers read “longest” instead of “lowest”.</p>
+            <p style="font-size: 18px; line-height: 1.5; color: var(--ink); margin: 0"><span style="color: var(--acc); margin-right: 10px">→</span>The eave was moved onto the map as a direct selection, with the wording rewritten and tested per market.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 10px 32px; padding: 20px 0; border-bottom: 1px solid var(--line3)">
+            <p style="font-size: 18px; line-height: 1.5; color: var(--sub); margin: 0">2 of 4 never noticed the panel count, and half only realised the point of the exercise late.</p>
+            <p style="font-size: 18px; line-height: 1.5; color: var(--ink); margin: 0"><span style="color: var(--acc); margin-right: 10px">→</span>Panel count and price were pulled into the persistent bottom bar, updating live with every change.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 10px 32px; padding: 20px 0; border-bottom: 1px solid var(--line3)">
+            <p style="font-size: 18px; line-height: 1.5; color: var(--sub); margin: 0">2 of 5 wanted a fallback to a person; sales agents feared unqualified self-served orders.</p>
+            <p style="font-size: 18px; line-height: 1.5; color: var(--ink); margin: 0"><span style="color: var(--acc); margin-right: 10px">→</span>A visible “talk to an agent” route at every step, plus qualification questions that route risky cases to sales before an offer exists.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 10px 32px; padding: 20px 0; border-bottom: 1px solid var(--line3)">
+            <p style="font-size: 18px; line-height: 1.5; color: var(--sub); margin: 0">4 of 5 were frustrated at having to restart a faulty shape from scratch.</p>
+            <p style="font-size: 18px; line-height: 1.5; color: var(--ink); margin: 0"><span style="color: var(--acc); margin-right: 10px">→</span>Panels became individually removable and the layout editable, so a wrong drawing is corrected rather than redone.</p>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 36px 0; border-top: 1px solid var(--line3)">
+        <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 200px; max-width: 100%">Solution</p>
+        <div style="flex: 1 1 320px; min-width: 0; max-width: 62ch">
+          <p style="font-size: 18px; line-height: 1.6; color: var(--body); margin: 0 0 20px">Assisted self-checkout: the customer draws the roof, picks panels and gets an instant offer, while a sales agent follows along and steps in the moment something stalls. Self-service where it is faster, humans where they add trust.</p>
+          <figure style="margin: 0 0 24px; padding: 0 0 0 20px; border-left: 2px solid var(--acc)">
+            <blockquote style="font-size: 18px; line-height: 1.5; font-style: italic; color: var(--ink); margin: 0">“Customers who chose to start the self-checkout process converted 40 % higher.”</blockquote>
+            <figcaption style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mut); margin-top: 12px">Pilot result, Sweden, France and Poland</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 36px 0; border-top: 1px solid var(--line3)">
+        <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 200px; max-width: 100%">Learnings</p>
+        <div style="flex: 1 1 320px; min-width: 0; max-width: 62ch">
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; font-size: 18px; line-height: 1.6; color: var(--body)">
+            <li>Autonomy is not abandonment; the win came from a visible way back to a human.</li>
+            <li>A pilot in three markets settled an argument that had run for months.</li>
+            <li>A self-served sale no system recognises is not a sale, so the back stage mattered as much as the interface.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Footer EN" style="padding: clamp(32px, 5vw, 48px) 0 clamp(56px, 8vw, 88px); border-top: 1px solid var(--line2)">
+      <p style="font-size: 14px; color: var(--mut); margin: 0; max-width: 60ch">Some data is anonymised due to NDAs. Happy to walk through the details over a coffee: <a href="mailto:anastasia.buialo@gmail.com" style="text-decoration: none">anastasia.buialo@gmail.com</a></p>
+      <p style="margin: 28px 0 0"><a href="Anastasia Buialo - Portfolio v2.dc.html" style="display: inline-block; font-size: 18px; color: var(--ink); border: 1px solid var(--line4); text-decoration: none; padding: 14px 28px; border-radius: 999px; white-space: nowrap; transition: border-color 0.2s, color 0.2s, transform 0.2s" style-hover="border-color: var(--acc); color: var(--acc2); transform: translateY(-3px)">← All work</a></p>
+    </section>
+  </main>
+</div>
+</sc-if>
+
+<sc-if value="{{ isNO }}" hint-placeholder-val="{{ false }}">
+<div data-screen-label="Case NO">
+
+  <header style="position: sticky; top: 0; z-index: 50; background: var(--header-bg); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line2)">
+    <div style="max-width: 1040px; margin: 0 auto; padding: 16px clamp(16px, 4vw, 32px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 20px">
+      <a href="Anastasia Buialo - Portfolio v2.dc.html" style="font-family: 'Futura', 'Jost', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; white-space: nowrap">← Anastasia Buialo</a>
+      <nav style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px">
+        <div style="display: flex; align-items: center; gap: 2px; border: 1px solid var(--line); border-radius: 999px; padding: 3px">
+          <button onClick="{{ setEN }}" style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.1em; padding: 5px 12px; border-radius: 999px; border: none; background: transparent; color: var(--sub); cursor: pointer" style-hover="color: var(--ink)">EN</button>
+          <button style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.1em; padding: 5px 12px; border-radius: 999px; border: none; background: var(--ink); color: var(--bg); cursor: pointer">NO</button>
+        </div>
+        <div style="display: flex; align-items: center; gap: 2px; border: 1px solid var(--line4); border-radius: 999px; padding: 3px">
+          <button onClick="{{ setLight }}" style="{{ lightBtnStyle }}">light</button>
+          <button onClick="{{ setDark }}" style="{{ darkBtnStyle }}">dark</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main style="max-width: 1040px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px)">
+
+    <section data-screen-label="Case hero NO" style="padding: clamp(48px, 8vw, 88px) 0 clamp(32px, 5vw, 48px)">
+      <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--acc); margin: 0 0 28px">Otovo · 2023 · Ansvarlig UX-designer</p>
+      <h1 style="font-size: clamp(44px, 6.4vw, 92px); font-weight: 500; line-height: 1.02; letter-spacing: -0.02em; margin: 0">Solar Planner</h1>
+      <p style="font-size: clamp(20px, 2.3vw, 27px); line-height: 1.45; font-weight: 400; color: var(--big); margin: 28px 0 0; max-width: 44ch; text-wrap: pretty">Selvutsjekking for solenergi: kunden har kontrollen, men blir aldri overlatt til seg selv.</p>
+      <img src="assets/otovo-final.webp" alt="Ferdig flyt: taktegning, panelplassering og tilbud på mobil" style="width: 100%; height: auto; margin-top: 44px; border-radius: 4px; border: 1px solid var(--img-line); display: block">
+      <div style="display: flex; flex-wrap: wrap; gap: 28px 56px; margin-top: 44px; padding-top: 28px; border-top: 1px solid var(--line3)">
+        <div>
+          <p style="font-size: clamp(36px, 4.4vw, 60px); font-weight: 500; letter-spacing: -0.02em; color: var(--acc2); margin: 0; line-height: 1; font-family: 'Futura', 'Jost', sans-serif">+40 %</p>
+          <p style="font-size: 14px; color: var(--sub); margin: 10px 0 0; max-width: 26ch">konvertering for kunder som startet selvutsjekking</p>
+        </div>
+        <div>
+          <p style="font-size: clamp(36px, 4.4vw, 60px); font-weight: 500; letter-spacing: -0.02em; color: var(--acc2); margin: 0; line-height: 1; font-family: 'Futura', 'Jost', sans-serif">13</p>
+          <p style="font-size: 14px; color: var(--sub); margin: 10px 0 0; max-width: 26ch">markeder, etter pilot i Sverige, Frankrike og Polen</p>
+        </div>
+        <div>
+          <p style="font-size: clamp(28px, 3vw, 42px); font-weight: 500; letter-spacing: -0.01em; color: var(--acc2); margin: 0; line-height: 1.15; font-family: 'Futura', 'Jost', sans-serif">Finalist</p>
+          <p style="font-size: 14px; color: var(--sub); margin: 10px 0 0; max-width: 26ch">UX Nordic Award 2023</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Story NO" style="padding: clamp(40px, 6vw, 64px) 0 clamp(48px, 7vw, 80px); border-top: 1px solid var(--line2)">
+      <div style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 0 0 36px">
+        <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 200px; max-width: 100%">Problem</p>
+        <div style="flex: 1 1 320px; min-width: 0; max-width: 62ch">
+          <p style="font-size: 18px; line-height: 1.6; color: var(--body); margin: 0 0 20px">Å kjøpe solenergi betydde å legge igjen kontaktinfo og vente på en selger. Kunder som allerede hadde bestemt seg, ble bremset av en prosess laget for de usikre, men tak, takfot og antall paneler er vanskelig å vurdere alene, så ren selvbetjening kunne gi kostbare feilbestillinger.</p>
+          <figure style="margin: 0 0 24px; padding: 0 0 0 20px; border-left: 2px solid var(--acc)">
+            <blockquote style="font-size: 18px; line-height: 1.5; font-style: italic; color: var(--ink); margin: 0">“Han er irritert over å måtte oppgi kontaktopplysninger og ikke få en pris med en gang.”</blockquote>
+            <figcaption style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mut); margin-top: 12px">Intervju, selvbetjeningskunde</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 36px 0; border-top: 1px solid var(--line3)">
+        <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 200px; max-width: 100%">Innsikt</p>
+        <div style="flex: 1 1 320px; min-width: 0; max-width: 62ch">
+          <p style="font-size: 18px; line-height: 1.6; color: var(--body); margin: 0 0 20px">Intervjuer med kunder, selgere og produktsjefer, samlet i én kundereise som dekket både flyten og systemene bak. Deretter modererte fjerntester med svenske, franske og polske brukere, lest sammen med traktdata og sesjonsopptak.</p>
+          <figure style="margin: 0 0 24px; padding: 0 0 0 20px; border-left: 2px solid var(--acc)">
+            <blockquote style="font-size: 18px; line-height: 1.5; font-style: italic; color: var(--ink); margin: 0">“Han synes kalkulatorsiden har mye informasjon, og vet ikke hva han skal gjøre.” Informasjonsoverbelastning.</blockquote>
+            <figcaption style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mut); margin-top: 12px">Brukertest med en ikke-kunde</figcaption>
+          </figure>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); gap: 12px; margin-top: 4px">
+            <img src="assets/otovo-journey.avif" alt="Kundereisekart" style="width: 100%; height: 130px; object-fit: cover; object-position: left; border-radius: 4px; border: 1px solid var(--img-line); display: block">
+            <img src="assets/otovo-stories.avif" alt="Brukerhistorier på lapper" style="width: 100%; height: 130px; object-fit: cover; object-position: top; border-radius: 4px; border: 1px solid var(--img-line); display: block">
+            <img src="assets/otovo-insights.avif" alt="Innsiktsflate med kvantifisert testoppsummering" style="width: 100%; height: 130px; object-fit: cover; object-position: left top; border-radius: 4px; border: 1px solid var(--img-line); display: block">
+            <img src="assets/otovo-workshop.webp" alt="Tverrfaglig workshop" style="width: 100%; height: 130px; object-fit: cover; border-radius: 4px; border: 1px solid var(--img-line); display: block">
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 36px 0; border-top: 1px solid var(--line3)">
+        <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 200px; max-width: 100%">Fra innsikt til design</p>
+        <div style="flex: 1 1 320px; min-width: 0; max-width: 62ch">
+          <p style="font-size: 18px; line-height: 1.6; color: var(--body); margin: 0 0 20px">Hvert funn ble koblet til en beslutning, slik at teamet så hva som ble endret og hvorfor.</p>
+          <figure style="margin: 0 0 24px; padding: 0 0 0 20px; border-left: 2px solid var(--acc)">
+            <blockquote style="font-size: 18px; line-height: 1.5; font-style: italic; color: var(--ink); margin: 0">“Tegning av flaten er krevende på mobil. Brukerne sliter i tegnesteget og starter Tetrisen på nytt flere ganger.”</blockquote>
+            <figcaption style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mut); margin-top: 12px">Innsiktsflate, proof of concept</figcaption>
+          </figure>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 10px 32px; padding: 0 0 20px; border-bottom: 1px solid var(--line3)">
+            <p style="font-size: 18px; line-height: 1.5; color: var(--sub); margin: 0">3 av 5 forsto ikke hva de skulle gjøre i tegnesteget, og de fleste fant aldri veiledningen.</p>
+            <p style="font-size: 18px; line-height: 1.5; color: var(--ink); margin: 0"><span style="color: var(--acc); margin-right: 10px">→</span>Umiddelbar visuell tilbakemelding under tegning: panelene dukker opp på taket idet flaten lukkes, og veiledningen ble en del av steget i stedet for en lenke.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 10px 32px; padding: 20px 0; border-bottom: 1px solid var(--line3)">
+            <p style="font-size: 18px; line-height: 1.5; color: var(--sub); margin: 0">3 av 5 slet med nedtrekkslisten for takfot, og svenske testere leste «lengste» i stedet for «laveste».</p>
+            <p style="font-size: 18px; line-height: 1.5; color: var(--ink); margin: 0"><span style="color: var(--acc); margin-right: 10px">→</span>Takfoten ble flyttet ut på kartet som et direkte valg, med ordlyd skrevet om og testet per marked.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 10px 32px; padding: 20px 0; border-bottom: 1px solid var(--line3)">
+            <p style="font-size: 18px; line-height: 1.5; color: var(--sub); margin: 0">2 av 4 la aldri merke til antall paneler, og halvparten skjønte poenget med øvelsen for sent.</p>
+            <p style="font-size: 18px; line-height: 1.5; color: var(--ink); margin: 0"><span style="color: var(--acc); margin-right: 10px">→</span>Antall paneler og pris ble flyttet til den faste bunnlinjen, oppdatert live ved hver endring.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 10px 32px; padding: 20px 0; border-bottom: 1px solid var(--line3)">
+            <p style="font-size: 18px; line-height: 1.5; color: var(--sub); margin: 0">2 av 5 ønsket en vei tilbake til et menneske; selgerne fryktet ukvalifiserte selvbetjente ordrer.</p>
+            <p style="font-size: 18px; line-height: 1.5; color: var(--ink); margin: 0"><span style="color: var(--acc); margin-right: 10px">→</span>En synlig «snakk med en rådgiver» i hvert steg, pluss kvalifiseringsspørsmål som ruter risikable saker til salg før et tilbud finnes.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 10px 32px; padding: 20px 0; border-bottom: 1px solid var(--line3)">
+            <p style="font-size: 18px; line-height: 1.5; color: var(--sub); margin: 0">4 av 5 var frustrerte over å måtte starte en feil flate helt på nytt.</p>
+            <p style="font-size: 18px; line-height: 1.5; color: var(--ink); margin: 0"><span style="color: var(--acc); margin-right: 10px">→</span>Panelene ble mulige å fjerne enkeltvis og layouten redigerbar, slik at en feil tegning rettes i stedet for å gjøres om.</p>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 36px 0; border-top: 1px solid var(--line3)">
+        <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 200px; max-width: 100%">Løsning</p>
+        <div style="flex: 1 1 320px; min-width: 0; max-width: 62ch">
+          <p style="font-size: 18px; line-height: 1.6; color: var(--body); margin: 0 0 20px">Assistert selvutsjekking: kunden tegner taket, velger paneler og får tilbud umiddelbart, mens en selger følger med og hopper inn i det noe stopper. Selvbetjening der det går raskere, mennesker der de skaper tillit.</p>
+          <figure style="margin: 0 0 24px; padding: 0 0 0 20px; border-left: 2px solid var(--acc)">
+            <blockquote style="font-size: 18px; line-height: 1.5; font-style: italic; color: var(--ink); margin: 0">“Kunder som valgte å starte selvutsjekkingen, konverterte 40 % høyere.”</blockquote>
+            <figcaption style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mut); margin-top: 12px">Pilotresultat, Sverige, Frankrike og Polen</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 36px 0; border-top: 1px solid var(--line3)">
+        <p style="font-family: 'Futura', 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin: 0; flex: 0 0 auto; width: 200px; max-width: 100%">Læring</p>
+        <div style="flex: 1 1 320px; min-width: 0; max-width: 62ch">
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; font-size: 18px; line-height: 1.6; color: var(--body)">
+            <li>Autonomi er ikke det samme som å bli forlatt; gevinsten lå i en synlig vei tilbake til et menneske.</li>
+            <li>En pilot i tre markeder avgjorde en diskusjon som hadde gått i månedsvis.</li>
+            <li>Et selvbetjent salg ingen systemer kjenner igjen, er ikke et salg; systemene bak betydde like mye som grensesnittet.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Footer NO" style="padding: clamp(32px, 5vw, 48px) 0 clamp(56px, 8vw, 88px); border-top: 1px solid var(--line2)">
+      <p style="font-size: 14px; color: var(--mut); margin: 0; max-width: 60ch">Noe data er anonymisert på grunn av NDA-er. Jeg går gjerne gjennom detaljene over en kaffe: <a href="mailto:anastasia.buialo@gmail.com" style="text-decoration: none">anastasia.buialo@gmail.com</a></p>
+      <p style="margin: 28px 0 0"><a href="Anastasia Buialo - Portfolio v2.dc.html" style="display: inline-block; font-size: 18px; color: var(--ink); border: 1px solid var(--line4); text-decoration: none; padding: 14px 28px; border-radius: 999px; white-space: nowrap; transition: border-color 0.2s, color 0.2s, transform 0.2s" style-hover="border-color: var(--acc); color: var(--acc2); transform: translateY(-3px)">← Alle prosjekter</a></p>
+    </section>
+  </main>
+</div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;defaultLang&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;en&quot;, &quot;no&quot;], &quot;default&quot;: &quot;en&quot;, &quot;tsType&quot;: &quot;'en' | 'no'&quot;, &quot;section&quot;: &quot;Case&quot;}}">
+class Component extends DCLogic {
+  state = { lang: null, theme: null };
+
+  componentDidMount() {
+    let savedTheme = null, savedLang = null;
+    try {
+      savedTheme = localStorage.getItem('ab-portfolio-theme');
+      savedLang = localStorage.getItem('ab-portfolio-lang');
+    } catch (e) {}
+    const theme = savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : 'light';
+    const lang = savedLang === 'no' || savedLang === 'en' ? savedLang : (this.props.defaultLang ?? 'en');
+    this.setState({ theme, lang });
+    document.body.dataset.theme = theme;
+  }
+
+  componentDidUpdate() {
+    if (this.state.theme) document.body.dataset.theme = this.state.theme;
+  }
+
+  setTheme(theme) {
+    try { localStorage.setItem('ab-portfolio-theme', theme); } catch (e) {}
+    this.setState({ theme });
+  }
+
+  setLang(lang) {
+    try { localStorage.setItem('ab-portfolio-lang', lang); } catch (e) {}
+    this.setState({ lang });
+  }
+
+  themeBtnStyle(active) {
+    return {
+      fontFamily: "'Futura', 'Jost', sans-serif", fontSize: 11, fontWeight: 700,
+      letterSpacing: '0.1em', textTransform: 'lowercase', padding: '5px 12px',
+      borderRadius: 999, border: 'none', cursor: 'pointer', lineHeight: 1.2,
+      background: active ? 'var(--ink)' : 'transparent',
+      color: active ? 'var(--bg)' : 'var(--sub)',
+      transition: 'background 0.2s, color 0.2s',
+    };
+  }
+
+  renderVals() {
+    const lang = this.state.lang ?? (this.props.defaultLang ?? 'en');
+    return {
+      isEN: lang === 'en',
+      isNO: lang === 'no',
+      setEN: () => this.setLang('en'),
+      setNO: () => this.setLang('no'),
+      setLight: () => this.setTheme('light'),
+      setDark: () => this.setTheme('dark'),
+      lightBtnStyle: this.themeBtnStyle((this.state.theme ?? 'light') === 'light'),
+      darkBtnStyle: this.themeBtnStyle((this.state.theme ?? 'light') === 'dark'),
+    };
+  }
+}
+</script>
+</body>
+</html>
