@@ -573,6 +573,37 @@ body[data-lang="no"] .lang-no { display: block; }
 }
 .acc-panel[hidden] { display: none; }
 
+/* Short statement of approach (replaces the step grid) */
+.approach-lead {
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.55;
+  color: var(--body);
+  margin: 0;
+  max-width: 60ch;
+}
+
+/* Calm collapsible disclosure for secondary content (skills, more projects, experience) */
+.disclosure { border-top: 1px solid var(--line3); }
+.disclosure > .acc-head {
+  grid-template-columns: minmax(0, 1fr) auto;
+  padding: 22px 0;
+  border-top: none;
+}
+.disclosure > .acc-head .acc-title {
+  font-size: clamp(19px, 2.2vw, 26px);
+  font-weight: 400;
+}
+.disclosure > .acc-head:hover { background: transparent; }
+.disclosure > .acc-head:hover .acc-title { transform: none; color: var(--acc2); }
+.disclosure > .acc-head .acc-icon { color: var(--acc2); }
+.disclosure > .acc-panel {
+  display: block;
+  padding: 0 0 32px;
+}
+.disclosure > .acc-panel[hidden] { display: none; }
+.disclosure > .acc-panel .rows,
+.disclosure > .acc-panel .index { margin-top: 0; }
+
 .panel-body p { margin: 0; }
 .panel-body .desc {
   font-size: 16px;
