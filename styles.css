@@ -1259,5 +1259,5 @@ body[data-lang="no"] .lang-no { display: block; }
 
   /* Compact About: small avatar tucked at the top, tight gap */
   .about-grid { gap: 16px; }
-  .about-portrait { flex: 0 0 auto; width: 56px; min-width: 0; order: -1; }
+  .about-portrait { flex: 0 0 auto; width: 124px; min-width: 0; order: -1; }
 }
