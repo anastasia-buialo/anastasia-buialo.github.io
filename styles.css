@@ -573,13 +573,13 @@ body[data-lang="no"] .lang-no { display: block; }
 }
 .acc-panel[hidden] { display: none; }
 
-/* Short statement of approach (replaces the step grid) */
+/* Short statement of approach — kept smaller than the entry title */
 .approach-lead {
-  font-size: clamp(20px, 2.4vw, 26px);
-  line-height: 1.4;
+  font-size: 18px;
+  line-height: 1.45;
   color: var(--ink);
   margin: 0;
-  max-width: 40ch;
+  max-width: 46ch;
 }
 .approach-body {
   font-size: 16px;
@@ -764,11 +764,11 @@ body[data-lang="no"] .lang-no { display: block; }
 
   /* Mobile type scale: hero stays dominant, body steps down a grade
      so the desktop hierarchy (big display vs. calm body) is preserved. */
-  .hero-lead { font-size: 16px; line-height: 1.55; }
-  .about-lead { font-size: 17px; line-height: 1.5; }
+  .hero-lead { font-size: 15px; line-height: 1.5; }
+  .about-lead { font-size: 16px; line-height: 1.5; }
   .about-p2 { font-size: 15px; }
   .about-langs { font-size: 16px; }
-  .approach-lead { font-size: 18px; }
+  .approach-lead { font-size: 16px; }
   .approach-body { font-size: 15px; }
   .skills-text { font-size: 15px; }
   .vw-intro { font-size: 15px; }
@@ -777,8 +777,8 @@ body[data-lang="no"] .lang-no { display: block; }
   .disclosure > .acc-panel .row-list { font-size: 15px; }
   .note { font-size: 14px; }
 
-  /* Much smaller avatar on mobile (~1/3 of desktop) */
-  .about-portrait { flex: 0 0 auto; width: 92px; min-width: 0; }
+  /* Small avatar on mobile */
+  .about-portrait { flex: 0 0 auto; width: 46px; min-width: 0; }
 }
 .block-heading {
   font-size: clamp(20px, 2.4vw, 28px);
