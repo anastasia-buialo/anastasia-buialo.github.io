@@ -777,8 +777,8 @@ body[data-lang="no"] .lang-no { display: block; }
   .disclosure > .acc-panel .row-list { font-size: 15px; }
   .note { font-size: 14px; }
 
-  /* Small avatar on mobile */
-  .about-portrait { flex: 0 0 auto; width: 46px; min-width: 0; }
+  /* Tiny avatar on mobile */
+  .about-portrait { flex: 0 0 auto; width: 24px; min-width: 0; }
 }
 .block-heading {
   font-size: clamp(20px, 2.4vw, 28px);
