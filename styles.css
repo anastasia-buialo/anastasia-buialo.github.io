@@ -575,11 +575,18 @@ body[data-lang="no"] .lang-no { display: block; }
 
 /* Short statement of approach (replaces the step grid) */
 .approach-lead {
-  font-size: clamp(18px, 2vw, 22px);
-  line-height: 1.55;
-  color: var(--body);
+  font-size: clamp(20px, 2.4vw, 26px);
+  line-height: 1.4;
+  color: var(--ink);
   margin: 0;
-  max-width: 60ch;
+  max-width: 40ch;
+}
+.approach-body {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--body);
+  margin: 18px 0 0;
+  max-width: 58ch;
 }
 
 /* Calm collapsible disclosure for secondary content (skills, more projects, experience) */
@@ -601,6 +608,23 @@ body[data-lang="no"] .lang-no { display: block; }
   padding: 0 0 32px;
 }
 .disclosure > .acc-panel[hidden] { display: none; }
+/* Panel content runs full width: label sits above, not in a narrow left column */
+.disclosure > .acc-panel .row {
+  display: block;
+  padding: 20px 0;
+}
+.disclosure > .acc-panel .row-label {
+  width: auto;
+  margin: 0 0 12px;
+}
+.disclosure > .acc-panel .row-list {
+  columns: 20rem;
+  column-gap: 56px;
+}
+.disclosure > .acc-panel .row-list li {
+  break-inside: avoid;
+  margin: 0 0 14px;
+}
 .disclosure > .acc-panel .rows,
 .disclosure > .acc-panel .index { margin-top: 0; }
 
