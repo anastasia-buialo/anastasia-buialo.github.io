@@ -80,59 +80,87 @@
       <div class="story-row">
         <p class="story-label">Context</p>
         <div class="story-body">
-          <p>Tiltakshåndboka is a living overview of knowledge summaries on the effect of measures for children's and youth mental health. Its readers are clinicians and researchers, the content is dense and highly specialised, and the navigation is inherently demanding: a condition connects to measures, measures connect to tests and to systematic reviews.</p>
-          <p class="tight">My role is to lead the insight and the UX improvements, so that depth does not come at the cost of findability.</p>
+          <p>Tiltakshåndboka is a living overview of what works in children's and youth mental health. Its readers are clinicians and health professionals, the content is dense and highly specialised, and the navigation is inherently demanding: a condition connects to measures, measures connect to tests and to systematic reviews.</p>
+          <p class="tight">My role is to lead the insight and the UX improvements, so that depth does not come at the cost of findability. The work falls into two halves: what the testing revealed, and how that turned into design decisions.</p>
+        </div>
+      </div>
+
+      <h2 class="story-part"><span class="num">Part 1</span>What the testing revealed</h2>
+
+      <div class="story-row">
+        <p class="story-label">Method</p>
+        <div class="story-body">
+          <p>I ran moderated usability testing with seven professionals from across the field: family counsellors, specialist and school health nurses, and clinicians in child and youth mental health. Each worked through real tasks while I watched where they hesitated, what they said, and where they gave up.</p>
         </div>
       </div>
 
       <div class="story-row">
-        <p class="story-label">Insight</p>
+        <p class="story-label">The main finding</p>
         <div class="story-body">
-          <p>I work insight-first: how do professionals actually look for evidence, where do they get stuck, and what do they need to trust a summary and act on it. That evidence, not assumption, decides what we change and in what order.</p>
+          <p class="diagnosis">Every participant navigated by condition first, not through the measures page.</p>
+          <p>People start from the problem in front of them, a young person's condition, and expect the relevant measures to follow. The dedicated measures page, organised by type of measure, was almost no one's way in. Condition is the real front door.</p>
         </div>
       </div>
 
       <div class="story-row">
-        <p class="story-label">AI-assisted findability</p>
+        <p class="story-label">Where people got stuck</p>
         <div class="story-body">
-          <p>The material is too dense to browse from cold. I use AI to shorten the path from a question in a professional's own words to the right condition, measure or review, while keeping the evidence and its caveats intact. AI helps people find, it does not replace the clinical judgement or the source.</p>
+          <p>Five pain points came up again and again across the seven sessions:</p>
+          <ul class="learnings">
+            <li><strong>Search broke on real input.</strong> Typos, synonyms and combined terms all returned nothing (6 of 7). One professional missed a single letter in a therapy name, got zero results, and blamed herself: "I must need glasses."</li>
+            <li><strong>Comorbidity had no home.</strong> People rarely work with one isolated condition, but could only look at one at a time (6 of 7). Several asked, unprompted, to "tick two conditions and compare."</li>
+            <li><strong>"Systematic reviews" did not communicate.</strong> Most would not have clicked the label without being asked (6 of 7). "It could just be called research," one said.</li>
+            <li><strong>Interactive elements did not look clickable.</strong> People scrolled long lists without trying the links, and overlooked the filters (4 of 7).</li>
+            <li><strong>The evidence grading confused.</strong> "Good effect, low confidence" read as a contradiction, and the basis for comparison was unclear (4 of 7).</li>
+          </ul>
         </div>
       </div>
 
       <div class="story-row">
-        <p class="story-label">AI in the design process</p>
+        <p class="story-label">What already worked</p>
         <div class="story-body">
-          <p>I also used AI as a working tool. With the engineer and the client, I prototyped and pressure-tested interactions and flows in Claude, so we could try a direction and feel it before committing to build. What held up, we translated into new components the team can reuse.</p>
+          <p>The testing was not only a list of problems. Condition as an entry point, the effect information, the front page as a starting point and the restrained amount of text per page all held up, and every participant said they would recommend the resource to colleagues. The job was to protect what worked and clear the friction around it.</p>
         </div>
       </div>
 
-      <div class="story-row">
-        <p class="story-label">Navigation and structure</p>
-        <div class="story-body">
-          <p>The hard part is the graph: conditions, measures, tests and systematic reviews all reference each other. I work on the structure and the wayfinding so a professional can move between them without losing the thread, whether they arrive by search or by browsing.</p>
-        </div>
-      </div>
+      <h2 class="story-part"><span class="num">Part 2</span>From insight to design decisions</h2>
 
       <div class="story-row">
-        <p class="story-label">From insight to decisions</p>
+        <p class="story-label">Decisions</p>
         <div class="story-body">
-          <p>Every change is tied back to what professionals told us, so the team can see the reason behind it.</p>
+          <p>Each decision is tied back to a finding, so the team can see the reason behind it.</p>
           <div class="rec-row">
-            <p class="rec-problem">People arrive with a question in clinical language, not in our taxonomy terms.</p>
-            <p class="rec-fix"><span class="arrow">→</span>Search accepts natural, clinical phrasing and maps it to the right condition, measure or review.</p>
+            <p class="rec-problem">Search returned nothing on a typo, a synonym or two conditions at once (6 of 7).</p>
+            <p class="rec-fix"><span class="arrow">→</span>A forgiving search: tolerant of spelling and synonyms, able to handle combined terms, with live, visible feedback so people can see the results update.</p>
           </div>
           <div class="rec-row">
-            <p class="rec-problem">They need to trust a summary before acting, and want the evidence and its caveats in view.</p>
-            <p class="rec-fix"><span class="arrow">→</span>Every result keeps the evidence, its strength and its caveats one step away, so AI speeds the path without hiding the source.</p>
+            <p class="rec-problem">People work with comorbidity, but could only view one condition at a time (6 of 7).</p>
+            <p class="rec-fix"><span class="arrow">→</span>Treat two conditions at once: let people compare, and surface shared measures, instead of hiding "concurrent conditions" at the bottom of a page.</p>
           </div>
           <div class="rec-row">
-            <p class="rec-problem">The value is in the connections: a condition to its measures, a measure to its tests and reviews.</p>
-            <p class="rec-fix"><span class="arrow">→</span>Cross-links are first-class, so a professional moves across the graph without losing the thread.</p>
+            <p class="rec-problem">"Systematic reviews" did not tell people what was behind the link (6 of 7).</p>
+            <p class="rec-fix"><span class="arrow">→</span>Label sections in the audience's own words, tested with real users, with plain explanatory subtext rather than domain jargon.</p>
           </div>
           <div class="rec-row">
-            <p class="rec-problem">People come both to browse a field and to look up one specific thing.</p>
-            <p class="rec-fix"><span class="arrow">→</span>Two clear entries: fast search for the known item, and structured browse for exploration.</p>
+            <p class="rec-problem">Links, panels and filters were missed because they did not look interactive (4 of 7).</p>
+            <p class="rec-fix"><span class="arrow">→</span>Give interactive elements clear affordances, so a professional never has to guess what is clickable.</p>
           </div>
+          <div class="rec-row">
+            <p class="rec-problem">Effect and confidence together read as a contradiction (4 of 7).</p>
+            <p class="rec-fix"><span class="arrow">→</span>Code effect and confidence more clearly, and explain in plain language what "limited research" means in practice.</p>
+          </div>
+          <div class="rec-row">
+            <p class="rec-problem">Everyone entered by condition, yet the measures page was built as a primary route (7 of 7).</p>
+            <p class="rec-fix"><span class="arrow">→</span>Promote condition as the main way in, and add a condition filter to the measures page for people who start there.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-row">
+        <p class="story-label">AI in the process</p>
+        <div class="story-body">
+          <p>To move from a decision to something we could actually feel, I used AI as a working tool. With the engineer and the client, I prototyped and pressure-tested interactions and flows in Claude, so we could try a direction before committing to build. What held up became new components the team can reuse.</p>
+          <p class="tight">Inside the product, AI is aimed at one honest job: shortening the path from a question in a professional's own words to the right condition, measure or review, while keeping the evidence and its caveats intact. It helps people find; it does not replace the clinical judgement or the source.</p>
         </div>
       </div>
 
@@ -140,8 +168,8 @@
         <p class="story-label">Learnings</p>
         <ul class="learnings">
           <li>In a specialist domain, findability is the feature. Depth is worth nothing if people cannot reach it.</li>
-          <li>AI earns its place when it shortens the path to the right evidence, and stays honest about the source.</li>
-          <li>Demanding navigation is a structure problem first, an interface problem second.</li>
+          <li>Test the words, not just the flows. The biggest blockers here were vocabulary and affordance, not architecture.</li>
+          <li>Design for how people actually arrive. Everyone came by condition, so that is the front door.</li>
         </ul>
       </div>
     </section>
@@ -217,59 +245,87 @@
       <div class="story-row">
         <p class="story-label">Kontekst</p>
         <div class="story-body">
-          <p>Tiltakshåndboka er en levende oversikt over kunnskapsoppsummeringer om effekt av tiltak for barn og unges psykiske helse. Leserne er klinikere og forskere, innholdet er tett og spesialisert, og navigasjonen er iboende krevende: en tilstand henger sammen med tiltak, tiltak henger sammen med tester og med systematiske oversikter.</p>
-          <p class="tight">Min rolle er å lede innsikten og UX-forbedringene, slik at dybden ikke går på bekostning av gjenfinnbarhet.</p>
+          <p>Tiltakshåndboka er en levende oversikt over hva som virker i barn og unges psykiske helse. Leserne er klinikere og fagfolk, innholdet er tett og spesialisert, og navigasjonen er iboende krevende: en tilstand henger sammen med tiltak, tiltak henger sammen med tester og med systematiske oversikter.</p>
+          <p class="tight">Min rolle er å lede innsikten og UX-forbedringene, slik at dybden ikke går på bekostning av gjenfinnbarhet. Arbeidet faller i to halvdeler: hva testingen avdekket, og hvordan det ble til designbeslutninger.</p>
+        </div>
+      </div>
+
+      <h2 class="story-part"><span class="num">Del 1</span>Hva testingen avdekket</h2>
+
+      <div class="story-row">
+        <p class="story-label">Metode</p>
+        <div class="story-body">
+          <p>Jeg gjennomførte moderert brukertesting med sju fagfolk fra hele feltet: familieveiledere, spesial- og helsesykepleiere, og klinikere i barn og unges psykiske helse. Hver løste reelle oppgaver mens jeg fulgte med på hvor de nølte, hva de sa, og hvor de ga opp.</p>
         </div>
       </div>
 
       <div class="story-row">
-        <p class="story-label">Innsikt</p>
+        <p class="story-label">Hovedfunnet</p>
         <div class="story-body">
-          <p>Jeg jobber innsikt først: hvordan leter fagfolk faktisk etter evidens, hvor stopper de opp, og hva trenger de for å stole på en oppsummering og handle på den. Den innsikten, ikke antakelser, avgjør hva vi endrer og i hvilken rekkefølge.</p>
+          <p class="diagnosis">Samtlige deltakere navigerte via tilstand først, ikke via tiltakssiden.</p>
+          <p>Folk starter fra problemet foran seg, en ung persons tilstand, og forventer at de relevante tiltakene følger. Den egne tiltakssiden, organisert etter type tiltak, var nesten ingens inngang. Tilstand er den egentlige inngangsdøra.</p>
         </div>
       </div>
 
       <div class="story-row">
-        <p class="story-label">KI-assistert gjenfinnbarhet</p>
+        <p class="story-label">Der folk stoppet opp</p>
         <div class="story-body">
-          <p>Materialet er for tett til å bla i fra bunnen. Jeg bruker KI til å korte ned veien fra et spørsmål i fagpersonens egne ord til riktig tilstand, tiltak eller oversikt, samtidig som evidensen og forbeholdene holdes intakte. KI hjelper folk å finne, den erstatter ikke den faglige vurderingen eller kilden.</p>
+          <p>Fem smertepunkter kom igjen og igjen på tvers av de sju øktene:</p>
+          <ul class="learnings">
+            <li><strong>Søket brøt sammen på ekte input.</strong> Skrivefeil, synonymer og kombinerte søk ga null treff (6 av 7). En fagperson manglet én bokstav i et terapinavn, fikk ingen treff, og skyldte på seg selv: "Skulle hatt briller."</li>
+            <li><strong>Komorbiditet hadde ingen plass.</strong> Folk jobber sjelden med én isolert tilstand, men kunne bare se på én om gangen (6 av 7). Flere ba, uoppfordret, om å "huke av to tilstander og sammenligne."</li>
+            <li><strong>"Systematiske oversikter" kommuniserte ikke.</strong> De fleste ville ikke trykket på lenken uten å bli bedt om det (6 av 7). "Det kunne nesten bare hett forskning," sa en.</li>
+            <li><strong>Interaktive elementer så ikke klikkbare ut.</strong> Folk scrollet i lange lister uten å prøve lenkene, og overså filtrene (4 av 7).</li>
+            <li><strong>Effektgraderingen forvirret.</strong> "God effekt, lav tillit" ble lest som en motsetning, og sammenligningsgrunnlaget var utydelig (4 av 7).</li>
+          </ul>
         </div>
       </div>
 
       <div class="story-row">
-        <p class="story-label">KI i designprosessen</p>
+        <p class="story-label">Det som allerede virket</p>
         <div class="story-body">
-          <p>Jeg brukte også KI som arbeidsverktøy. Sammen med utvikleren og kunden prototypet og stresstestet jeg interaksjoner og flyt i Claude, så vi kunne prøve en retning og kjenne på den før vi bandt oss til å bygge. Det som holdt, oversatte vi til nye komponenter teamet kan gjenbruke.</p>
+          <p>Testingen var ikke bare en liste over problemer. Tilstand som inngang, effektinformasjonen, forsiden som startpunkt og den nøkterne tekstmengden per side holdt alt sammen, og samtlige deltakere sa de ville anbefalt ressursen til kolleger. Jobben var å verne om det som virket og rydde vekk friksjonen rundt.</p>
         </div>
       </div>
 
-      <div class="story-row">
-        <p class="story-label">Navigasjon og struktur</p>
-        <div class="story-body">
-          <p>Det vanskelige er grafen: tilstander, tiltak, tester og systematiske oversikter refererer alle til hverandre. Jeg jobber med strukturen og veifinningen slik at en fagperson kan bevege seg mellom dem uten å miste tråden, enten de kommer via søk eller ved å bla.</p>
-        </div>
-      </div>
+      <h2 class="story-part"><span class="num">Del 2</span>Fra innsikt til designbeslutninger</h2>
 
       <div class="story-row">
-        <p class="story-label">Fra innsikt til beslutninger</p>
+        <p class="story-label">Beslutninger</p>
         <div class="story-body">
-          <p>Hver endring er koblet tilbake til hva fagfolk fortalte oss, så teamet ser begrunnelsen bak.</p>
+          <p>Hver beslutning er koblet tilbake til et funn, så teamet ser begrunnelsen bak.</p>
           <div class="rec-row">
-            <p class="rec-problem">Folk kommer med et spørsmål i klinisk språk, ikke i våre taksonomiord.</p>
-            <p class="rec-fix"><span class="arrow">→</span>Søket tar imot naturlig, klinisk formulering og kobler det til riktig tilstand, tiltak eller oversikt.</p>
+            <p class="rec-problem">Søket ga null treff på en skrivefeil, et synonym eller to tilstander samtidig (6 av 7).</p>
+            <p class="rec-fix"><span class="arrow">→</span>Et tilgivende søk: tåler skrivemåte og synonymer, håndterer kombinerte søkeord, med levende, synlig tilbakemelding så folk ser resultatene oppdatere seg.</p>
           </div>
           <div class="rec-row">
-            <p class="rec-problem">De må stole på en oppsummering før de handler, og vil se evidensen og forbeholdene.</p>
-            <p class="rec-fix"><span class="arrow">→</span>Hvert resultat holder evidensen, styrken og forbeholdene ett steg unna, så KI korter ned veien uten å skjule kilden.</p>
+            <p class="rec-problem">Folk jobber med komorbiditet, men kunne bare se én tilstand om gangen (6 av 7).</p>
+            <p class="rec-fix"><span class="arrow">→</span>Behandle to tilstander samtidig: la folk sammenligne, og løft frem felles tiltak, i stedet for å gjemme "samtidige tilstander" nederst på en side.</p>
           </div>
           <div class="rec-row">
-            <p class="rec-problem">Verdien ligger i koblingene: en tilstand til sine tiltak, et tiltak til sine tester og oversikter.</p>
-            <p class="rec-fix"><span class="arrow">→</span>Kryssreferanser er førsteklasses, så fagpersonen beveger seg gjennom grafen uten å miste tråden.</p>
+            <p class="rec-problem">"Systematiske oversikter" fortalte ikke folk hva som lå bak lenken (6 av 7).</p>
+            <p class="rec-fix"><span class="arrow">→</span>Merk seksjonene i målgruppas egne ord, testet med ekte brukere, med enkel forklarende undertekst i stedet for fagsjargong.</p>
           </div>
           <div class="rec-row">
-            <p class="rec-problem">Folk kommer både for å bla i et fagfelt og for å slå opp én bestemt ting.</p>
-            <p class="rec-fix"><span class="arrow">→</span>To tydelige innganger: raskt søk for det kjente, og strukturert blaing for utforsking.</p>
+            <p class="rec-problem">Lenker, paneler og filtre ble oversett fordi de ikke så interaktive ut (4 av 7).</p>
+            <p class="rec-fix"><span class="arrow">→</span>Gi interaktive elementer tydelige affordanser, så en fagperson aldri må gjette hva som er klikkbart.</p>
           </div>
+          <div class="rec-row">
+            <p class="rec-problem">Effekt og tillit sammen ble lest som en motsetning (4 av 7).</p>
+            <p class="rec-fix"><span class="arrow">→</span>Kod effekt og tillit tydeligere, og forklar i klartekst hva "mangelfull forskning" betyr i praksis.</p>
+          </div>
+          <div class="rec-row">
+            <p class="rec-problem">Alle kom inn via tilstand, men tiltakssiden var bygget som en primærinngang (7 av 7).</p>
+            <p class="rec-fix"><span class="arrow">→</span>Løft tilstand frem som hovedinngangen, og legg til et tilstandsfilter på tiltakssiden for dem som starter der.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-row">
+        <p class="story-label">KI i prosessen</p>
+        <div class="story-body">
+          <p>For å komme fra en beslutning til noe vi faktisk kunne kjenne på, brukte jeg KI som arbeidsverktøy. Sammen med utvikleren og kunden prototypet og stresstestet jeg interaksjoner og flyt i Claude, så vi kunne prøve en retning før vi bandt oss til å bygge. Det som holdt, ble til nye komponenter teamet kan gjenbruke.</p>
+          <p class="tight">Inne i produktet har KI én ærlig jobb: å korte ned veien fra et spørsmål i fagpersonens egne ord til riktig tilstand, tiltak eller oversikt, samtidig som evidensen og forbeholdene holdes intakte. Den hjelper folk å finne; den erstatter ikke den faglige vurderingen eller kilden.</p>
         </div>
       </div>
 
@@ -277,8 +333,8 @@
         <p class="story-label">Læring</p>
         <ul class="learnings">
           <li>I et fagdomene er gjenfinnbarhet selve funksjonen. Dybde er verdiløs hvis folk ikke når den.</li>
-          <li>KI gjør nytte for seg når den korter ned veien til riktig evidens, og er ærlig om kilden.</li>
-          <li>Krevende navigasjon er et strukturproblem først, et grensesnittproblem etterpå.</li>
+          <li>Test ordene, ikke bare flytene. De største sperrene her var ord og affordans, ikke arkitektur.</li>
+          <li>Design for hvordan folk faktisk kommer inn. Alle kom via tilstand, så det er inngangsdøra.</li>
         </ul>
       </div>
     </section>

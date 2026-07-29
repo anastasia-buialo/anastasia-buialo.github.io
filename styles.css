@@ -1032,6 +1032,25 @@ body[data-lang="no"] .lang-no { display: block; }
 .case-section--story { padding: clamp(32px, 5vw, 52px) 0 clamp(40px, 6vw, 64px); }
 .case-section--footer { padding: clamp(32px, 5vw, 48px) 0 clamp(56px, 8vw, 88px); border-top: 1px solid var(--line2); }
 
+/* Two-part divider heading inside a case story */
+.story-part {
+  font-family: var(--font-display);
+  font-size: clamp(21px, 2.3vw, 28px);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--ink);
+  width: 100%;
+  margin: clamp(30px, 4vw, 48px) 0 4px;
+  padding-top: clamp(30px, 4vw, 48px);
+  border-top: 1px solid var(--line2);
+}
+.story-part:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+.story-part .num {
+  color: var(--acc2);
+  margin-right: 14px;
+}
+.story-part + .story-row { border-top: none; padding-top: 20px; }
+
 /* Story rows */
 .story-row {
   display: flex;
