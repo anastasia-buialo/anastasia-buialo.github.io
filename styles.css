@@ -1260,4 +1260,17 @@ body[data-lang="no"] .lang-no { display: block; }
   /* Compact About: small avatar tucked at the top, tight gap */
   .about-grid { gap: 16px; }
   .about-portrait { flex: 0 0 auto; width: 124px; min-width: 0; order: -1; }
+
+  /* Email pill was wider than the viewport, pushing "Kopier" off-screen.
+     Let the address truncate instead of forcing the pill to overflow. */
+  .email-control { width: 100%; }
+  .email-link {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 14px 12px 14px 20px;
+    font-size: 16px;
+  }
+  .copy-btn { flex: 0 0 auto; padding: 14px 16px; }
 }
