@@ -339,7 +339,7 @@ body[data-lang="no"] .lang-no { display: block; }
   margin: 40px 0 16px;
 }
 .note {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   color: var(--mut);
   margin: 0;
@@ -740,7 +740,7 @@ body[data-lang="no"] .lang-no { display: block; }
 }
 /* The work (what she did) leads; the client is secondary */
 .index-name { font-size: 15px; font-weight: 500; color: var(--sub); }
-.index-desc { font-size: 18px; font-weight: 400; color: var(--ink); line-height: 1.45; }
+.index-desc { font-size: 16px; font-weight: 400; color: var(--ink); line-height: 1.45; }
 .index-year {
   font-family: var(--font-display);
   font-size: 14px;
@@ -811,15 +811,15 @@ body[data-lang="no"] .lang-no { display: block; }
 }
 .about-copy { flex: 1 1 420px; max-width: 62ch; }
 .about-lead {
-  font-size: 20px;
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 1.6;
   font-weight: 400;
   color: var(--big);
   margin: 0;
   text-wrap: pretty;
 }
 .about-p2 {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.6;
   font-weight: 400;
   color: var(--sub);
@@ -1245,7 +1245,7 @@ body[data-lang="no"] .lang-no { display: block; }
 
   /* Type scale: hero stays dominant, body steps down a grade */
   .hero-lead { font-size: 15px; line-height: 1.5; }
-  .about-lead { font-size: 16px; line-height: 1.5; }
+  .about-lead { font-size: 15px; line-height: 1.5; }
   .about-p2 { font-size: 15px; }
   .about-langs { font-size: 16px; }
   .approach-lead { font-size: 16px; }
@@ -1255,7 +1255,7 @@ body[data-lang="no"] .lang-no { display: block; }
   .vw-text { font-size: 15px; }
   .side-copy { font-size: 15px; }
   .disclosure > .acc-panel .row-list { font-size: 15px; }
-  .note { font-size: 14px; }
+  .note { font-size: 15px; }
 
   /* Compact About: small avatar tucked at the top, tight gap */
   .about-grid { gap: 16px; }

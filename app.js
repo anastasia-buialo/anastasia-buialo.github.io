@@ -36,7 +36,7 @@
   var savedTheme = read(THEME_KEY);
   applyTheme(savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : 'light');
   var savedLang = read(LANG_KEY);
-  applyLang(savedLang === 'en' || savedLang === 'no' ? savedLang : 'en');
+  applyLang(savedLang === 'en' || savedLang === 'no' ? savedLang : 'no');
 
   function closeHead(head) {
     head.setAttribute('aria-expanded', 'false');
