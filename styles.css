@@ -254,7 +254,7 @@ body[data-lang="no"] .lang-no { display: block; }
   display: flex;
   align-items: center;
   gap: 2px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line4);
   border-radius: 999px;
   padding: 3px;
 }
