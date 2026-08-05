@@ -665,13 +665,18 @@ body[data-lang="no"] .lang-no { display: block; }
 .tag-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 20px;
+  gap: 8px 10px;
 }
 .tag {
+  display: inline-flex;
+  align-items: center;
   font-family: var(--font-display);
-  font-size: 14px;
+  font-size: 13px;
   letter-spacing: 0.02em;
-  color: var(--acc3);
+  color: var(--ink);
+  border: 1px solid var(--line4);
+  border-radius: 4px;
+  padding: 5px 10px;
 }
 .side-role {
   font-size: 16px;
