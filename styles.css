@@ -27,6 +27,7 @@
   --dot3: rgba(23, 23, 27, 0.3);
   --img-line: rgba(79, 70, 229, 0.28);
   --glow: rgba(67, 56, 202, 0.45);
+  --tag-bg: rgba(23, 23, 27, 0.08);
 
   --font-display: 'Futura', 'Jost', sans-serif;
   --font-body: 'Suisse Intl', 'Suisse Int\'l', 'Switzer', sans-serif;
@@ -56,6 +57,7 @@ body[data-theme="dark"] {
   --dot3: rgba(129, 140, 248, 0.35);
   --img-line: rgba(129, 140, 248, 0.25);
   --glow: rgba(129, 140, 248, 0.35);
+  --tag-bg: rgba(249, 250, 251, 0.16);
 }
 
 /* ---------- Base -------------------------------------------- */
@@ -256,7 +258,6 @@ body[data-lang="no"] .lang-no { display: block; }
   border-radius: 999px;
   padding: 3px;
 }
-.seg--theme { border-color: var(--line4); }
 .seg-btn {
   font-family: var(--font-body);
   font-size: 13px;
@@ -674,7 +675,7 @@ body[data-lang="no"] .lang-no { display: block; }
   font-size: 13px;
   letter-spacing: 0.02em;
   color: var(--ink);
-  border: 1px solid var(--line4);
+  background: var(--tag-bg);
   border-radius: 4px;
   padding: 5px 10px;
 }
