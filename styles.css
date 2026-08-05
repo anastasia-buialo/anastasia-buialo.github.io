@@ -272,7 +272,7 @@ body[data-lang="no"] .lang-no { display: block; }
   transition: background 0.2s, color 0.2s;
 }
 .seg-btn--theme { text-transform: lowercase; }
-.seg-btn:hover { color: var(--ink); }
+.seg-btn:hover { color: var(--acc2); background: var(--wash); }
 .seg-btn[aria-pressed="true"] {
   background: var(--ink);
   color: var(--bg);
