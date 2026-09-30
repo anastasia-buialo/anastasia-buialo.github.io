@@ -362,15 +362,20 @@ body[data-lang="no"] .lang-no { display: block; }
   line-height: 1.05;
   letter-spacing: -0.02em;
   margin: 0;
-  max-width: 18ch;
+  max-width: 20ch;
   text-wrap: balance;
 }
 /* Norwegian string has ascender/descender collisions at the tight leading */
 .lang-no .hero-h1 { line-height: 1.15; }
-.hero-h1 em {
-  font-style: italic;
+/* Name carries the weight; role sits underneath, quieter */
+.hero-role {
+  display: block;
+  margin-top: 0.3em;
+  font-size: 0.5em;
   font-weight: 400;
-  color: var(--acc2);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--mut);
 }
 .hero-lead {
   font-size: 20px;
