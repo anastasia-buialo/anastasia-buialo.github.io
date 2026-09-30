@@ -375,7 +375,7 @@ body[data-lang="no"] .lang-no { display: block; }
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: -0.01em;
-  color: var(--mut);
+  color: var(--acc);
 }
 .hero-lead {
   font-size: 20px;
